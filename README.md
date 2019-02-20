@@ -1,2 +1,1 @@
-# plm-bb
-PlentyMarket BlueBery
+PlentyMarket BB Plugin

@@ -1,0 +1,9 @@
+{
+    "name"              : "BlueBerryPLM",
+    "namespace"         : "BlueBerry",
+    "type"              : "template",
+    "version"           : "1.0.0",
+    "description"       : "BlueBerry B2B",
+    "author"            : "BlueBerry",
+    "serviceProvider"   : "BlueBerry\\Providers\\BlueBerryServiceProvider"
+}
