@@ -12,6 +12,6 @@ class BlueBerryServiceProvider extends ServiceProvider {
      */
 
     public function register() {
-        $this->getApplication()->register(BlueBerryRouteServiceProvider::class);
+        $this->getApplication()->register( BlueBerryRouteServiceProvider );//::class
     }
 }
