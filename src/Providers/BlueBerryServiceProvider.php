@@ -3,7 +3,7 @@
 namespace BlueBerry\Providers;
 
 use Plenty\Plugin\ServiceProvider;
-use BlueBerry\BlueBerryRouteServiceProvider;
+// use BlueBerry\BlueBerryRouteServiceProvider;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
