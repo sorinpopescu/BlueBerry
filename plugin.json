@@ -2,7 +2,7 @@
     "name"              : "BlueBerryPLM",
     "namespace"         : "BlueBerry",
     "type"              : "template",
-    "version"           : "1.0.0",
+    "version"           : "1.0.1",
     "description"       : "BlueBerry B2B",
     "author"            : "BlueBerry",
     "serviceProvider"   : "BlueBerry\\Providers\\BlueBerryServiceProvider"
