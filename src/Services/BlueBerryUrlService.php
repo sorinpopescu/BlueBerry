@@ -17,6 +17,6 @@ class BlueBerryUrlService {
     }
 
     public function getCurrentController() {
-        die('x'.$this->routeService->getActionName());
+        die('x'.$this->routeService->getCurrentRoute()->getActionName());
     }
 };
