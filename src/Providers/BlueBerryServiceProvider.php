@@ -3,7 +3,7 @@
 namespace BlueBerry\Providers;
 
 use Plenty\Plugin\ServiceProvider;
-//use BlueBerry\Providers\BlueBerryRouteServiceProvider;
+use BlueBerry\Services\BlueBerryCustomerService;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -12,6 +12,17 @@ class BlueBerryServiceProvider extends ServiceProvider {
      */
 
     public function register() {
-        $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
+        // Register routes
+        // $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
+        // Register Our service
+        $this->getApplication()->singleton( BlueBerryCustomerService::class );
+    }
+
+    public function boot() {
+        $customerService = pluginApp(BlueBerryCustomerService::class);
+
+        var_dump($customerService->isLoggedIn());
+
+        die('sorin');
     }
 }
