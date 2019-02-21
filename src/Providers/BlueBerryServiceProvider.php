@@ -21,7 +21,9 @@ class BlueBerryServiceProvider extends ServiceProvider {
     public function boot() {
         $customerService = pluginApp(BlueBerryCustomerService::class);
 
-        var_dump($customerService->isLoggedIn());
+        if (!$customerService->isLoggedIn()) {
+            die('NO LOGGEDIN');
+        };
 
         die('sorin');
     }
