@@ -3,20 +3,19 @@
 namespace BlueBerry\Services;
 
 //use IO\Services\UrlService;
-use Plenty\Plugin\Routing\Route;
-//use Illuminate\Routing\Route;
+//use Plenty\Plugin\Routing\Route;
+use Plenty\Plugin\Http\Request;
 
 class BlueBerryUrlService {
 
     //private $urlService;
-    private $routeService;
+    private $requestService;
 
-    public function __construct(Route $routeService) {//UrlService $urlService,
-        //$this->urlService = $urlService;
-        $this->routeService = $routeService;
+    public function __construct(Request $requestService) {
+        $this->requestService = $requestService;
     }
 
-    public function getCurrentController() {
-        die('x'.$this->routeService->getCurrentRoute()->getActionName());
+    public function getCurrentUri() {
+        return $this->requestService->getRequestUri();
     }
 };
