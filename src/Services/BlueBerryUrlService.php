@@ -3,8 +3,8 @@
 namespace BlueBerry\Services;
 
 //use IO\Services\UrlService;
-use Plenty\Plugin\Routing\Route;
-//use Illuminate\Routing\Route;
+//use Plenty\Plugin\Routing\Route;
+use Illuminate\Routing\Route;
 
 class BlueBerryUrlService {
 
