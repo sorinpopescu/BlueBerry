@@ -20,7 +20,7 @@ class BlueBerryUrlService {
     }
 
     public function redirectTo($path) {
-        $this->responseService->redirectTo($path);
-        exit;die;
+        return $this->responseService->redirectTo($path);
+        // exit;die;
     }
 };
