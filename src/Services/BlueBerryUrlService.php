@@ -13,10 +13,10 @@ class BlueBerryUrlService {
 
     public function __construct(Request $requestService) {//UrlService $urlService,Route $routeService
         //$this->urlService = $urlService;
-        $this->$requestService = $requestService;
+        $this->requestService = $requestService;
     }
 
     public function getCurrentController() {
-        die('x'.$this->$requestService->getRequestUri());
+        die('x'.$this->requestService->getRequestUri());
     }
 };
