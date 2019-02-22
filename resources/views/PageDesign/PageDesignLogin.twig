@@ -2,12 +2,8 @@
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 {% import "Ceres::PageDesign.Macros.Translations" as Translations %}
 {{ component( "Ceres::PageDesign.Components.Notifications" ) }}
-{{ component( "Ceres::Customer.Components.Login" ) }}
-{{ component( "Ceres::Customer.Components.Registration" ) }}
-{{ component( "Ceres::Customer.Components.ForgotPassword" ) }}
 {% set currencyFormat = config("Ceres.currency.format") %}
 {% set defaultLanguage = services.webstoreConfig.getDefaultLanguage() %}
-
 <!DOCTYPE html>
 
 <html lang="{{ lang }}" data-framework="vue" prefix="og: http://ogp.me/ns#">
