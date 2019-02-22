@@ -29,7 +29,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             // if there is no rest or
             if (stripos($currentUri, 'rest/') === false && stripos($currentUri, 'customer-') === false) {
                 // Redirect to login
-                $urlService->redirectTo('customer-login');
+                $urlService->redirectTo('/customer-login');
             };
         };
     }

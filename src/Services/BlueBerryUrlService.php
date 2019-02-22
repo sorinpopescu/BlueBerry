@@ -4,7 +4,6 @@ namespace BlueBerry\Services;
 
 use Plenty\Plugin\Http\Request;
 use Plenty\Plugin\Http\Response;
-use IO\Guards\AuthGuard;
 
 class BlueBerryUrlService {
 
@@ -21,7 +20,7 @@ class BlueBerryUrlService {
     }
 
     public function redirectTo($path) {
-        AuthGuard::redirect($path, ["backlink" => AuthGuard::getUrl()]);
-        exit;die;
+        header("Location: ".$path);
+        die;
     }
 };
