@@ -22,11 +22,12 @@ class BlueBerryServiceProvider extends ServiceProvider {
 
     public function boot() {
         // Get the service data
-        $urlService = pluginApp(BlueBerryUrlService::class);
         $customerService = pluginApp(BlueBerryCustomerService::class);
         
         if (!$customerService->isLoggedIn()) {
+            $urlService = pluginApp(BlueBerryUrlService::class);
             $currentUri = $urlService->getCurrentUri();
+            echo $urlService->getMethod()." - ";
             // if there is no rest or 
             if (stripos($currentUri, 'rest/') === false && stripos($currentUri, 'account/') === false) {
                 echo $currentUri;
