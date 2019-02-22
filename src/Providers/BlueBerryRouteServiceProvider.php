@@ -8,6 +8,9 @@ use Plenty\Plugin\Routing\Router;
 class BlueBerryRouteServiceProvider extends RouteServiceProvider {
 
     public function map(Router $router) {
-        $router->get('sorin','BlueBerry\Controllers\ContentController@sayHello');
+        // Login action
+        $router->get('customer-login','BlueBerry\Controllers\ContentController@doLogin');
+        // Register action
+        $router->get('customer-register','BlueBerry\Controllers\ContentController@register');
     }
 }

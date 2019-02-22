@@ -14,7 +14,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
 
     public function register() {
         // Register routes
-        // $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
+        $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
         // Register Our service
         $this->getApplication()->singleton( BlueBerryCustomerService::class );
         $this->getApplication()->singleton( BlueBerryUrlService::class );
@@ -23,14 +23,13 @@ class BlueBerryServiceProvider extends ServiceProvider {
     public function boot() {
         // Get the service data
         $customerService = pluginApp(BlueBerryCustomerService::class);
-        
         if (!$customerService->isLoggedIn()) {
             $urlService = pluginApp(BlueBerryUrlService::class);
             $currentUri = $urlService->getCurrentUri();
-            echo $urlService->getMethod()." - ";
-            // if there is no rest or 
-            if (stripos($currentUri, 'rest/') === false && stripos($currentUri, 'account/') === false) {
-                echo $currentUri;
+            // if there is no rest or
+            if (stripos($currentUri, 'rest/') === false && stripos($currentUri, 'customer-') === false) {
+                // Redirect to login
+                $urlService->redirectTo('customer-login');
             };
         };
     }
