@@ -3,6 +3,7 @@
     visibility: hidden;
 }
 
-.footer-content, .footer-features {
+.footer-content, .footer-features,
+.wrapper-main header .container-max>.row {
     display: none;
 }
