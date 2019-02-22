@@ -1,4 +1,10 @@
 /* BlueBerry Styles */
+.blue-berry-login-body {
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center center;
+}
+
 .mainmenu {
     visibility: hidden;
 }
