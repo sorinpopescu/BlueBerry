@@ -2,8 +2,6 @@
 
 namespace BlueBerry\Services;
 
-//use IO\Services\UrlService;
-//use Plenty\Plugin\Routing\Route;
 use Plenty\Plugin\Http\Request;
 
 class BlueBerryUrlService {
