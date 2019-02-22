@@ -1,0 +1,8 @@
+/* BlueBerry Styles */
+.mainmenu {
+    visibility: hidden;
+}
+
+.container-max, .footer-content, .footer-features {
+    display: none;
+}
