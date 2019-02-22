@@ -3,6 +3,11 @@
     background-repeat: no-repeat;
     background-color: transparent;
     background-position: center center;
+    background-size: contain;
+}
+
+body>#vue-app, body>#vue-error {
+    background-color: transparent;
 }
 
 .mainmenu {
