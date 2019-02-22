@@ -11,6 +11,6 @@ class BlueBerryRouteServiceProvider extends RouteServiceProvider {
         // Login action
         $router->get('customer-login','BlueBerry\Controllers\ContentController@doLogin');
         // Register action
-        $router->get('customer-register','BlueBerry\Controllers\ContentController@register');
+        $router->get('customer-register','BlueBerry\Controllers\ContentController@doRegister');
     }
 }
