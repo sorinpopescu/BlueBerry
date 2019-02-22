@@ -5,6 +5,8 @@ namespace BlueBerry\Providers;
 use Plenty\Plugin\ServiceProvider;
 use BlueBerry\Services\BlueBerryCustomerService;
 use BlueBerry\Services\BlueBerryUrlService;
+use Plenty\Plugin\Events\Dispatcher;
+use IO\Extensions\Functions\Partial;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -20,7 +22,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $this->getApplication()->singleton( BlueBerryUrlService::class );
     }
 
-    public function boot() {
+    public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(BlueBerryCustomerService::class);
         if (!$customerService->isLoggedIn()) {
@@ -31,6 +33,10 @@ class BlueBerryServiceProvider extends ServiceProvider {
                 // Redirect to login
                 $urlService->redirectTo('/customer-login');
             };
+            // set my login design
+            $eventDispatcher->listen('IO.init.templates', function (Partial $partial){
+                $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
+            }, 100);
         };
     }
 }
