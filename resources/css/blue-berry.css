@@ -3,6 +3,6 @@
     visibility: hidden;
 }
 
-.container-max, .footer-content, .footer-features {
+.footer-content, .footer-features {
     display: none;
 }
