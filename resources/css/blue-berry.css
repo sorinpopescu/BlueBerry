@@ -2,8 +2,8 @@
 .blue-berry-login-body {
     background-repeat: no-repeat;
     background-color: transparent;
-    background-position: center center;
-    background-size: contain;
+    background-position: top center;
+    background-size: cover;
 }
 
 body>#vue-app, body>#vue-error {
