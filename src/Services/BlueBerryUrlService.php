@@ -21,7 +21,7 @@ class BlueBerryUrlService {
     }
 
     public function redirectTo($path) {
-        return AuthGuard::redirect($path, ["backlink" => AuthGuard::getUrl()]);
+        AuthGuard::redirect($path, ["backlink" => AuthGuard::getUrl()]);
         exit;die;
     }
 };
