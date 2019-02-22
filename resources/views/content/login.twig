@@ -1,14 +1,13 @@
-{% extends getPartial('page-design') %}
+{% extends getPartial('page-design-login') %}
 
 {% block PartialHead %}
     <meta name="robots" content="NOINDEX, NOFOLLOW">
     <title>{{ trans("Ceres::Template.login") }} | {{ trans("Ceres::Template.headerCompanyName") }}</title>
     <link href="{{ plugin_path('BlueBerry') }}/css/blue-berry.css?v=3" rel="stylesheet" type="text/css" media="all" />
-
 {% endblock %}
 
-{% block PartialFooter %}
-    <script src="{{ plugin_path('BlueBerry') }}/js/blue-berry.js?v=3"></script>
+{% block PartialFooterLatest %}
+    <script src="{{ plugin_path('BlueBerry') }}/js/blue-berry.js?v=4"></script>
 {% endblock %}
 
 {% block PageBody %}

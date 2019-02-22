@@ -1,0 +1,113 @@
+{% import "Ceres::PageDesign.Macros.IncludeComponents" as Loader %}
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+{% import "Ceres::PageDesign.Macros.Translations" as Translations %}
+{{ component( "Ceres::Customer.Components.Login" ) }}
+{{ component( "Ceres::Customer.Components.Registration" ) }}
+{{ component( "Ceres::Customer.Components.ForgotPassword" ) }}
+{% set currencyFormat = config("Ceres.currency.format") %}
+{% set defaultLanguage = services.webstoreConfig.getDefaultLanguage() %}
+<!DOCTYPE html>
+<html lang="{{ lang }}" data-framework="vue" prefix="og: http://ogp.me/ns#">
+<head>
+    {% include getPartial('head') %}
+
+    {% block PartialHead %}
+    {% endblock %}
+
+    {% for styleTemplate in get_additional_styles() %}
+        {% include styleTemplate.path ignore missing with styleTemplate.params %}
+    {% endfor %}
+</head>
+
+<body>
+<script>
+    if('ontouchstart' in document.documentElement)
+    {
+        document.body.classList.add("touch");
+    }
+    else
+    {
+        document.body.classList.add("no-touch");
+    }
+</script>
+<div id="vue-app">
+    <div class="wrapper wrapper-top">
+        <!-- messages -->
+        <notifications template="#vue-notifications" :initial-notifications="{{ notifications | json_encode() }}"></notifications>
+    </div>
+
+    <div class="wrapper wrapper-main {% if ceresConfig.header.fixNavBarPos %}isSticky{% endif %}">
+        {% include getPartial('header') %}
+
+        <div id="page-body" class="main">
+            {% block PageBody %}
+                <!-- inject content of inherited templates here -->
+            {% endblock %}
+        </div>
+        {% block PartialFooter %}
+        {% endblock %}
+    </div>
+</div>
+
+<script>
+    App = {
+        config: {{ ceresConfig | json_encode | raw }},
+        activeCurrency: "{{ currencyData[currencyFormat] }}",
+        currencyPattern: {{  services.checkout.getCurrencyPattern() | json_encode | raw }},
+        isCategoryView: {% if services.template.isCategory() == "1" %}true{% else %}false{% endif %},
+        isCheckoutView : {% if services.template.isCheckout() == "1" %}true{% else %}false{% endif %},
+        isSearch: {% if services.template.isSearch() == "1" %}true{% else %}false{% endif %},
+        templateEvent: "{{templateEvent}}",
+        language: "{{ lang }}",
+        defaultLanguage: "{{ defaultLanguage }}",
+        decimalSeparator: "{{ config("IO.format.separator_decimal") }}",
+        urlTrailingSlash: {{ urls.appendTrailingSlash | json_encode }}
+    };
+</script>
+
+{{ Loader.include_components() }}
+{{ LayoutContainer.show("Ceres::Script.Loader") }}
+{{ Translations.add( "Ceres", "Template" ) }}
+{% if ceresConfig.log.performanceLevel  == 'development' %}
+    <script src="{{ plugin_path('Ceres') }}/js/dist/ceres-vendor.js"></script>
+    <script src="{{ plugin_path('Ceres') }}/js/dist/ceres-app.js"></script>
+{% else %}
+    <script src="{{ plugin_path('Ceres') }}/js/dist/ceres.min.js"></script>
+{% endif %}
+
+{% for scriptTemplate in get_additional_scripts() %}
+    {% include scriptTemplate.path ignore missing with scriptTemplate.params %}
+{% endfor %}
+
+{{ LayoutContainer.show("Ceres::Script.AfterScriptsLoaded") }}
+
+<script>
+    vueEventHub = new Vue();
+
+    {% if ceresConfig.log.checkSyntax %}
+        var rootElement = document.getElementById("vue-app");
+        rootElement.innerHTML = rootElement.innerHTML.replace(/(?:^|\s)(?::|v-bind:)\S+=(?:""|'')/g, '');
+
+        var vueApp = new Vue({
+            store: window.ceresStore
+        });
+
+        vueApp.$mount( rootElement.cloneNode(true) );
+
+        if ( vueApp.$el.id === "vue-app")
+        {
+            document.body.replaceChild( vueApp.$el, rootElement );
+        }
+    {% else %}
+        var vueApp = new Vue({
+            el: "#vue-app",
+            store: window.ceresStore
+        });
+    {% endif %}
+</script>
+
+{% block PartialFooterLatest %}
+{% endblock %}
+
+</body>
+</html>
