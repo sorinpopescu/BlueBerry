@@ -22,6 +22,7 @@ body>#vue-app, body>#vue-error {
 #page-body {
     position: fixed;
     width: 100%;
+    height: auto;
     bottom: 0px;
     left: 0px;
     border-top: 1px solid #cccccc;
@@ -29,8 +30,20 @@ body>#vue-app, body>#vue-error {
     margin-bottom: 30px;
     text-align: right;
     background-color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 100px;
 }
 
 .bb-main-disclaimer {
     padding: 10px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background: #fff;
+    text-align: right;
+    width: 100%;
+    height: auto;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666;
 }
