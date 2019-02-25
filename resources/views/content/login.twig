@@ -17,16 +17,16 @@
 <script type="x/template" id="vue-login">
     <form :id="'login-form-' + _uid" class="login-container row">
         <div class="col-sm-6">
-            <div class="col-sm-8">
-                <div class="col-sm-8 pull-left">
-                    {{ trans("BlueBerry::Text.loginTextDescription") }}
-                </div>
-                <div class="col-sm-2 pull-left">
-                I
-                </div>
-                <div class="col-sm-2 pull-left">
-                I
-                </div>
+            <div class="col-sm-8 pull-left loginTextDescription">
+                {{ trans("BlueBerry::Text.loginTextDescription") }}
+            </div>
+            <div class="col-sm-2 pull-left">
+                <a href="/customer-register"><span class="fa fa-user"></span></a>
+            </div>
+            <div class="col-sm-2 pull-left">
+                <a href="/contact">
+                    <span class="fa fa-envelope"></span>
+                </a>
             </div>
         </div>
         <div class="col-sm-6">
