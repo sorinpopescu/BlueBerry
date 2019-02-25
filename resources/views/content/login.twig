@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="col-sm-7">
-            <div class="col-sm-4 pull-left">
+            <div class="col-sm-5 pull-left">
                 <div class="input-unit" data-validate="mail">
                     {% set uid_mail = uid() %}
                     <input type="email" name="email" id="{{ uid_mail }}" v-model="username" data-autofocus>
@@ -39,7 +39,7 @@
                 </div>
                 <span class="error-msg">{{ trans("Ceres::Template.loginEmptyPassword") }}</span>
             </div>
-            <div class="col-sm-4 pull-left">
+            <div class="col-sm-3 pull-left">
                 {{ LayoutContainer.show("Ceres::LoginOverlay.ExtendOverlayButtons") }}
                 <button @click.prevent="validateLogin" :disabled="isDisabled" class="btn btn-primary btn-medium" :class="{'btn-right': !modalElement}">
                     <i class="fa fa-user" v-waiting-animation="isDisabled"></i>
@@ -51,7 +51,7 @@
 </script>
 
 <script type="x/template" id="vue-login-view" >
-    <div class="container-fluid login bb-login-holder">
+    <div class="container-fluid login login-pwd-reset bb-login-holder">
         <login template="#vue-login" backlink="{{ backlink | url_encode }}" has-to-forward="true"></login>
     </div>
 </script>
