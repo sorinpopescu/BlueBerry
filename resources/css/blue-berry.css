@@ -10,6 +10,10 @@ body>#vue-app, body>#vue-error {
     background-color: transparent;
 }
 
+.input-unit {
+    border: 0px;
+}
+
 .mainmenu, .login-view-title {
     visibility: hidden;
 }
