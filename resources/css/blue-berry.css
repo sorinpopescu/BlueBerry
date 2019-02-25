@@ -12,6 +12,7 @@ body>#vue-app, body>#vue-error {
 
 .input-unit {
     border: 0px;
+    margin-bottom: 0px;
 }
 
 .mainmenu, .login-view-title {
