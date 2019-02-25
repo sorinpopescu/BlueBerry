@@ -17,8 +17,7 @@
 <script type="x/template" id="vue-login">
     <form :id="'login-form-' + _uid" class="login-container row">
         <div class="col-sm-5">
-            <div class="col-sm-8">
-            </div>
+            <div class="col-sm-8"></div>
         </div>
         <div class="col-sm-7">
             <div class="col-sm-5 pull-left">
@@ -34,7 +33,6 @@
                     {% set uid_pwd = uid() %}
                     <input type="password" name="password" id="{{ uid_pwd }}" v-model="password">
                     <label for="{{ uid_pwd }}">{{ trans("Ceres::Template.loginPassword") }}*</label>
-                    <br/>
                     <a href="javascript:void(0)" @click="showResetPwdView" class="small">{{ trans("Ceres::Template.loginForgotPassword") }}?</a>
                 </div>
                 <span class="error-msg">{{ trans("Ceres::Template.loginEmptyPassword") }}</span>
