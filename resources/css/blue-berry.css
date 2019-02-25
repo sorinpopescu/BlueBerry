@@ -19,7 +19,6 @@ body>#vue-app, body>#vue-error {
     display: none;
 }
 
-
 #page-body {
     position: fixed;
     width: 100%;
@@ -30,4 +29,8 @@ body>#vue-app, body>#vue-error {
     margin-bottom: 30px;
     text-align: right;
     background-color: rgba(255, 255, 255, 0.7);
+}
+
+.bb-main-disclaimer {
+    padding: 10px;
 }
