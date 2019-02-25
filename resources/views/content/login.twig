@@ -16,7 +16,7 @@
 {% block PageBody %}
 <script type="x/template" id="vue-login">
     <form :id="'login-form-' + _uid" class="login-container row">
-        <div class="col-sm-5">
+        <div class="col-sm-6">
             <div class="col-sm-8">
                 <div class="col-sm-8 pull-left">
                     {{ trans("BlueBerry::Text.loginTextDescription") }}
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-6">
             <div class="col-sm-5 pull-left">
                 <div class="input-unit" data-validate="mail">
                     {% set uid_mail = uid() %}
