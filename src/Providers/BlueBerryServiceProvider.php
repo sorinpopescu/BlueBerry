@@ -32,11 +32,12 @@ class BlueBerryServiceProvider extends ServiceProvider {
             if (stripos($currentUri, 'rest/') === false && stripos($currentUri, 'customer-') === false) {
                 // Redirect to login
                 // $urlService->redirectTo('/customer-login');
+            } else if (stripos($currentUri, 'customer-') !== false) {
+                // set my login design
+                $eventDispatcher->listen('IO.init.templates', function (Partial $partial){
+                    $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
+                }, 100);
             };
-            // set my login design
-            // $eventDispatcher->listen('IO.init.templates', function (Partial $partial){
-            //     $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
-            // }, 100);
         };
     }
 }

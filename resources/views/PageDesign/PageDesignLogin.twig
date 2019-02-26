@@ -30,6 +30,10 @@
             document.body.classList.add("no-touch");
         }
     </script>
+    {% set headerContainer = LayoutContainer.show("Ceres::Header") | trim %}
+    {% if headerContainer is empty %}
+        {% include "Ceres::PageDesign.Partials.Header.DefaultHeader" %}
+    {% else %}
     <div id="vue-app">
         <div class="wrapper wrapper-top">
             <!-- messages -->
