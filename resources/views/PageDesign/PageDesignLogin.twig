@@ -33,7 +33,7 @@
     {% set headerContainer = LayoutContainer.show("Ceres::Header") | trim %}
     {% if headerContainer is empty %}
         {% include "Ceres::PageDesign.Partials.Header.DefaultHeader" %}
-    {% else %}
+    {% endif %}
     <div id="vue-app">
         <div class="wrapper wrapper-top">
             <!-- messages -->
