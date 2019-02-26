@@ -1,0 +1,104 @@
+{% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
+{% set lang = services.sessionStorage.getLang() %}
+{% set activeCurrencies = config("Ceres.currency.available_currencies") | split(', ') %}
+{% set enableCurrencySelect = config("Ceres.currency.enable_selection") == "true" and activeCurrencies | length > 0 %}
+{% set currencyFormat = config("Ceres.currency.format") %}
+{% set currencyFormatSelect = config("Ceres.currency.format_selection") %}
+
+<header id="page-header" class="top-bar fixed-top">
+    <div>
+        <div class="container-max">
+            <div class="row">
+                {{ LayoutContainer.show("Ceres::Header.LeftSide") }}
+                <ul id="controlsList" class="controls-list list-inline">
+                    <li class="list-inline-item control-user"></li>
+                    <li class="list-inline-item dropdown control-languages">
+                        <a data-toggle="collapse" href="#countrySettings" aria-expanded="false"
+                           aria-controls="countrySettings"
+                           data-parent="#controlsList">
+                            <i class="flag-icon flag-icon-{{ lang }}"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item control-search">
+                        <a class="anicon anicon-search-xcross"
+                           aria-label="toggle search"
+                           data-toggle="collapse"
+                           href="#searchBox"
+                           aria-expanded="false"
+                           aria-controls="searchBox"
+                           data-parent="#controlsList">
+                            <span class="anicon-search-item" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container-max page-header">
+    <div class="row">
+        {% if enableCurrencySelect == "true" %}
+            <div id="currencySelect" class="cmp cmp-currency-select collapse">
+                <div class="container-max">
+                    <div class="row py-3">
+
+                        <div class="currency-list col-12">
+                            <div class="list-title">
+                                <strong>{{ trans("Ceres::Template.headerCurrency") }}</strong>
+                                <hr>
+                            </div>
+                            <ul class="text-center text-sm-left">
+                                {% for currency in services.checkout.getCurrencyList() if currency.name in activeCurrencies or activeCurrencies[0] == 'all' or currency.name == services.checkout.getCurrencyData().name %}
+                                    <li{% if currency.name == services.checkout.getCurrencyData().name %} class="active"{% endif %}>
+                                        <a href="{{ queryString({"currency": currency.name}) }}" rel="nofollow">
+                                            {% if currencyFormatSelect == 'all' %}
+                                                {{ currency.name }} <br class="d-block d-sm-none" />({{ currency.symbol }})
+                                            {% else %}
+                                                {{ currency[currencyFormatSelect] }}
+                                            {% endif %}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        <shop-country-settings
+                country-flag-prefix="flag-icon-"
+                :shipping-countries="{{ services.country.getActiveCountriesList() | filterFields(['id','currLangName', 'isoCode2', 'states.id', 'states.name']) | json_encode }}"
+                :shipping-country-id="{{ services.checkout.getShippingCountryId }}">
+            <div id="countrySettings" class="cmp cmp-country-settings collapse">
+                <div class="container-max">
+                    <div class="row py-3">
+                        <div class="col-12 col-lg-6">
+
+                            <div class="language-settings">
+                                <div class="list-title">
+                                    <strong>{{ trans("Ceres::Template.headerSelectLanguage") }}</strong>
+                                    <hr>
+                                </div>
+
+                                {% set languageList = services.webstoreConfig.getActiveLanguageList() %}
+                                {% set languageUrls = services.url.getLanguageURLs() %}
+                                <ul>
+                                    {% for language in languageList %}
+                                        <li{% if lang == language %} class="active"{% endif %}>
+                                            <a href="{% if languageUrls[language] is defined %}{{ languageUrls[language] ~ queryString() }}{% elseif language != defaultLanguage %}/{{ language }}{{ urls.trailingSlashSuffix }}{% else %}/{% endif %}" data-update-url>
+                                                <i class="flag-icon flag-icon-{{ language }}"></i>
+                                                {{ trans("Ceres::Template.header" ~ language | capitalize) }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </shop-country-settings>
+    </div>
+</div>
