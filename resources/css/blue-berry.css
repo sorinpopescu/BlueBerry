@@ -66,4 +66,5 @@ body>#vue-app, body>#vue-error {
 .registeration-holder {
     padding: 15px;
     background: #fff;
+    width: 800px;
 }

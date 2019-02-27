@@ -15,7 +15,7 @@
 <script type="x/template" id="vue-registration">
     <div class="container registeration-holder">
         <div class="row" :id="'registration' + _uid">
-            <div class="col-sm-8">
+
                 <div class="col-sm-12">
                     <div class="input-unit" data-validate="mail">
                         {% set uid_mail = uid() %}
@@ -23,6 +23,8 @@
                         <label for="{{ uid_mail }}">{{ trans("Ceres::Template.regEmail") }}*</label>
                     </div>
                 </div>
+
+                <div class="clear clearfix"><!-- --></div>
 
                 <div class="col-sm-6">
                     <div class="input-unit" :class="{'no-bottom media-xs-d': modalElement}" data-validate="password" ref="passwordInput">
@@ -32,13 +34,15 @@
                     </div>
                 </div>
 
-                <div class="col-sm-6 input-unit-group">
+                <div class="col-sm-6">
                     <div class="input-unit" :class="{'no-bottom': modalElement}" data-validate="ref">
                         {% set uid_pwd_repeat = uid() %}
                         <input type="password" name="password-repeat" id="{{ uid_pwd_repeat }}" v-model="passwordRepeat" data-validate-ref="#{{ uid_pwd }}">
                         <label for="{{ uid_pwd_repeat }}">{{ trans("Ceres::Template.regRepeatPassword") }}*</label>
                     </div>
                 </div>
+
+                <div class="clear clearfix"><!-- --></div>
 
                 <div class="col-12">
                     <address-input-group
@@ -49,7 +53,7 @@
                         @input="setAddressDataField($event)">
                     </address-input-group>
                 </div>
-            </div>
+
         </div>
     </div>
     <div class="modal-footer">
