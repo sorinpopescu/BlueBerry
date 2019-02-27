@@ -62,3 +62,8 @@ body>#vue-app, body>#vue-error {
     font-size: 12px;
     line-height: 14px;
 }
+
+.registeration-holder {
+    padding: 15px;
+    background: #fff;
+}
