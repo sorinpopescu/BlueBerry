@@ -13,13 +13,11 @@
 {% block PageBody %}
 {{ component( "Ceres::Customer.Components.AddressInputGroup.AddressInputGroup" ) }}
 <script type="x/template" id="vue-registration">
-    <div class="container registeration-holder">
+    <div class="container registration-holder">
         <div class="row" :id="'registration' + _uid">
                 <div class="col-sm-12">
 
                     <h1 class="registration-view-title mb-5">{{ trans("Ceres::Template.regContactInformations") }}</h1>
-
-                    <div class="clear clearfix space20"><!-- --></div>
 
                     <div class="input-unit" data-validate="mail">
                         {% set uid_mail = uid() %}
@@ -48,7 +46,7 @@
 
                 <div class="clear clearfix space20"><!-- --></div>
 
-                <div class="col-12">
+                <div class="col-12 registration-holder-address">
                     <address-input-group
                         template="#vue-address-input-group"
                         v-if="!isSimpleRegistration"
@@ -58,15 +56,16 @@
                     </address-input-group>
                 </div>
 
-        </div>
-    </div>
-    <div class="modal-footer">
-        {{ LayoutContainer.show("Ceres::RegistrationOverlay.ExtendOverlayButtons") }}
+                <div class="clear clearfix space20"><!-- --></div>
 
-        <button @click="validateRegistration" :disabled="isDisabled" class="btn btn-primary btn-medium btn-right">
-            <i class="fa fa-user-plus" v-waiting-animation="isDisabled" aria-hidden="true"></i>
-            {{ trans("Ceres::Template.regRegister") }}
-        </button>
+                <div class="col-12">
+                    {{ LayoutContainer.show("Ceres::RegistrationOverlay.ExtendOverlayButtons") }}
+                    <button @click="validateRegistration" :disabled="isDisabled" class="btn btn-primary btn-medium btn-right">
+                        <i class="fa fa-user-plus" v-waiting-animation="isDisabled" aria-hidden="true"></i>
+                        {{ trans("Ceres::Template.regRegister") }}
+                    </button>
+                </div>
+        </div>
     </div>
 </script>
 

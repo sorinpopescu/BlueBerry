@@ -63,10 +63,14 @@ body>#vue-app, body>#vue-error {
     line-height: 14px;
 }
 
-.registeration-holder {
+.registration-holder {
     padding: 15px;
     background: #ddd;
     width: 800px;
+}
+
+.registration-holder-address .input-unit {
+    margin-bottom: 20px;
 }
 
 .space10 {
