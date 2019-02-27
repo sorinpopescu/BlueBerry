@@ -15,8 +15,12 @@
 <script type="x/template" id="vue-registration">
     <div class="container registeration-holder">
         <div class="row" :id="'registration' + _uid">
-
                 <div class="col-sm-12">
+
+                    <h1 class="registration-view-title mb-5">{{ trans("Ceres::Template.regContactInformations") }}</h1>
+
+                    <div class="clear clearfix space20"><!-- --></div>
+
                     <div class="input-unit" data-validate="mail">
                         {% set uid_mail = uid() %}
                         <input type="text" name="email" id="{{ uid_mail }}" v-model="username" data-autofocus>
@@ -24,7 +28,7 @@
                     </div>
                 </div>
 
-                <div class="clear clearfix"><!-- --></div>
+                <div class="clear clearfix space20"><!-- --></div>
 
                 <div class="col-sm-6">
                     <div class="input-unit" :class="{'no-bottom media-xs-d': modalElement}" data-validate="password" ref="passwordInput">
@@ -42,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="clear clearfix"><!-- --></div>
+                <div class="clear clearfix space20"><!-- --></div>
 
                 <div class="col-12">
                     <address-input-group
