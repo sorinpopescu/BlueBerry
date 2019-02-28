@@ -17,19 +17,19 @@
 <script type="x/template" id="vue-login">
     <form :id="'login-form-' + _uid" class="login-container row clearfix">
         <div class="col-sm-6">
-            <div class="col-sm-10 pull-left loginTextDescription">
+            <div class="col-sm-10 col-xs-12  pull-left loginTextDescription">
                 {{ trans("BlueBerry::Text.loginTextDescription") }}
             </div>
-            <div class="col-sm-1 pull-left">
+            <div class="col-sm-1 col-xs-6 pull-left">
                 <a href="/customer-register"><span class="fa fa-user"></span></a>
             </div>
-            <div class="col-sm-1 pull-left">
+            <div class="col-sm-1 col-xs-6 pull-left">
                 <a href="/contact">
                     <span class="fa fa-envelope"></span>
                 </a>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 col-xs-12">
             <div class="col-sm-5 pull-left">
                 <div class="input-unit" data-validate="mail">
                     {% set uid_mail = uid() %}
@@ -54,6 +54,7 @@
                     {{ trans("Ceres::Template.login") }}
                 </button>
             </div>
+            <div class="clearfix"><!-- --></div>
         </div>
         <div class="clearfix"><!-- --></div>
     </form>

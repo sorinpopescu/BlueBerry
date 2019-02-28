@@ -25,9 +25,10 @@ class BlueBerryServiceProvider extends ServiceProvider {
     public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(BlueBerryCustomerService::class);
+        $urlService = pluginApp(BlueBerryUrlService::class);
+        $currentUri = $urlService->getCurrentUri();
+        // Check if it's not login
         if (!$customerService->isLoggedIn()) {
-            $urlService = pluginApp(BlueBerryUrlService::class);
-            $currentUri = $urlService->getCurrentUri();
             // if there is no rest or
             if (stripos($currentUri, 'rest/') === false && stripos($currentUri, 'customer-') === false) {
                 // Redirect to login
@@ -38,6 +39,9 @@ class BlueBerryServiceProvider extends ServiceProvider {
                     $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
                 }, 100);
             };
+        // IF user is loggedin and still on this page - redirect him
+        } else if (stripos($currentUri, 'customer-') !== false) {
+            $urlService->redirectTo('/');
         };
     }
 }

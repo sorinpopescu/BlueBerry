@@ -43,7 +43,7 @@
 
         <div class="wrapper wrapper-main {% if ceresConfig.header.fixNavBarPos %}isSticky{% endif %}">
 
-            <div id="page-body" class="main clearfix">
+            <div id="page-body" class="main clearfix {{ app.request.pathinfo }}">
                 {% block PageBody %}
                     <!-- inject content of inherited templates here -->
                 {% endblock %}
