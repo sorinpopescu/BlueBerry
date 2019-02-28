@@ -57,11 +57,13 @@ body>#vue-app, body>#vue-error {
     text-align: right;
     background-color: rgba(255, 255, 255, 0.7);
     left: 0px;
+    top: 70%;
+}
+
+.register #page-body {
     top: 50%;
     transform: translate(0%,-50%);
 }
-
-
 
 .bb-main-disclaimer {
     padding: 10px;
@@ -121,7 +123,16 @@ body>#vue-app, body>#vue-error {
         position: relative;
         left: inherit;
         top: inherit;
+        margin-top: 0px;
+        transform: none;
+    }
+
+    .login #page-body {
         margin-top: 60%;
+    }
+
+    .register #page-body {
+        margin-top: 5%;
     }
 
     .blue-berry-login-body {
