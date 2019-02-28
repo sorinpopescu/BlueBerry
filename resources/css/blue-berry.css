@@ -133,8 +133,9 @@ body>#vue-app, body>#vue-error {
     }
 
     .register #page-body {
-        margin-top: 5%;
-        margin-bottom: 50px;
+        margin-top: 15%;
+        margin-bottom: 90px;
+        padding: 10px 20px 10px 20px;
     }
 
     .blue-berry-login-body {
