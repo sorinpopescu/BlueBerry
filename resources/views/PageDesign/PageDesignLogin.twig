@@ -19,7 +19,7 @@
     {% endfor %}
 </head>
 
-<body class="blue-berry-login-body" style="background-image: url('{{ plugin_path('BlueBerry') }}/images/screener-bg-small.jpg');">
+<body class="blue-berry-login-body {{ pageDesignType }}" style="background-image: url('{{ plugin_path('BlueBerry') }}/images/screener-bg-small.jpg');">
     <script>
         if('ontouchstart' in document.documentElement)
         {
@@ -43,7 +43,7 @@
 
         <div class="wrapper wrapper-main {% if ceresConfig.header.fixNavBarPos %}isSticky{% endif %}">
 
-            <div id="page-body" class="main clearfix {{ app.request.pathinfo }}">
+            <div id="page-body" class="main clearfix">
                 {% block PageBody %}
                     <!-- inject content of inherited templates here -->
                 {% endblock %}
