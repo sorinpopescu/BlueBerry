@@ -31,19 +31,19 @@
         }
     </script>
     {% include "BlueBerry::PageDesign.TopHeader" %}
-    <div id="vue-app">
-        <div class="wrapper wrapper-top">
+    <div id="vue-app" class="clearfix">
+        <div class="wrapper wrapper-top clearfix">
             <!-- messages -->
             <notifications template="#vue-notifications" :initial-notifications="{{ notifications | json_encode() }}"></notifications>
         </div>
 
-        <div class="wrapper wrapper-left">
+        <div class="wrapper wrapper-left clearfix">
             <!-- filters -->
         </div>
 
         <div class="wrapper wrapper-main {% if ceresConfig.header.fixNavBarPos %}isSticky{% endif %}">
 
-            <div id="page-body" class="main">
+            <div id="page-body" class="main clearfix">
                 {% block PageBody %}
                     <!-- inject content of inherited templates here -->
                 {% endblock %}
