@@ -124,15 +124,17 @@ body>#vue-app, body>#vue-error {
         left: inherit;
         top: inherit;
         margin-top: 0px;
-        transform: none;
+        transform: none!important;
     }
 
     .login #page-body {
         margin-top: 60%;
+        margin-bottom: 50px;
     }
 
     .register #page-body {
         margin-top: 5%;
+        margin-bottom: 50px;
     }
 
     .blue-berry-login-body {
