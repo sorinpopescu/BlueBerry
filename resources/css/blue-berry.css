@@ -1,4 +1,18 @@
 /* BlueBerry Styles */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+.btn-primary, .widget-address.widget-primary .btn-primary, a {
+    color: #fff;
+    background-color: #132479;
+    border-color: #132479;
+}
+
 .blue-berry-login-body {
     background-repeat: no-repeat;
     background-color: transparent;
@@ -13,6 +27,12 @@ body>#vue-app, body>#vue-error {
 .input-unit {
     border: 0px;
     margin-bottom: 0px;
+}
+
+.input-unit input[type="text"],
+.input-unit input[type="email"],
+.input-unit input[type="password"] {
+    border: 1px solid #ddd;
 }
 
 .mainmenu, .login-view-title {
@@ -34,6 +54,8 @@ body>#vue-app, body>#vue-error {
     left: 0px;
     top: 70%;
 }
+
+
 
 .bb-main-disclaimer {
     padding: 10px;
@@ -93,6 +115,10 @@ body>#vue-app, body>#vue-error {
         position: relative;
         left: inherit;
         top: inherit;
-        margin-top: 50px;
+        margin-top: 60%;
+    }
+
+    .blue-berry-login-body {
+        background-position: center center;
     }
 }
