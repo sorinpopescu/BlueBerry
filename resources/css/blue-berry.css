@@ -129,10 +129,12 @@ body>#vue-app, body>#vue-error {
     }
 
     .login #page-body {
+        width: 100%;
         margin-bottom: 50px;
     }
 
     .register #page-body {
+        width: 100%;
         margin-bottom: 90px;
         margin: 10px 20px 10px 20px;
     }
