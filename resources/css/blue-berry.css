@@ -68,6 +68,7 @@ body>#vue-app, body>#vue-error {
 .register #page-body {
     width: 450px;
     background-color: rgba(221, 221, 221, 0.9);
+    padding: 20px;
 }
 
 .bb-main-disclaimer {
@@ -95,10 +96,6 @@ body>#vue-app, body>#vue-error {
 .loginTextDescription {
     font-size: 12px;
     line-height: 14px;
-}
-
-.registration-holder {
-    padding: 15px;
 }
 
 .registration-holder-address .input-unit {
