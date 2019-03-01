@@ -27,24 +27,21 @@
 
                 <div class="clear clearfix space20"><!-- --></div>
 
-                <div class="col-sm-12">
-                    <div class="col-sm-6">
-                        <div class="input-unit" :class="{'no-bottom media-xs-d': modalElement}" data-validate="password" ref="passwordInput">
-                            {% set uid_pwd = uid() %}
-                            <input slot="handle" type="password" name="password" id="{{ uid_pwd }}" v-model="password">
-                            <label for="{{ uid_pwd }}">{{ trans("Ceres::Template.regPassword") }}*</label>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="input-unit" :class="{'no-bottom': modalElement}" data-validate="ref">
-                            {% set uid_pwd_repeat = uid() %}
-                            <input type="password" name="password-repeat" id="{{ uid_pwd_repeat }}" v-model="passwordRepeat" data-validate-ref="#{{ uid_pwd }}">
-                            <label for="{{ uid_pwd_repeat }}">{{ trans("Ceres::Template.regRepeatPassword") }}*</label>
-                        </div>
+                <div class="col-sm-6 pull-left">
+                    <div class="input-unit" :class="{'no-bottom media-xs-d': modalElement}" data-validate="password" ref="passwordInput">
+                        {% set uid_pwd = uid() %}
+                        <input slot="handle" type="password" name="password" id="{{ uid_pwd }}" v-model="password">
+                        <label for="{{ uid_pwd }}">{{ trans("Ceres::Template.regPassword") }}*</label>
                     </div>
                 </div>
 
+                <div class="col-sm-6  pull-left">
+                    <div class="input-unit" :class="{'no-bottom': modalElement}" data-validate="ref">
+                        {% set uid_pwd_repeat = uid() %}
+                        <input type="password" name="password-repeat" id="{{ uid_pwd_repeat }}" v-model="passwordRepeat" data-validate-ref="#{{ uid_pwd }}">
+                        <label for="{{ uid_pwd_repeat }}">{{ trans("Ceres::Template.regRepeatPassword") }}*</label>
+                    </div>
+                </div>
 
                 <div class="clear clearfix space20"><!-- --></div>
 
