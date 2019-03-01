@@ -51,16 +51,12 @@ body>#vue-app, body>#vue-error {
 
 #page-body {
     position: fixed;
-    width: 100%;
+    width: 450px;
     height: auto;
     margin-bottom: 0px;
     text-align: right;
     background-color: rgba(255, 255, 255, 0.7);
-    left: 0px;
-    top: 70%;
-}
-
-.register #page-body {
+    right: 5%;
     top: 50%;
     transform: translate(0%,-50%);
 }
