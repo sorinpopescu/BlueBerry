@@ -8,7 +8,7 @@ use BlueBerry\Services\BlueBerryUrlService;
 use Plenty\Plugin\Events\Dispatcher;
 use IO\Extensions\Functions\Partial;
 use IO\Services\SessionStorageService;
-use IO\Services\WebstoreConfigurationService;
+// use IO\Services\WebstoreConfigurationService;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -32,14 +32,14 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $sessionStorageService = pluginApp(SessionStorageService::class);
         $sessionLanguage = $sessionStorageService->getLang();
         if (empty($sessionLanguage)) {
-            $webstoreConfigService = pluginApp(WebstoreConfigurationService::class);
-            $sessionLanguage = $webstoreConfigService->getDefaultLanguage();
-            // Make sure we have it
-            if (empty($sessionLanguage)) {
+            // $webstoreConfigService = pluginApp(WebstoreConfigurationService::class);
+            // $sessionLanguage = $webstoreConfigService->getDefaultLanguage();
+            if (stripos($currentUri, '/en/') !== false) {
+                $sessionLanguage = 'en';
+            } else {
                 $sessionLanguage = 'de';
             };
         };
-        die('x'.$sessionLanguage);
         // Check if it's not login
         if (!$customerService->isLoggedIn()) {
             // Is rest
