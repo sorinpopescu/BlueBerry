@@ -29,11 +29,13 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $currentUri = $urlService->getCurrentUri();
         // Check if it's not login
         if (!$customerService->isLoggedIn()) {
+            // Is rest
+            $isRest = stripos($currentUri, 'rest/');
             // if there is no rest or
-            if (stripos($currentUri, 'rest/') === false && stripos($currentUri, 'customer-') === false) {
+            if ($isRest === false && stripos($currentUri, 'customer-') === false) {
                 // Redirect to login
                 $urlService->redirectTo('/customer-login');
-            } else if (stripos($currentUri, 'customer-') !== false) {
+            } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
                 // set my login design
                 $eventDispatcher->listen('IO.init.templates', function (Partial $partial, $currentUri) {
                     // the partial
