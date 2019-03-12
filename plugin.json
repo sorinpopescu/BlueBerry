@@ -2,7 +2,7 @@
     "name"              : "BlueBerry",
     "namespace"         : "BlueBerry",
     "type"              : "template",
-    "version"           : "1.8.4",
+    "version"           : "1.8.5",
     "description"       : "BlueBerry B2B",
     "author"            : "BlueBerry",
     "serviceProvider"   : "BlueBerry\\Providers\\BlueBerryServiceProvider"
