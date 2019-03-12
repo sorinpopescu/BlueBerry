@@ -4,13 +4,10 @@
 
 <script type="x/template" id="vue-address-input-group">
     <div class="row">
-        <template v-if="value.showPickupStation && selectedCountry.isoCode2 === 'DE' && addressType === '2'">
-            {% include "BlueBerry::Customer.AddressInputGroup.Locale.DHLPackingStationAddressInputGroupDE" %}
-        </template>
-        <template v-else-if="localeToShow == 'DE' && addressType === '1'">
+        <template v-if="localeToShow == 'DE'">
             {% include "BlueBerry::Customer.AddressInputGroup.Locale.BillingAddressInputGroupDE" %}
         </template>
-        <template v-else-if="localeToShow == 'GB' && addressType === '1'">
+        <template v-else-if="localeToShow == 'GB'">
             {% include "BlueBerry::Customer.AddressInputGroup.Locale.BillingAddressInputGroupGB" %}
         </template>
         <div class="col-12 col-sm-4">
