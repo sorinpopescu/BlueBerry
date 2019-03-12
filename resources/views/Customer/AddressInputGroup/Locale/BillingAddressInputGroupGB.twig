@@ -1,9 +1,3 @@
-{{ component( "Ceres::Customer.Components.SalutationSelect" ) }}
-
-{% set addressFields = config("Ceres.billing_address.en.show") | split(', ') %}
-{% set addressFieldsRequired = config("Ceres.billing_address.en.require") | split(', ') %}
-
-
 <div class="col-12">
     <div class="row">
         {% if "billing_address.salutation" in addressFields %}
