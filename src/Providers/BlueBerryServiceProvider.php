@@ -33,8 +33,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $sessionLanguage = $sessionStorageService->getLang();
         if (empty($sessionLanguage)) {
             $webstoreConfigService = pluginApp(WebstoreConfigurationService::class);
-            $webstoreConfig = $webstoreConfigService->getWebstoreConfig();
-            $sessionLanguage = $webstoreConfig->getDefaultLanguage();
+            //$webstoreConfig = $webstoreConfigService->getWebstoreConfig();
+            $sessionLanguage = $webstoreConfigService->getDefaultLanguage();
             // Make sure we have it
             if (empty($sessionLanguage)) {
                 $sessionLanguage = 'de';
