@@ -46,7 +46,7 @@
     <div class="row">
 
         {% if "billing_address.title" in addressFields %}
-            <div class="col-12 col-sm-12">
+            <div class="col-12 col-sm-4">
                 <div class="input-unit"
                      {% if "billing_address.title" in addressFieldsRequired %}data-validate="text" {% endif %}data-model="title">
                     <input type="text" name="title" :id="'txtTitle' + _uid" :value="value.title" @input="emitInputEvent('title', $event.target.value)" data-autofocus>
