@@ -13,6 +13,18 @@
 
 {% block PageBody %}
 {{ component( "BlueBerry::Customer.AddressInputGroup.AddressInputGroup" ) }}
+
+{% set optionalInvoiceAddressFields = {
+    "de": ceresConfig.addresses.billingAddressShow,
+    "gb": ceresConfig.addresses.billingAddressShow_en
+    }
+%}
+{% set requiredInvoiceAddressFields = {
+    "de": ceresConfig.addresses.billingAddressRequire,
+    "gb": ceresConfig.addresses.billingAddressRequire_en
+    }
+%}
+
 <script type="x/template" id="vue-registration">
     <div class="container registration-holder">
         <div class="row" :id="'registration' + _uid">
