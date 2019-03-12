@@ -39,6 +39,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
                 $sessionLanguage = 'de';
             };
         };
+        die('x'.$sessionLanguage);
         // Check if it's not login
         if (!$customerService->isLoggedIn()) {
             // Is rest
