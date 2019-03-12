@@ -7,6 +7,8 @@ use BlueBerry\Services\BlueBerryCustomerService;
 use BlueBerry\Services\BlueBerryUrlService;
 use Plenty\Plugin\Events\Dispatcher;
 use IO\Extensions\Functions\Partial;
+use IO\Services\SessionStorageService;
+use IO\Services\WebstoreConfigurationService;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -27,6 +29,17 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $customerService = pluginApp(BlueBerryCustomerService::class);
         $urlService = pluginApp(BlueBerryUrlService::class);
         $currentUri = $urlService->getCurrentUri();
+        $sessionStorageService = pluginApp(SessionStorageService::class);
+        $sessionLanguage = $sessionStorageService->getLang();
+        if (empty($sessionLanguage)) {
+            $webstoreConfigService = pluginApp(WebstoreConfigurationService::class);
+            $webstoreConfig = $webstoreConfigService->getWebstoreConfig();
+            $sessionLanguage = $webstoreConfig->getDefaultLanguage();
+            // Make sure we have it
+            if (empty($sessionLanguage)) {
+                $sessionLanguage = 'de';
+            };
+        };
         // Check if it's not login
         if (!$customerService->isLoggedIn()) {
             // Is rest
@@ -34,7 +47,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             // if there is no rest or
             if ($isRest === false && stripos($currentUri, 'customer-') === false) {
                 // Redirect to login
-                $urlService->redirectTo('/customer-login');
+                $urlService->redirectTo('/'.$sessionLanguage.'/customer-login');
             } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
                 // set my login design
                 $eventDispatcher->listen('IO.init.templates', function (Partial $partial, $currentUri) {
@@ -46,7 +59,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             };
         // IF user is loggedin and still on this page - redirect him
         } else if (stripos($currentUri, 'customer-') !== false) {
-            $urlService->redirectTo('/');
+            $urlService->redirectTo('/'.$sessionLanguage.'/');
         };
     }
 }

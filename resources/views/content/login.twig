@@ -1,8 +1,8 @@
 {% extends getPartial('page-design-login') %}
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
-{% set gCapture = config("Ceres.global.google_recaptcha_api_key") %}
 {% set backlink = request.get("backlink") %}
 {% set pageDesignType = "login" %}
+{% set lang = services.sessionStorage.getLang() %}
 
 {% block PartialHead %}
     <meta name="robots" content="NOINDEX, NOFOLLOW">
@@ -50,11 +50,11 @@
         <div class="col-sm-12">
 
             <div class="col-sm-2 col-xs-6 pull-left">
-                <a href="/customer-register"><span class="fa fa-user"></span></a>
+                <a href="/{{ lang }}/customer-register"><span class="fa fa-user"></span></a>
             </div>
 
             <div class="col-sm-2 col-xs-6 pull-left">
-                <a href="/contact">
+                <a href="/{{ lang }}/contact">
                     <span class="fa fa-envelope"></span>
                 </a>
             </div>
