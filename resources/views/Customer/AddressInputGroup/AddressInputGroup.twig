@@ -13,13 +13,6 @@
         <template v-else-if="localeToShow == 'GB' && addressType === '1'">
             {% include "BlueBerry::Customer.AddressInputGroup.Locale.BillingAddressInputGroupGB" %}
         </template>
-        <template v-else-if="localeToShow == 'DE' && addressType === '2'">
-            {% include "BlueBerry::Customer.AddressInputGroup.Locale.DeliveryAddressInputGroupDE" %}
-        </template>
-        <template v-else-if="localeToShow == 'GB' && addressType === '2'">
-            {% include "BlueBerry::Customer.AddressInputGroup.Locale.DeliveryAddressInputGroupGB" %}
-        </template>
-
         <div class="col-12 col-sm-4">
             <country-select
                 template="#vue-country-select"
@@ -33,3 +26,5 @@
         </div>
     </div>
 </script>
+
+{{ LayoutContainer.show("Ceres::Checkout.CustomAddressField") }}
