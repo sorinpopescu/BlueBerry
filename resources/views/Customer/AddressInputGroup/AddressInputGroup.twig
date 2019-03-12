@@ -11,15 +11,14 @@
 
         <div class="col-12">
             <div class="row">
-                {% if "billing_address.salutation" in addressFields %}
-                    <div class="col-12 col-sm-4">
-                        <div class="input-unit"
-                            {% if "billing_address.salutation" in addressFieldsRequired %}data-validate{% endif %}>
-                            <salutation-select template="#vue-salutation-select" :address-type="addressType" :address-data="value" @input="emitInputEvent($event.field, $event.value)"></salutation-select>
-                            <label :for="'txtSalutation' + _uid">{{ trans("Ceres::Template.addressSalutation") }}{% if "billing_address.salutation" in addressFieldsRequired %}*{% endif %}</label>
-                        </div>
+
+                <div class="col-12 col-sm-4">
+                    <div class="input-unit"
+                        {% if "billing_address.salutation" in addressFieldsRequired %}data-validate{% endif %}>
+                        <salutation-select template="#vue-salutation-select" :address-type="addressType" :address-data="value" @input="emitInputEvent($event.field, $event.value)"></salutation-select>
+                        <label :for="'txtSalutation' + _uid">{{ trans("Ceres::Template.addressSalutation") }}{% if "billing_address.salutation" in addressFieldsRequired %}*{% endif %}</label>
                     </div>
-                {% endif %}
+                </div>
             </div>
         </div>
 
