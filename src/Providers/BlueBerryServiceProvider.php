@@ -27,8 +27,9 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $customerService = pluginApp(BlueBerryCustomerService::class);
         $urlService = pluginApp(BlueBerryUrlService::class);
         $currentUri = $urlService->getCurrentUri();
+        // What language
         $sessionLanguage = null;
-        if (stripos($currentUri, '/en/') !== false) {
+        if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
             $sessionLanguage = 'en';
         } else {
             $sessionLanguage = 'de';
