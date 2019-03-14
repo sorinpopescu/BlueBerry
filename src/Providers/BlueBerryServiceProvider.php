@@ -38,26 +38,26 @@ class BlueBerryServiceProvider extends ServiceProvider {
             $sessionLanguage = 'de';
         };
         // Check if it's not login
-        if (!$accountService->getIsAccountLoggedIn()) {
-            // Is rest
-            $isRest = stripos($currentUri, 'rest/');
-            // if there is no rest or
-            if ($isRest === false && stripos($currentUri, 'customer-') === false) {
-                // Redirect to login
-                // $urlService->redirectTo('/'.$sessionLanguage.'/customer-login');
-            } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
-                // set my login design
-                $eventDispatcher->listen('IO.init.templates', function (Partial $partial, $currentUri) {
-                    // the partial
-                    $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
-                    // The login
-                    $partial->set('pageDesignType', (stripos($currentUri, 'customer-register') !== false ? 'register' : 'login'));
-                }, 100);
-            };
-        // IF user is loggedin and still on this page - redirect him
-        } else if (stripos($currentUri, 'customer-') !== false) {
-            // $urlService->redirectTo('/'.$sessionLanguage.'/');
-        };
+        // if (!$accountService->getIsAccountLoggedIn()) {
+        //     // Is rest
+        //     $isRest = stripos($currentUri, 'rest/');
+        //     // if there is no rest or
+        //     if ($isRest === false && stripos($currentUri, 'customer-') === false) {
+        //         // Redirect to login
+        //         // $urlService->redirectTo('/'.$sessionLanguage.'/customer-login');
+        //     } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
+        //         // set my login design
+        //         $eventDispatcher->listen('IO.init.templates', function (Partial $partial, $currentUri) {
+        //             // the partial
+        //             $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
+        //             // The login
+        //             $partial->set('pageDesignType', (stripos($currentUri, 'customer-register') !== false ? 'register' : 'login'));
+        //         }, 100);
+        //     };
+        // // IF user is loggedin and still on this page - redirect him
+        // } else if (stripos($currentUri, 'customer-') !== false) {
+        //     // $urlService->redirectTo('/'.$sessionLanguage.'/');
+        // };
     }
 
     // Main redirector
