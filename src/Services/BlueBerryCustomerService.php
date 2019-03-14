@@ -9,9 +9,7 @@ class BlueBerryCustomerService {
     private $accountService;
 
     public function __construct(AccountService $accountService) {
-
         $this->accountService = $accountService;
-
         return $accountService;
     }
 

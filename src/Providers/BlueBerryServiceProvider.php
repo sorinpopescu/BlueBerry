@@ -22,7 +22,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $this->getApplication()->singleton( BlueBerryUrlService::class );
     }
 
-    public function boot(Dispatcher $eventDispatcher) {return true;
+    public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(BlueBerryCustomerService::class);
         $urlService = pluginApp(BlueBerryUrlService::class);
@@ -55,5 +55,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         } else if (stripos($currentUri, 'customer-') !== false) {
             // $urlService->redirectTo('/'.$sessionLanguage.'/');
         };
+        // Return true
+        return true;
     }
 }
