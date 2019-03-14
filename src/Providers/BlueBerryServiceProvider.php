@@ -3,10 +3,12 @@
 namespace BlueBerry\Providers;
 
 use Plenty\Plugin\ServiceProvider;
-use BlueBerry\Services\BlueBerryCustomerService;
+use Plenty\Modules\Frontend\Services\AccountService;
 use BlueBerry\Services\BlueBerryUrlService;
 use Plenty\Plugin\Events\Dispatcher;
 use IO\Extensions\Functions\Partial;
+use Plenty\Plugin\Http\Request;
+use Plenty\Plugin\Http\Response;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -22,12 +24,11 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $this->getApplication()->singleton( BlueBerryUrlService::class );
     }
 
-    public function boot(Dispatcher $eventDispatcher) {
+    public function boot(AccountService $accountService, Request $requestService, Dispatcher $eventDispatcher) {
         // Get the service data
-        $customerService = pluginApp(BlueBerryCustomerService::class);
-        return true;
-        $urlService = pluginApp(BlueBerryUrlService::class);
-        $currentUri = $urlService->getCurrentUri();
+        //$customerService = pluginApp(BlueBerryCustomerService::class);
+        // $urlService = pluginApp(BlueBerryUrlService::class);
+        $currentUri = $requestService->getRequestUri();
         // What language
         $sessionLanguage = null;
         if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
@@ -36,7 +37,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             $sessionLanguage = 'de';
         };
         // Check if it's not login
-        if (!$customerService->isLoggedIn()) {
+        if (!$accountService->getIsAccountLoggedIn()) {
             // Is rest
             $isRest = stripos($currentUri, 'rest/');
             // if there is no rest or
@@ -56,7 +57,11 @@ class BlueBerryServiceProvider extends ServiceProvider {
         } else if (stripos($currentUri, 'customer-') !== false) {
             // $urlService->redirectTo('/'.$sessionLanguage.'/');
         };
-        // Return true
-        return true;
+    }
+
+    // Main redirector
+    public function redirectTo($path) {
+        header("Location: ".$path);
+        die;
     }
 }
