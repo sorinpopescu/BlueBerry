@@ -29,14 +29,14 @@ class BlueBerryServiceProvider extends ServiceProvider {
         // Get the service data
         //$customerService = pluginApp(BlueBerryCustomerService::class);
         // $urlService = pluginApp(BlueBerryUrlService::class);
-        $currentUri = $requestService->getRequestUri();
-        // What language
-        $sessionLanguage = null;
-        if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
-            $sessionLanguage = 'en';
-        } else {
-            $sessionLanguage = 'de';
-        };
+        // $currentUri = $requestService->getRequestUri();
+        // // What language
+        // $sessionLanguage = null;
+        // if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
+        //     $sessionLanguage = 'en';
+        // } else {
+        //     $sessionLanguage = 'de';
+        // };
         // Check if it's not login
         // if (!$accountService->getIsAccountLoggedIn()) {
         //     // Is rest
