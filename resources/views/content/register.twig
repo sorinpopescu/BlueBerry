@@ -70,11 +70,18 @@
                 <div class="clear clearfix space20"><!-- --></div>
 
                 <div class="col-12">
-                    {{ LayoutContainer.show("Ceres::RegistrationOverlay.ExtendOverlayButtons") }}
-                    <button @click="validateRegistration" :disabled="isDisabled" class="btn btn-primary btn-medium btn-right">
-                        <i class="fa fa-user-plus" v-waiting-animation="isDisabled" aria-hidden="true"></i>
-                        {{ trans("Ceres::Template.regRegister") }}
-                    </button>
+
+                    <div class="col-sm-2 col-xs-4 pull-left">
+                        <a href="/{{ lang }}/customer-login"><span class="fa fa-user"></span></a>
+                    </div>
+
+                    <div class="col-sm-10 col-xs-8 pull-left">
+                        {{ LayoutContainer.show("Ceres::RegistrationOverlay.ExtendOverlayButtons") }}
+                        <button @click="validateRegistration" :disabled="isDisabled" class="btn btn-primary btn-medium btn-right">
+                            <i class="fa fa-user-plus" v-waiting-animation="isDisabled" aria-hidden="true"></i>
+                            {{ trans("Ceres::Template.regRegister") }}
+                        </button>
+                    </div>
                 </div>
         </div>
     </div>

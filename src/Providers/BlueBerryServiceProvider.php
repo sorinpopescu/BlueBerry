@@ -41,7 +41,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             // if there is no rest or
             if ($isRest === false && stripos($currentUri, 'customer-') === false) {
                 // Redirect to login
-                $urlService->redirectTo('/'.$sessionLanguage.'/customer-login');
+                // $urlService->redirectTo('/'.$sessionLanguage.'/customer-login');
             } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
                 // set my login design
                 $eventDispatcher->listen('IO.init.templates', function (Partial $partial, $currentUri) {
@@ -53,7 +53,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             };
         // IF user is loggedin and still on this page - redirect him
         } else if (stripos($currentUri, 'customer-') !== false) {
-            $urlService->redirectTo('/'.$sessionLanguage.'/');
+            // $urlService->redirectTo('/'.$sessionLanguage.'/');
         };
     }
 }
