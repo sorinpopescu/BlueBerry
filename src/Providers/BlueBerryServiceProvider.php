@@ -25,7 +25,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         // $this->getApplication()->singleton( BlueBerryUrlService::class );
     }
 
-    public function __construct(AccountService $accountService, Request $requestService, Dispatcher $eventDispatcher) {
+    public function boot(AccountService $accountService, Request $requestService, Dispatcher $eventDispatcher) {
         // Get the service data
         //$customerService = pluginApp(BlueBerryCustomerService::class);
         // $urlService = pluginApp(BlueBerryUrlService::class);
