@@ -4,11 +4,12 @@ namespace BlueBerry\Providers;
 
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Modules\Frontend\Services\AccountService;
-use BlueBerry\Services\BlueBerryUrlService;
 use Plenty\Plugin\Events\Dispatcher;
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\Http\Request;
-use Plenty\Plugin\Http\Response;
+//use Plenty\Plugin\Http\Response;
+//use BlueBerry\Services\BlueBerryCustomerService;
+//use BlueBerry\Services\BlueBerryUrlService;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -20,8 +21,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
         // Register routes
         $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
         // Register Our service
-        $this->getApplication()->singleton( BlueBerryCustomerService::class );
-        $this->getApplication()->singleton( BlueBerryUrlService::class );
+        // $this->getApplication()->singleton( BlueBerryCustomerService::class );
+        // $this->getApplication()->singleton( BlueBerryUrlService::class );
     }
 
     public function boot(AccountService $accountService, Request $requestService, Dispatcher $eventDispatcher) {
