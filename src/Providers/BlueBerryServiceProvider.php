@@ -22,7 +22,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $this->getApplication()->singleton( BlueBerryUrlService::class );
     }
 
-    public function boot(Dispatcher $eventDispatcher) {
+    public function boot(Dispatcher $eventDispatcher) {return true;
         // Get the service data
         $customerService = pluginApp(BlueBerryCustomerService::class);
         $urlService = pluginApp(BlueBerryUrlService::class);
@@ -39,10 +39,10 @@ class BlueBerryServiceProvider extends ServiceProvider {
             // Is rest
             $isRest = stripos($currentUri, 'rest/');
             // if there is no rest or
-            if ($isRest === false && stripos($currentUri, 'customer-') === false) {echo "WHY";
+            if ($isRest === false && stripos($currentUri, 'customer-') === false) {
                 // Redirect to login
                 // $urlService->redirectTo('/'.$sessionLanguage.'/customer-login');
-            } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {echo "WHY2";
+            } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
                 // set my login design
                 $eventDispatcher->listen('IO.init.templates', function (Partial $partial, $currentUri) {
                     // the partial
