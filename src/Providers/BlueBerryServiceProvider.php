@@ -14,15 +14,15 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * Register the service provider.
      */
 
-    public function register(Dispatcher $eventDispatcher) {
+    public function register() {
         // Register routes
         $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
         // Register Our service
         $this->getApplication()->singleton( BlueBerryCustomerService::class );
         $this->getApplication()->singleton( BlueBerryUrlService::class );
-    // }
+    }
 
-    // public function boot(Dispatcher $eventDispatcher) {
+    public function boot(Twig $twig, Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(BlueBerryCustomerService::class);
         $urlService = pluginApp(BlueBerryUrlService::class);
@@ -44,15 +44,14 @@ class BlueBerryServiceProvider extends ServiceProvider {
                 //$urlService->redirectTo('/'.$sessionLanguage.'/customer-login');
             } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
                 // set my login design
-                $eventDispatcher->listen('IO.init.templates', function (Partial $partial) { //, $currentUri
+                $eventDispatcher->listen('IO.init.templates', function (Partial $partial) use ($currentUri) { //, $currentUri
                     // the partial
                     $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
                     // The login
-                    // $partial->set('pageDesignType', (stripos($currentUri, 'customer-register') !== false ? 'register' : 'login'));
-                    $partial->set('pageDesignType', 'login');
+                    $partial->set('pageDesignType', (stripos($currentUri, 'customer-register') !== false ? 'register' : 'login'));
                     // return data
-                    // return false;
-                }, 100);
+                    return false;
+                }, 800);
             };
         // IF user is loggedin and still on this page - redirect him
         } else if (stripos($currentUri, 'customer-') !== false) {
