@@ -14,15 +14,15 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * Register the service provider.
      */
 
-    public function register() {
+    public function register(Dispatcher $eventDispatcher) {
         // Register routes
         $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
         // Register Our service
         $this->getApplication()->singleton( BlueBerryCustomerService::class );
         $this->getApplication()->singleton( BlueBerryUrlService::class );
-    }
+    // }
 
-    public function boot(Dispatcher $eventDispatcher) {
+    // public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(BlueBerryCustomerService::class);
         $urlService = pluginApp(BlueBerryUrlService::class);
