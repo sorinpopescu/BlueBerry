@@ -49,6 +49,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
                     $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
                     // The login
                     // $partial->set('pageDesignType', (stripos($currentUri, 'customer-register') !== false ? 'register' : 'login'));
+                    $partial->set('pageDesignType', 'login');
                     // return data
                     // return false;
                 }, 100);
