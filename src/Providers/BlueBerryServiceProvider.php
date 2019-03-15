@@ -49,6 +49,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
                     $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
                     // The login
                     $partial->set('pageDesignType', (stripos($currentUri, 'customer-register') !== false ? 'register' : 'login'));
+                    // return data
+                    return true;
                 }, 100);
             };
         // IF user is loggedin and still on this page - redirect him
