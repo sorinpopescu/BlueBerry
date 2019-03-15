@@ -2,11 +2,12 @@
 
 namespace BlueBerry\Providers;
 
+use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
 use BlueBerry\Services\BlueBerryCustomerService;
 use BlueBerry\Services\BlueBerryUrlService;
 use Plenty\Plugin\Events\Dispatcher;
-use IO\Extensions\Functions\Partial;
+use Plenty\Plugin\Templates\Twig;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
