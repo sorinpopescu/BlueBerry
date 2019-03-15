@@ -44,13 +44,13 @@ class BlueBerryServiceProvider extends ServiceProvider {
                 //$urlService->redirectTo('/'.$sessionLanguage.'/customer-login');
             } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
                 // set my login design
-                $eventDispatcher->listen('IO.init.templates', function (Partial $partial, $currentUri) {
+                $eventDispatcher->listen('IO.init.templates', function (Partial $partial) { //, $currentUri
                     // the partial
                     $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
                     // The login
-                    $partial->set('pageDesignType', (stripos($currentUri, 'customer-register') !== false ? 'register' : 'login'));
+                    // $partial->set('pageDesignType', (stripos($currentUri, 'customer-register') !== false ? 'register' : 'login'));
                     // return data
-                    return false;
+                    // return false;
                 }, 100);
             };
         // IF user is loggedin and still on this page - redirect him
