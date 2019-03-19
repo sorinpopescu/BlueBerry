@@ -30,8 +30,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(AccountService::class);
-        $urlService = pluginApp(Request::class);
-        $currentUri = $urlService->getRequestUri();
+        $urlService = pluginApp(BlueBerryUrlService::class);
+        $currentUri = $urlService->getCurrentUri();
         // What language
         $sessionLanguage = null;
         if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
