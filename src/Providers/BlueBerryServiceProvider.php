@@ -5,15 +5,13 @@ namespace BlueBerry\Providers;
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
 
-// use Plenty\Plugin\Http\Request;
-// use Plenty\Plugin\Http\Response;
-
+use Plenty\Plugin\Http\Request;
 use Plenty\Modules\Frontend\Services\AccountService;
 
 use Plenty\Plugin\Events\Dispatcher;
 
 use BlueBerry\Services\BlueBerryCustomerService;
-use BlueBerry\Services\BlueBerryUrlService;
+//use BlueBerry\Services\BlueBerryUrlService;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -29,8 +27,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
     public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(AccountService::class);
-        $urlService = pluginApp(BlueBerryUrlService::class);
-        // $currentUri = $urlService->getCurrentUri();
+        $urlService = pluginApp(Request::class);
+        $currentUri = $urlService->getCurrentUri();
         // // What language
         // $sessionLanguage = null;
         // if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
