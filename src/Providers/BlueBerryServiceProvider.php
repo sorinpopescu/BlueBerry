@@ -4,6 +4,7 @@ namespace BlueBerry\Providers;
 
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
+use Plenty\Modules\Frontend\Services\AccountService;
 use BlueBerry\Services\BlueBerryCustomerService;
 use BlueBerry\Services\BlueBerryUrlService;
 use Plenty\Plugin\Events\Dispatcher;
@@ -15,17 +16,14 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * Register the service provider.
      */
 
-    public function register(){
+    public function register() {
         // Register routes
         $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
-        // Register Our service
-        //$this->getApplication()->singleton( BlueBerryCustomerService::class );
-        //$this->getApplication()->singleton( BlueBerryUrlService::class );
     }
 
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
         // Get the service data
-        $customerService = pluginApp(BlueBerryCustomerService::class);
+        $customerService = pluginApp(AccountService::class);
         $urlService = pluginApp(BlueBerryUrlService::class);
         $currentUri = $urlService->getCurrentUri();
         // What language
@@ -36,7 +34,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             $sessionLanguage = 'de';
         };
         // Check if it's not login
-        if (!$customerService->isLoggedIn()) {
+        if (!$customerService->getIsAccountLoggedIn()) {
             // Is rest
             $isRest = stripos($currentUri, 'rest/');
             // if there is no rest or
