@@ -4,11 +4,17 @@ namespace BlueBerry\Providers;
 
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
+
+// use Plenty\Plugin\Http\Request;
+// use Plenty\Plugin\Http\Response;
+
 use Plenty\Modules\Frontend\Services\AccountService;
-use BlueBerry\Services\BlueBerryCustomerService;
-use BlueBerry\Services\BlueBerryUrlService;
+
 use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\Templates\Twig;
+
+use BlueBerry\Services\BlueBerryCustomerService;
+use BlueBerry\Services\BlueBerryUrlService;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -16,7 +22,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * Register the service provider.
      */
 
-    public function register() {
+    public function nooregister() {
         // Register routes
         $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
     }
@@ -24,8 +30,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(AccountService::class);
-        $urlService = pluginApp(BlueBerryUrlService::class);
-        $currentUri = $urlService->getCurrentUri();
+        $urlService = pluginApp(Request::class);
+        $currentUri = $urlService->getRequestUri();
         // What language
         $sessionLanguage = null;
         if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
