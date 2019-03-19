@@ -8,10 +8,9 @@ use Plenty\Plugin\ServiceProvider;
 // use Plenty\Plugin\Http\Request;
 // use Plenty\Plugin\Http\Response;
 
-use Plenty\Modules\Frontend\Services\AccountService;
+// use Plenty\Modules\Frontend\Services\AccountService;
 
 use Plenty\Plugin\Events\Dispatcher;
-use Plenty\Plugin\Templates\Twig;
 
 use BlueBerry\Services\BlueBerryCustomerService;
 use BlueBerry\Services\BlueBerryUrlService;
@@ -22,12 +21,12 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * Register the service provider.
      */
 
-    public function nooegister() {
+    public function register() {
         // Register routes
         // $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
     }
 
-    public function boot(Twig $twig, Dispatcher $eventDispatcher) {
+    public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
         // $customerService = pluginApp(AccountService::class);
         // $urlService = pluginApp(BlueBerryUrlService::class);
