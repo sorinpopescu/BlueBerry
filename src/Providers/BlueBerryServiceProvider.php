@@ -5,7 +5,6 @@ namespace BlueBerry\Providers;
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
 
-// use Plenty\Plugin\Http\Request;
 use Plenty\Modules\Frontend\Services\AccountService;
 
 use Plenty\Plugin\Events\Dispatcher;
@@ -27,17 +26,15 @@ class BlueBerryServiceProvider extends ServiceProvider {
     public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(AccountService::class);
-        echo 'X'.$_SERVER['REQUEST_URI'];
-        // $urlService = pluginApp(Request::class);
-        /// $currentUri = $urlService->getRequestUri();
-        // // What language
-        // $sessionLanguage = null;
-        // if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
-        //     $sessionLanguage = 'en';
-        // } else {
-        //     $sessionLanguage = 'de';
-        // };
-        // // Check if it's not login
+        $currentUri = trim(!empty($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : (!empty($_SERVER['QUERY_STRING']) ? : null));
+        // What language
+        $sessionLanguage = null;
+        if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
+            $sessionLanguage = 'en';
+        } else {
+            $sessionLanguage = 'de';
+        };
+        // Check if it's not login
         // if (!$customerService->getIsAccountLoggedIn()) {
         //     // Is rest
         //     $isRest = stripos($currentUri, 'rest/');
