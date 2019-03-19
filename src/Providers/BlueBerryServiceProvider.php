@@ -6,7 +6,7 @@ use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Modules\Frontend\Services\AccountService;
 use Plenty\Plugin\Events\Dispatcher;
-use BlueBerry\Services\BlueBerryRouteServiceProvider;
+// use BlueBerry\Services\BlueBerryRouteServiceProvider;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
