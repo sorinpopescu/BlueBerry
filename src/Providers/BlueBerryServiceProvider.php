@@ -5,7 +5,7 @@ namespace BlueBerry\Providers;
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
 
-use Plenty\Modules\Frontend\Services\AccountService;
+// use Plenty\Modules\Frontend\Services\AccountService;
 
 use Plenty\Plugin\Events\Dispatcher;
 
@@ -18,7 +18,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * Register the service provider.
      */
 
-    public function register() {
+    public function noegister() {
         // Register routes
         $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
     }
