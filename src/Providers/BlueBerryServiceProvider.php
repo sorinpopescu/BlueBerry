@@ -9,7 +9,7 @@ use Plenty\Modules\Frontend\Services\AccountService;
 
 use Plenty\Plugin\Events\Dispatcher;
 
-use BlueBerry\Services\BlueBerryCustomerService;
+//use BlueBerry\Services\BlueBerryCustomerService;
 //use BlueBerry\Services\BlueBerryUrlService;
 
 class BlueBerryServiceProvider extends ServiceProvider {
