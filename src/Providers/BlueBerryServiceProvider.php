@@ -5,7 +5,7 @@ namespace BlueBerry\Providers;
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
 
-use Plenty\Plugin\Http\Request;
+// use Plenty\Plugin\Http\Request;
 use Plenty\Modules\Frontend\Services\AccountService;
 
 use Plenty\Plugin\Events\Dispatcher;
@@ -27,6 +27,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
     public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(AccountService::class);
+        print_r($_SERVER);
         // $urlService = pluginApp(Request::class);
         /// $currentUri = $urlService->getRequestUri();
         // // What language
