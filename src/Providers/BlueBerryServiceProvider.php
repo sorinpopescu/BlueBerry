@@ -24,6 +24,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
     }
 
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
+        // Register my services
+        $this->noegister();
         // Get the service data
         $customerService = pluginApp(BlueBerryCustomerService::class);
         $urlService = pluginApp(BlueBerryUrlService::class);
