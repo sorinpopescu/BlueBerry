@@ -27,7 +27,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
     public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
         $customerService = pluginApp(AccountService::class);
-        echo $_SERVER['REQUEST_URI'];
+        die('X'.$_SERVER['REQUEST_URI']);
         // $urlService = pluginApp(Request::class);
         /// $currentUri = $urlService->getRequestUri();
         // // What language
