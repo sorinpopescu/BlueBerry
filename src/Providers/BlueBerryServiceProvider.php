@@ -24,7 +24,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
 
     public function nooregister() {
         // Register routes
-        $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
+        // $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
     }
 
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
