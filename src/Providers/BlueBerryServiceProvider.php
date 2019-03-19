@@ -4,12 +4,9 @@ namespace BlueBerry\Providers;
 
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
-
-// use Plenty\Modules\Frontend\Services\AccountService;
-
+use Plenty\Modules\Frontend\Services\AccountService;
 use Plenty\Plugin\Events\Dispatcher;
-
-//use BlueBerry\Services\BlueBerryCustomerService;
+use BlueBerry\Services\BlueBerryRouteServiceProvider;
 //use BlueBerry\Services\BlueBerryUrlService;
 
 class BlueBerryServiceProvider extends ServiceProvider {
@@ -18,22 +15,22 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * Register the service provider.
      */
 
-    public function noegister() {
+    public function register() {
         // Register routes
         $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
     }
 
     public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
-        // $customerService = pluginApp(AccountService::class);
-        // $currentUri = trim(!empty($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : (!empty($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : null));
+        $customerService = pluginApp(AccountService::class);
+        $currentUri = trim(!empty($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : (!empty($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : null));
         // What language
-        // $sessionLanguage = null;
-        // if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
-        //     $sessionLanguage = 'en';
-        // } else {
-        //     $sessionLanguage = 'de';
-        // };
+        $sessionLanguage = null;
+        if (stripos($currentUri, '/en/') !== false || $currentUri === '/en') {
+            $sessionLanguage = 'en';
+        } else {
+            $sessionLanguage = 'de';
+        };
         // Check if it's not login
         // if (!$customerService->getIsAccountLoggedIn()) {
         //     // Is rest
