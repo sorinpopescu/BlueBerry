@@ -22,7 +22,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * Register the service provider.
      */
 
-    public function nooregister() {
+    public function nooegister() {
         // Register routes
         // $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
     }
