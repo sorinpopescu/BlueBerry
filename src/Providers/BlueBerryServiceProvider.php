@@ -8,7 +8,7 @@ use Plenty\Plugin\ServiceProvider;
 // use Plenty\Plugin\Http\Request;
 // use Plenty\Plugin\Http\Response;
 
-// use Plenty\Modules\Frontend\Services\AccountService;
+use Plenty\Modules\Frontend\Services\AccountService;
 
 use Plenty\Plugin\Events\Dispatcher;
 
@@ -28,7 +28,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
 
     public function boot(Dispatcher $eventDispatcher) {
         // Get the service data
-        // $customerService = pluginApp(AccountService::class);
+        $customerService = pluginApp(AccountService::class);
         // $urlService = pluginApp(BlueBerryUrlService::class);
         // $currentUri = $urlService->getCurrentUri();
         // // What language
