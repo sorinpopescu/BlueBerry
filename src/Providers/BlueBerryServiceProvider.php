@@ -19,7 +19,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
     }
 
-    public function boot(Dispatcher $eventDispatcher) {
+    public function boot(Dispatcher $eventDispatcher, AccountService $customerService) {
         // // Get the service data
         // $customerService = pluginApp(AccountService::class);
         // $currentUri = trim(!empty($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : (!empty($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : null));
