@@ -35,7 +35,6 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $userIsLoggedIn = pluginApp(UserSession::class)->isContactLoggedIn();
         // Check if it's not login
         if (!$userIsLoggedIn) {
-            echo "NOTTTT LOGGEDIN";
             // // Is rest
             // $isRest = stripos($currentUri, 'rest/');
             // // if there is no rest or
@@ -56,7 +55,6 @@ class BlueBerryServiceProvider extends ServiceProvider {
         // IF user is loggedin and still on this page - redirect him
         } else if (stripos($currentUri, 'customer-') !== false) {
             //$this->redirectTo('/'.$sessionLanguage.'/');
-            echo "LOGGEDIN";
         };
     }
 
