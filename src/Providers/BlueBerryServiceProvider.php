@@ -13,12 +13,14 @@ class BlueBerryServiceProvider extends ServiceProvider {
     /**
      * Register the service provider.
      */
-
     public function register() {
         // Register routes
         $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
     }
 
+    /**
+     * Boot method check if user is logged in or not and redirect him
+     */
     public function boot(Dispatcher $eventDispatcher) {
         // // Get the service data
         $currentUri = trim(!empty($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : (!empty($_SERVER['QUERY_STRING']) ? $_SERVER['QUERY_STRING'] : null));
@@ -38,7 +40,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             // if there is no rest or
             if ($isRest === false && stripos($currentUri, 'customer-') === false) {
                 // Redirect to login
-                //$urlService->redirectTo('/'.$sessionLanguage.'/customer-login');
+                $this->redirectTo('/'.$sessionLanguage.'/customer-login');
             } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
                 // set my login design
                 $eventDispatcher->listen('IO.init.templates', function (Partial $partial) use ($currentUri) {
@@ -52,7 +54,15 @@ class BlueBerryServiceProvider extends ServiceProvider {
             };
         // IF user is loggedin and still on this page - redirect him
         } else if (stripos($currentUri, 'customer-') !== false) {
-            $urlService->redirectTo('/'.$sessionLanguage.'/');
+            $this->redirectTo('/'.$sessionLanguage.'/');
         };
+    }
+
+    /**
+     * redirect to destination
+     */
+    public function redirectTo($path) {
+        header("Location: ".$path);
+        die;
     }
 }
