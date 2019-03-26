@@ -35,26 +35,28 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $userIsLoggedIn = pluginApp(UserSession::class)->isContactLoggedIn();
         // Check if it's not login
         if (!$userIsLoggedIn) {
-            // Is rest
-            $isRest = stripos($currentUri, 'rest/');
-            // if there is no rest or
-            if ($isRest === false && stripos($currentUri, 'customer-') === false) {
-                // Redirect to login
-                $this->redirectTo('/'.$sessionLanguage.'/customer-login');
-            } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
-                // set my login design
-                $eventDispatcher->listen('IO.init.templates', function (Partial $partial) use ($currentUri) {
-                    // the partial
-                    $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
-                    // The login
-                    $partial->set('pageDesignType', (stripos($currentUri, 'customer-register') !== false ? 'register' : 'login'));
-                    // return data
-                    return false;
-                }, 800);
-            };
+            echo "NOTTTT LOGGEDIN";
+            // // Is rest
+            // $isRest = stripos($currentUri, 'rest/');
+            // // if there is no rest or
+            // if ($isRest === false && stripos($currentUri, 'customer-') === false) {
+            //     // Redirect to login
+            //     $this->redirectTo('/'.$sessionLanguage.'/customer-login');
+            // } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
+            //     // set my login design
+            //     $eventDispatcher->listen('IO.init.templates', function (Partial $partial) use ($currentUri) {
+            //         // the partial
+            //         $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
+            //         // The login
+            //         $partial->set('pageDesignType', (stripos($currentUri, 'customer-register') !== false ? 'register' : 'login'));
+            //         // return data
+            //         return false;
+            //     }, 800);
+            // };
         // IF user is loggedin and still on this page - redirect him
         } else if (stripos($currentUri, 'customer-') !== false) {
-            $this->redirectTo('/'.$sessionLanguage.'/');
+            //$this->redirectTo('/'.$sessionLanguage.'/');
+            echo "LOGGEDIN";
         };
     }
 
