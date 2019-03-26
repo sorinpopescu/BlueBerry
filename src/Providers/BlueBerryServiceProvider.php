@@ -2,6 +2,7 @@
 
 namespace BlueBerry\Providers;
 
+use IO\Helper\UserSession;
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Modules\Frontend\Services\AccountService;
@@ -30,6 +31,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
         } else {
             $sessionLanguage = 'de';
         };
+
+        $userIsLoggedIn = pluginApp(UserSession::class)->isContactLoggedIn();
         // // Check if it's not login
         // if (!$customerService->getIsAccountLoggedIn()) {
         //     // Is rest
