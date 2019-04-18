@@ -32,7 +32,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             $sessionLanguage = 'de';
         };
         // Check if user is logged in
-        $userIsLoggedIn = pluginApp(UserSession::class)->isContactLoggedIn();
+        $userIsLoggedIn = false;//pluginApp(UserSession::class)->isContactLoggedIn();
         // Check if it's not login
         if (!$userIsLoggedIn) {
             // // Is rest
