@@ -13,6 +13,7 @@ use Plenty\Plugin\Templates\Twig;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
+    const EVENT_LISTENER_PRIORITY = 100;
     /**
      * Register the service provider.
      */
@@ -33,7 +34,13 @@ class BlueBerryServiceProvider extends ServiceProvider {
         {
             // The style is imported in the <head> on the PageDesign.twig of Ceres
             $container->addStyleTemplate('BlueBerry::content.BlueBerry');
-        }, 800);
+        }, self::EVENT_LISTENER_PRIORITY);
+
+        /*$eventDispatcher->listen('IO.init.templates', function (Partial $partial){
+            $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
+
+
+        }, self::EVENT_LISTENER_PRIORITY);*/
     }
 
     /**
