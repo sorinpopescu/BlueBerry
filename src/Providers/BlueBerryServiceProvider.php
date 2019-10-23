@@ -33,7 +33,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $eventDispatcher->listen('IO.Resources.Import', function (ResourceContainer $container)
         {
             // The style is imported in the <head> on the PageDesign.twig of Ceres
-            $container->addStyleTemplate('BlueBerry::content.styless');
+            $container->addStyleTemplate('BlueBerry::content.styles');
         }, self::EVENT_LISTENER_PRIORITY);
 
         /*$eventDispatcher->listen('IO.init.templates', function (Partial $partial){
