@@ -1,3 +1,12 @@
 #page-header.top-bar {
     background-color: #ffffff !important;
 }
+
+.top-bar .controls-list>li a:not(.btn) {
+    color: #000000;
+}
+
+
+#mainNavbarCollapsable ul.mainmenu {
+    color: #000000;
+}
