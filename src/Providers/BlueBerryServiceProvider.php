@@ -33,7 +33,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         {
             // The style is imported in the <head> on the PageDesign.twig of Ceres
             $container->addStyleTemplate('BlueBerry::content.BlueBerry');
-        }, self::PRIORITY);
+        }, 800);
     }
 
     /**
