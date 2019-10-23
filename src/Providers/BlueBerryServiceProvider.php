@@ -19,7 +19,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
      */
     public function register() {
         // Register routes
-        $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
+        // $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
     }
 
     /**
@@ -30,17 +30,19 @@ class BlueBerryServiceProvider extends ServiceProvider {
         // $this->checkForceLogin($eventDispatcher);
         // Set BlueBerry Homepage
         // $this->setDesign();
-        $eventDispatcher->listen('IO.Resources.Import', function (ResourceContainer $container)
-        {
+        $eventDispatcher->listen('IO.Resources.Import', function (ResourceContainer $container) {
             // The style is imported in the <head> on the PageDesign.twig of Ceres
             $container->addStyleTemplate('BlueBerry::content.styles');
         }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen('IO.init.templates', function (Partial $partial){
-            $partial->set('header', 'BlueBerry::content.header');
+        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
 
-        }, 0);
-        return false;
+            $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
+
+            return false;
+
+        }, 10);
+
 
     }
 
