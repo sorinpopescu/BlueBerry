@@ -1,4 +1,3 @@
-{% extends getPartial('header') %}
 {% import "Ceres::PageDesign.Macros.LayoutContainer" as LayoutContainer %}
 
 {{ component( "Ceres::Customer.Components.UserLoginHandler" ) }}
@@ -14,13 +13,13 @@
 {% set enableCurrencySelect = config("Ceres.currency.enable_selection") == "true" and activeCurrencies | length > 0 %}
 {% set currencyFormat = config("Ceres.currency.format") %}
 {% set currencyFormatSelect = config("Ceres.currency.format_selection") %}
-ddddddd
+
 
 {% set headerContainer = LayoutContainer.show("BlueBerry::Header") | trim %}
 {% if headerContainer is empty %}
     {% include "BlueBerry::PageDesign.Partials.Header.DefaultHeader" %}
 {% else %}
-<header id="page-header" class="fixed-top">
+<header id="page-header" class="fixed-top fffff">
     <div class="container-max">
         <div class="row">
             <div id="page-header-parent" class="col-12">
@@ -45,7 +44,7 @@ ddddddd
     scriptElement.parentElement.removeChild(scriptElement);
 </script>
 
-<div>
+<div class="aaaa">
     {% if category.linklist == "Y" %}
         {% set initialCategory = { id: category.id } %}
     {% else %}
