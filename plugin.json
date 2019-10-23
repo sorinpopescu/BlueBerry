@@ -5,10 +5,5 @@
     "version"           : "2.5.8",
     "description"       : "BlueBerry B2B",
     "author"            : "BlueBerry",
-    "serviceProvider"   : "BlueBerry\\Providers\\BlueBerryServiceProvider",
-    "dataProviders": [{
-        "key": "BlueBerry\\Containers\\BlueBerryContainer",
-        "name": "Dark background",
-        "description": "Change the background colour of the Ceres template"
-    }]
+    "serviceProvider"   : "BlueBerry\\Providers\\BlueBerryServiceProvider"
 }

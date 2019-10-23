@@ -3,10 +3,13 @@
 namespace BlueBerry\Providers;
 
 use IO\Helper\UserSession;
+use IO\Helper\TemplateContainer;
+use IO\Helper\ResourceContainer;
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Events\Dispatcher;
 use BlueBerry\Providers\BlueBerryRouteServiceProvider;
+use Plenty\Plugin\Templates\Twig;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -21,11 +24,16 @@ class BlueBerryServiceProvider extends ServiceProvider {
     /**
      * Boot method check if user is logged in or not and redirect him
      */
-    public function boot(Dispatcher $eventDispatcher) {
+    public function boot(Twig $twig, Dispatcher $eventDispatcher) {
         // Redirect to a force login page - SKIP FOR NOW
         // $this->checkForceLogin($eventDispatcher);
         // Set BlueBerry Homepage
         // $this->setDesign();
+        $eventDispatcher->listen('IO.Resources.Import', function (ResourceContainer $container)
+        {
+            // The style is imported in the <head> on the PageDesign.twig of Ceres
+            $container->addStyleTemplate('BlueBerry::content.BlueBerry');
+        }, self::PRIORITY);
     }
 
     /**
