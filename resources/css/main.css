@@ -20,3 +20,13 @@
     -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
 }
+
+@media (min-width: 992px) {
+    #mainNavbarCollapsable ul.mainmenu>li>ul {
+        background-color: #ffffff;
+    }
+
+    #mainNavbarCollapsable ul.mainmenu>li>ul>li {
+        color: #000000;
+    }
+}
