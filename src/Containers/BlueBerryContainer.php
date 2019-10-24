@@ -1,6 +1,6 @@
 <?php
 
-namespace Theme\Containers;
+namespace BlueBerry\Containers;
 
 use Plenty\Plugin\Templates\Twig;
 
