@@ -6,8 +6,8 @@ use IO\Helper\UserSession;
 use IO\Helper\TemplateContainer;
 use IO\Helper\ResourceContainer;
 use IO\Extensions\Functions\Partial;
-use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Events\Dispatcher;
+use Plenty\Plugin\ServiceProvider;
 use BlueBerry\Providers\BlueBerryRouteServiceProvider;
 use Plenty\Plugin\Templates\Twig;
 
@@ -35,11 +35,12 @@ class BlueBerryServiceProvider extends ServiceProvider {
             $container->addStyleTemplate('BlueBerry::content.styles');
         }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
+        $eventDispatcher->listen('IO.tpl.header', function (TemplateContainer $container, $templateData) {
+            $container->setTemplate('header', 'BlueBerry::PageDesign.Partials.Header.Header');
+            return false;
+        }, 0);
 
-            $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
 
-        }, 1000);
 
     }
 
