@@ -35,8 +35,9 @@ class BlueBerryServiceProvider extends ServiceProvider {
             $container->addStyleTemplate('BlueBerry::content.styles');
         }, self::EVENT_LISTENER_PRIORITY);*/
 
-        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
-            $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
+        $eventDispatcher->listen('IO.init.templates', function(Partial $partial)
+        {
+           $partial->set('footer', 'BlueBerry::content.ThemeFooter');
         }, 0);
         return false;
 
