@@ -34,14 +34,10 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $eventDispatcher->listen('IO.init.templates', function(Partial $partial)
         {
            $partial->set('footer', 'BlueBerry::content.ThemeFooter');
-            return false;
-        }, 0);
-        $eventDispatcher->listen('IO.tpl.home', function (TemplateContainer $container)
-            {
-                $container->setTemplate('Ceres::Homepage.Homepage');
-                return false;
-            }, 0);
 
+        }, 0);
+
+        return false;
     }
 
     /**
