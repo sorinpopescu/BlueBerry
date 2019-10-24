@@ -47,6 +47,10 @@
     background-color: #ffffff;
 }
 
+.list-inline-item:not(:last-child) {
+    margin-right: 5px !important;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
