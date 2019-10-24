@@ -1,7 +1,13 @@
 {
     "name"              : "BlueBerry",
     "namespace"         : "BlueBerry",
-    "type"              : "template",
+    "type"              : "theme",
+    "keywords": [
+        "theme",
+        "Ceres",
+        "template"
+    ],
+    "require": [],
     "version"           : "2.5.9",
     "description"       : "BlueBerry B2B",
     "author"            : "BlueBerry",
