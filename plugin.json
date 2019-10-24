@@ -11,5 +11,12 @@
     "version"           : "2.5.9",
     "description"       : "BlueBerry B2B",
     "author"            : "BlueBerry",
-    "serviceProvider"   : "BlueBerry\\Providers\\BlueBerryServiceProvider"
+    "serviceProvider"   : "BlueBerry\\Providers\\BlueBerryServiceProvider",
+    "dataProviders": [
+        {
+            "key": "BlueBerry\\Containers\\BlueBerryContainer",
+            "name": "Stylesheet",
+            "description": "Add changes to the CSS file"
+        }
+    ]
 }
