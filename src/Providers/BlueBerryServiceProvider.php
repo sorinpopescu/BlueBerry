@@ -39,7 +39,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
 
             $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
 
-        }, 10);
+        }, 1000);
 
     }
 
