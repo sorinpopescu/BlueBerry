@@ -24,6 +24,10 @@
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
+        border-color: rgba(0, 0, 0, 0.15);
+        -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+        box-shadow: -1 1px 5px 0 rgba(0, 0, 0, 0.15);
     }
 
     #mainNavbarCollapsable ul.mainmenu>li>ul>li {
