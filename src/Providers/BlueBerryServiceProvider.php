@@ -35,7 +35,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             $container->addStyleTemplate('BlueBerry::content.styles');
         }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen('IO.tpl.templates', function (Partial $partial) {
+        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
             $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
         }, 0);
 
