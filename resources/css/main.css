@@ -38,6 +38,15 @@
     background: #4D4F4D;
 }
 
+.top-bar .controls-list .control-basket .toggle-basket-preview {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.top-bar .controls-list .control-basket .toggle-basket-preview:hover {
+    background-color: #ffffff;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
