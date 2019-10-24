@@ -34,6 +34,10 @@
     background: #000000;
 }
 
+.anicon.anicon-search-xcross[aria-expanded="false"]:hover>.anicon-search-item:after {
+    background: #4D4F4D;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
