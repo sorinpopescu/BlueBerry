@@ -41,7 +41,11 @@ class BlueBerryServiceProvider extends ServiceProvider {
            return false;
         }, 0);
 
-
+         $dispatcher->listen('IO.tpl.home', function (TemplateContainer $container)
+            {
+                $container->setTemplate('Ceres::Homepage.Homepage');
+                return false;
+            }, 0);
     }
 
     /**
