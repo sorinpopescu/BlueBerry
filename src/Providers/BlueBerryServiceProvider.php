@@ -37,7 +37,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
 
         }, 0);
 
-        return false;
+
     }
 
     /**
