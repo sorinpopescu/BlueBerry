@@ -87,11 +87,20 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
 .cmp-country-settings ul li a,
 .cmp-currency-select ul li a {
     color: #000000;
-    margin-left: 0.1rem;
+    margin: 0.1rem 0rem 0.1rem 0.1rem;
 }
 
 .cmp-country-settings ul li a:hover,
 .cmp-currency-select ul li a:hover {
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+.cmp-country-settings ul li.active a,
+.cmp-currency-select ul li.active a {
     background-color: #ffffff;
     color: #000000;
     -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
