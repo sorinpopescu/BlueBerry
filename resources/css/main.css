@@ -63,8 +63,8 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
 
 .cmp-search-box {
     background-color: #ffffff;
-    border-top: 1px solid #828282;
-    border-bottom: 1px solid #828282;
+    border-top: 1px solid #dcdbd8;
+    border-bottom: 1px solid #dcdbd8;
 }
 
 .cmp-search-box .search-submit {
@@ -74,6 +74,29 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
 .top-bar .controls-list .control-languages a[aria-expanded="true"],
 .top-bar .controls-list .control-search a[aria-expanded="true"] {
     background: #ffffff;
+}
+
+.cmp-country-settings,
+.cmp-currency-select {
+    background-color: #ffffff;
+    color: #000000;
+    border-top: 1px solid #dcdbd8;
+    border-bottom: 1px solid #dcdbd8;
+}
+
+.cmp-country-settings ul li a,
+.cmp-currency-select ul li a {
+    color: #000000;
+    margin-left: 0.1rem;
+}
+
+.cmp-country-settings ul li a:hover,
+.cmp-currency-select ul li a:hover {
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: 992px) {
