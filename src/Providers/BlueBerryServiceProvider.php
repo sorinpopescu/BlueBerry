@@ -34,6 +34,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $eventDispatcher->listen('IO.init.templates', function(Partial $partial)
         {
            $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
+           $partial->set('footer', 'BlueBerry::PageDesign.Partials.Footer');
 
         }, 0);
 
