@@ -55,6 +55,10 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     background: #ffffff;
 }
 
+.anicon.anicon-search-xcross[aria-expanded="true"]>.anicon-search-item:before, .anicon.anicon-search-xcross[aria-expanded="true"]>.anicon-search-item:after {
+    background: #000000;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
