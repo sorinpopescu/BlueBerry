@@ -51,6 +51,10 @@
     margin-right: 5px !important;
 }
 
+nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
+    background: #ffffff;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
@@ -62,5 +66,11 @@
 
     #mainNavbarCollapsable ul.mainmenu>li>ul>li {
         color: #000000;
+    }
+
+    .no-touch #mainNavbarCollapsable ul.mainmenu>li>ul>li:hover,
+    .touch #mainNavbarCollapsable ul.mainmenu>li>ul>li.hover {
+        background: #ffffff;
+        color: #828282;
     }
 }
