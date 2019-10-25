@@ -71,6 +71,11 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     color: #000000;
 }
 
+.top-bar .controls-list .control-languages a[aria-expanded="true"],
+.top-bar .controls-list .control-search a[aria-expanded="true"] {
+    background: #ffffff;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
