@@ -112,7 +112,7 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     text-align: left !important;
 }
 
-.footer .widget-legal-information {
+.footer .widget-legal-information a {
     display: block;
 }
 
