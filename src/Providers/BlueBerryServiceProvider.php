@@ -31,14 +31,14 @@ class BlueBerryServiceProvider extends ServiceProvider {
         // Set BlueBerry Homepage
         // $this->setDesign();
 
-        $eventDispatcher->listen('IO.init.templates', function(Partial $partial)
+        /*$eventDispatcher->listen('IO.init.templates', function(Partial $partial)
         {
             $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
             $partial->set('footer', 'BlueBerry::PageDesign.Partials.Footer');
 
         }, 0);
 
-        return false;
+        return false;*/
     }
 
     /**
