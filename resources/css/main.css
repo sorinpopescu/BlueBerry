@@ -108,6 +108,14 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
 }
 
+.footer .widget-legal-information {
+    text-align: left !important;
+}
+
+.footer .widget-legal-information {
+    display: block;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
