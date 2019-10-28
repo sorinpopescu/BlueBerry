@@ -122,6 +122,7 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
 
 .widget.widget-legal-texts.h4 p {
     font-size: 1rem;
+    line-height: 1.5;
 }
 
 @media (min-width: 992px) {
