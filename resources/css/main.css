@@ -116,6 +116,14 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     display: block;
 }
 
+.widget.widget-legal-texts.h4 h3 {
+    font-size: 1.25rem;
+}
+
+.widget.widget-legal-texts.h4 p {
+    font-size: 1rem;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
