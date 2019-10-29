@@ -6,7 +6,8 @@ body>#vue-error {
 
 .wrapper-main .navbar {
     background-color: #ffffff;
-    border-top: 1px solid #efefef;
+    border-top: 1px solid #123479;
+    border-bottom: 1px solid #123479;
 }
 
 #page-header.top-bar {
@@ -15,7 +16,7 @@ body>#vue-error {
 
 .wrapper-main>nav.container-max {
     background: #ffffff;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid #123479;
 }
 
 .page-content {
