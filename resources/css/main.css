@@ -1,5 +1,19 @@
+body,
+body>#vue-app,
+body>#vue-error {
+    background-color: #ffffff;
+}
+
+.navbar {
+    background-color: #ffffff;
+}
+
 #page-header.top-bar {
     background-color: #ffffff !important;
+}
+
+.wrapper-main>nav.container-max {
+    background: #ffffff;
 }
 
 .top-bar .controls-list>li a:not(.btn) {
