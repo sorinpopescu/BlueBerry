@@ -22,6 +22,11 @@ body>#vue-error {
     color: #000000;
 }
 
+.cmp-product-thumb:hover {
+    -website-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
+}
 
 #mainNavbarCollapsable ul.mainmenu {
     color: #000000;
