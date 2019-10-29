@@ -15,7 +15,7 @@ body>#vue-error {
 
 .wrapper-main>nav.container-max {
     background: #ffffff;
-    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
 }
 
 .top-bar .controls-list>li a:not(.btn) {
