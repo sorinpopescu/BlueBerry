@@ -160,6 +160,10 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     line-height: 1.5;
 }
 
+.custom-box p {
+    margin-bottom: 0rem;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
