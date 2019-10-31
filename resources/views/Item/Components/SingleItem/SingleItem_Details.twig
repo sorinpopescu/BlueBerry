@@ -44,19 +44,19 @@
         {% endif %}
         {% if 'item.producerCountry' in itemData or 'all' in itemData %}
             <p>
-                <b>{{ trans("Ceres::Template.singleItemManufacturingCountry") }}</b>
+                <b>{{ trans("Ceres::Template.singleItemManufacturingCountry") }}: </b>
                 <span>${ currentVariation.item.producingCountry.names.name }</span>
             </p>
         {% endif %}
         {% if 'item.weightNetG' in itemData or 'all' in itemData %}
             <p>
-                <b>{{ trans("Ceres::Template.singleItemNetWeight") }}</b>
+                <b>{{ trans("Ceres::Template.singleItemNetWeight") }}: </b>
                 <span>${ currentVariation.variation.weightNetG } g</span>
             </p>
         {% endif %}
         <p>
-            <b>{{ trans("Ceres::Template.singleItemContent") }}</b>
-            <span>{{ item.documents[0].data.stock.net }}</span>
+            <b>{% if currentVariation.texts.lang == 'en %}Stock{% endif %}</b>
+            <span>${ currentVariation.stock.net }</span>
         </p>
 
     </span>
