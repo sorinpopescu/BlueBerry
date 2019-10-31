@@ -1,0 +1,58 @@
+<!-- ITEM DESCRIPTION -->
+<div class="my-5">
+    <ul class="nav nav-tabs" role="tablist">
+
+        <li class="nav-item" v-if="isDescriptionTabActive">
+            <a class="nav-link active" data-toggle="tab" :href="'#details-' +  currentVariation.variation.id" role="tab">{{ trans("Ceres::Template.singleItemDescription") }}</a>
+        </li>
+
+
+        {% if 'item.technical_data' in itemData or 'all' in itemData %}
+            <li class="nav-item" v-if="isTechnicalDataTabActive">
+                <a :class="{ 'active': !isDescriptionTabActive && isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" :href="'#data-' + currentVariation.variation.id" role="tab">{{ trans("Ceres::Template.singleItemTechnicalData") }}</a>
+            </li>
+        {% endif %}
+
+        <slot name="add-detail-tabs"></slot>
+    </ul>
+
+    <div class="tab-content overflow-hidden">
+
+            <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel" v-if="isDescriptionTabActive">
+                <div class="my-4">
+                    <div slot="MyProperty">
+                        <div class="row">
+                            {% for property in item.documents[0].data.properties %}
+                                {% if property.texts.value != '' or property.selection.name != '' or  property.selection.description  != '' or property.valueFloat != '' or property.valueInt != '' %}
+                                    <div class="col-xs-6 col-md-5">
+                                        <b>{{ property.property.names.name }}:</b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7">
+                                        <span>{{ property.texts.value  }}</span>
+                                        <span>{{ property.selection.name }}</span>
+                                        <span>{{ property.selection.description }}</span>
+                                        <span>{{ property.valueFloat }}</span>
+                                        <span>{{ property.valueInt }}</span>
+                                        {% if property.valueFloat != '' or  property.valueInt != '' %}
+                                            Millimeter
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        {% if 'item.technical_data' in itemData or 'all' in itemData %}
+            <div :class="{ 'active': !isDescriptionTabActive && isTechnicalDataTabActive }" class="tab-pane overflow-auto" :id="'data-' + currentVariation.variation.id" role="tabpanel" v-if="isTechnicalDataTabActive">
+                <div class="my-4" v-html="currentVariation.texts.technicalData">
+                </div>
+            </div>
+        {% endif %}
+
+        <slot name="add-detail-tabs-content"></slot>
+    </div>
+</div>
+<!-- ./ITEM DESCRIPTION -->
