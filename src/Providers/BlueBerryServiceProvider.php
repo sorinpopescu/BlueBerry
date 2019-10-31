@@ -11,6 +11,7 @@ use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ServiceProvider;
 use BlueBerry\Providers\BlueBerryRouteServiceProvider;
 use Plenty\Plugin\Templates\Twig;
+use Plenty\Modules\Webshop\Template\Providers\TemplateServiceProvider;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
