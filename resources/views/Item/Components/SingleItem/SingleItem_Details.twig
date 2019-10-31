@@ -15,14 +15,18 @@
 <hr>
 
 <div class="mb-5">
-    <span class="articlenumber small text-muted">
+    <span class="articlenumber small text-muted custom-box">
         <p>
-            <b>{{ trans("Ceres::Template.singleItemNumber") }} </b>
+            <b>{{ trans("Ceres::Template.singleItemNumber") }}: </b>
             <span>${ currentVariation.variation.number }</span>
         </p>
         <p>
-            <b>EAN </b>
+            <b>EAN: </b>
             <span>${ currentVariation.barcodes[0].code }</span>
+        </p>
+        <p>
+            <b>{{ trans("Ceres::Template.singleItemCondition") }}: </b>
+            <span>${ currentVariation.item.storeSpecial.names.name }</span>
         </p>
     </span>
 </div>
