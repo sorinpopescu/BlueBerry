@@ -4,6 +4,7 @@ namespace BlueBerry\Providers;
 
 use IO\Helper\UserSession;
 use IO\Helper\TemplateContainer;
+use IO\Helper\ComponentContainer;
 use IO\Helper\ResourceContainer;
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\Events\Dispatcher;
@@ -39,13 +40,13 @@ class BlueBerryServiceProvider extends ServiceProvider {
         }, 0);
 
         return false;*/
-         /*$eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
+         $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
         {
             if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem.SingleItem_Details')
             {
                 $container->setNewComponentTemplate('BlueBerry::Item.Components.SingleItem.SingleItem_Details');
             }
-        }, 0); */
+        }, 0);
     }
 
     /**
