@@ -28,9 +28,15 @@
             <b>{{ trans("Ceres::Template.singleItemCondition") }}: </b>
             <span>${ currentVariation.item.storeSpecial.names.name }</span>
         </p>
+        {% if ('item.variation_model' in itemData or 'all' in itemData) %}
         <p>
             <b>{{ trans("Ceres::Template.singleItemModel") }}: </b>
-            <span>${ currentVariation.variation.id }</span>
+            <span>${ ${ currentVariation.variation.model } }</span>
+        </p>
+        {% endif %}
+        <p>
+            <b>{{ trans("Ceres::Template.singleItemManufacturer") }}: </b>
+            <span>${ currentVariation.item.manufacturer.externalName }</span>
         </p>
     </span>
 </div>
