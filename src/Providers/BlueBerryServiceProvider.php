@@ -45,7 +45,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             {
                 $container->setNewComponentTemplate('BleuBerry::Item.Components.SingleItem.SingleItem_Details');
             }
-        }, self::PRIORITY);
+        }, self::EVENT_LISTENER_PRIORITY);
     }
 
     /**
