@@ -2,7 +2,7 @@
 <div class="my-5">
     <ul class="nav nav-tabs" role="tablist">
 
-        <li class="nav-item" v-if="isDescriptionTabActive">
+        <li class="nav-item" >
             <a class="nav-link active" data-toggle="tab" :href="'#details-' +  currentVariation.variation.id" role="tab">{{ trans("Ceres::Template.singleItemDescription") }}</a>
         </li>
 
@@ -18,7 +18,7 @@
 
     <div class="tab-content overflow-hidden">
 
-            <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel" v-if="isDescriptionTabActive">
+            <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel" >
                 <div class="my-4">
                     <div slot="MyProperty">
                         <div class="row">
