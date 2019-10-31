@@ -39,6 +39,13 @@ class BlueBerryServiceProvider extends ServiceProvider {
         }, 0);
 
         return false;*/
+         $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
+        {
+            if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem.SingleItem_Details')
+            {
+                $container->setNewComponentTemplate('BleuBerry::Item.Components.SingleItem.SingleItem_Details');
+            }
+        }, self::PRIORITY);
     }
 
     /**
