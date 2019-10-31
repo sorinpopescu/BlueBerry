@@ -55,10 +55,13 @@
             </p>
         {% endif %}
         <p>
-            <b>{% if item.documents[0].data.texts.lang == 'en' %}Stock{% endif %}: </b>
+            <b>{% if item.documents[0].data.texts.lang == 'en' %}Stock{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}Bestand{% endif %}: </b>
             <span>${ currentVariation.stock.net }</span>
         </p>
-
+        <p>
+            <b>{{ trans("Ceres::Template.orderHistoryStatus") }} </b>
+            <span>${ currentVariation.variation.availability.names.name }</span>
+        </p>
     </span>
 </div>
 <!-- Variation -->
