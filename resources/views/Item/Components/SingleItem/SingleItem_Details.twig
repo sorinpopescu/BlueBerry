@@ -16,11 +16,16 @@
 
 <div class="mb-5">
     <span class="articlenumber small text-muted">
-        <b>{{ trans("Ceres::Template.singleItemNumber") }} </b>
-        <span>${ currentVariation.variation.number }</span>
+        <p>
+            <b>{{ trans("Ceres::Template.singleItemNumber") }} </b>
+            <span>${ currentVariation.variation.number }</span>
+        </p>
+        <p>
+            <b>EAN </b>
+            <span>${ barcodes.EAN_13 }</span>
+        </p>
     </span>
 </div>
-ssssss
 <!-- Variation -->
 <div class="mb-3" v-if="attributes.length || Object.keys(units).length">
     <variation-select></variation-select>
