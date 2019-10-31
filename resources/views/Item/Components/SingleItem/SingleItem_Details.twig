@@ -26,12 +26,12 @@
         </p>
         <p>
             <b>{{ trans("Ceres::Template.singleItemCondition") }}: </b>
-            <span>${ currentVariation.item.storeSpecial.names.name }</span>
+            <span>${ currentVariation.item.condition.names.name }</span>
         </p>
         {% if ('item.variation_model' in itemData or 'all' in itemData) %}
         <p>
             <b>{{ trans("Ceres::Template.singleItemModel") }}: </b>
-            <span>${ ${ currentVariation.variation.model } }</span>
+            <span>${ currentVariation.variation.model }</span>
         </p>
         {% endif %}
         <p>
