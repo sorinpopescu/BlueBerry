@@ -11,7 +11,6 @@ use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ServiceProvider;
 use BlueBerry\Providers\BlueBerryRouteServiceProvider;
 use Plenty\Plugin\Templates\Twig;
-use Plenty\Modules\Webshop\Template\Providers\TemplateServiceProvider;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -41,14 +40,14 @@ class BlueBerryServiceProvider extends ServiceProvider {
         }, 0);
 
         return false;*/
-        $this->overrideTemplate("Ceres::Item.Components.SingleItem.SingleItem_Details", "BlueBerry::Item.Components.SingleItem.SingleItem_Details");
-         /*$eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
+
+         $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
         {
-            if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem.SingleItem_Details')
+            if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem')
             {
-                $container->setNewComponentTemplate('BlueBerry::Item.Components.SingleItem.SingleItem_Details');
+                $container->setNewComponentTemplate('BlueBerry::Item.Components.SingleItem');
             }
-        }, 0);*/
+        }, 0);
     }
 
     /**
