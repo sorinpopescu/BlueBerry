@@ -89,8 +89,7 @@
         </del>
     </div>
     <div class="discount">
-        {{ currentVariation.prices.default.price.value }}
-        {% set discountNew = item.documents[0].data.prices.default.price.value + 100 %}
+        {% set discountNew = (item.documents[0].data.prices.default.price.value * 100) / item.documents[0].data.prices.rrp.data.basePrice %}
         {{ discountNew }}
     </div>
 {% endif %}
