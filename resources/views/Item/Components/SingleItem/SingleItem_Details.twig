@@ -90,7 +90,7 @@
     </div>
     <div class="discount">
         {{ currentVariation.prices.default.price.value }}
-        {% set discountNew = currentVariation.prices.default.price.value + 100 %}
+        ${ currentVariation.prices.default.price.value + 100 }
         {{ discountNew }}
     </div>
 {% endif %}
