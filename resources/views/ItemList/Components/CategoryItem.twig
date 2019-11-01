@@ -66,7 +66,7 @@
                                     ${ item.prices.default.unitPrice.formatted | itemCrossPrice(true) }
                                 </del>
                                 <del class="crossprice" v-else>
-                                    ${ item.prices.rrp.data.basePrice | itemCrossPrice }
+                                    {% if item.texts.lang == 'en' %}RRP ${ item.prices.rrp.currency } ${ item.prices.rrp.data.basePrice } {% endif %}{% if item.texts.lang == 'de' %}UVP ${ item.prices.rrp.data.basePrice } ${ item.prices.rrp.currency }{% endif %}
                                 </del>
                             </div>
 
