@@ -85,9 +85,8 @@
 {% if ('item.recommendedPrice' in itemData or 'all' in itemData) %}
     <div class="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.data.basePrice > 0 && currentVariation.prices.rrp.data.basePrice > currentVariation.prices.default.unitPrice.value">
         <del class="text-muted small">
-            {% set rrpPrice = currentVariation.prices.rrp.currency ~ currentVariation.prices.rrp.data.basePrice %}
-            {{ rrpPrice }}
-            ${ currentVariation.prices.rrp.currency | itemCrossPrice }
+            {% set rrpPriceNew = currentVariation.prices.rrp.currency ~ currentVariation.prices.rrp.data.basePrice %}
+            ${ rrpPriceNew | itemCrossPrice }
         </del>
     </div>
 {% endif %}
