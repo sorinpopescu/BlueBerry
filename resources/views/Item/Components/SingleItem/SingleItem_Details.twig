@@ -89,7 +89,7 @@
         </del>
     </div>
     <div class="discount">
-        {% set discountNew = (item.documents[0].data.prices.default.price.value * 100) / item.documents[0].data.prices.rrp.data.basePrice %}
+        {% set discountNew = 100 - ((item.documents[0].data.prices.default.price.value * 100) / item.documents[0].data.prices.rrp.data.basePrice) %}
         {{ discountNew }}
     </div>
 {% endif %}
