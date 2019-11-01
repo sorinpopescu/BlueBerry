@@ -90,7 +90,7 @@
     </div>
     <div class="discount">
         {% set discountNew = 100 - ((item.documents[0].data.prices.default.price.value * 100) / item.documents[0].data.prices.rrp.data.basePrice) %}
-        {{ discountNew|round }}
+        {% if item.documents[0].data.texts.lang == 'en' %}Dsicount:{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}Ersparnis:{% endif %} {{ discountNew|round }} %
     </div>
 {% endif %}
 
