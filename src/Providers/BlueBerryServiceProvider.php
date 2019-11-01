@@ -29,8 +29,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
      */
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
 
-        $guard = pluginApp(AuthGuard::class);
-        $guard->assertOrRedirect( true, '/login');
+        // $guard = pluginApp(AuthGuard::class);
+        // $guard->assertOrRedirect( true, '/login');
 
         $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
         {
