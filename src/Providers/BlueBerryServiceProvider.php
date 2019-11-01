@@ -2,6 +2,7 @@
 
 namespace BlueBerry\Providers;
 
+use IO\Guards\AuthGuard;
 use IO\Helper\UserSession;
 use IO\Helper\TemplateContainer;
 use IO\Helper\ComponentContainer;
@@ -27,6 +28,9 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * Boot method check if user is logged in or not and redirect him
      */
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
+
+        $guard = pluginApp(AuthGuard::class);
+        $guard->assertOrRedirect( true, '/login');
 
         $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
         {
