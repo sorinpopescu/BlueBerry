@@ -27,25 +27,16 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * Boot method check if user is logged in or not and redirect him
      */
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
-        // Redirect to a force login page - SKIP FOR NOW
-        // $this->checkForceLogin($eventDispatcher);
-        // Set BlueBerry Homepage
-        // $this->setDesign();
 
-        /*$eventDispatcher->listen('IO.init.templates', function(Partial $partial)
-        {
-            $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
-            $partial->set('footer', 'BlueBerry::PageDesign.Partials.Footer');
-
-        }, 0);
-
-        return false;*/
-
-         $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
+        $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
         {
             if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem')
             {
                 $container->setNewComponentTemplate('BlueBerry::Item.Components.SingleItem');
+            }
+            if ($container->getOriginComponentTemplate()=='Ceres::ItemList.Components.CategoryItem')
+            {
+                $container->setNewComponentTemplate('BlueBerry::ItemList.Components.CategoryItem');
             }
         }, 0);
     }
