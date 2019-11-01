@@ -88,6 +88,10 @@
             {% if item.documents[0].data.texts.lang == 'en' %}RRP{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}UVP{% endif %} ${ currentVariation.prices.rrp.currency } ${ currentVariation.prices.rrp.data.basePrice }
         </del>
     </div>
+    <div class="discount">
+        {%set discount = (currentVariation.prices.default.price.value*100)/currentVariation.prices.rrp.data.basePrice %}
+        {{ discount }}
+    </div>
 {% endif %}
 
 <span class="price h1">
