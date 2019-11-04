@@ -12,6 +12,8 @@ use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ServiceProvider;
 use BlueBerry\Providers\BlueBerryRouteServiceProvider;
 use Plenty\Plugin\Templates\Twig;
+use IO\Services\CustomerService;
+use Plenty\Modules\ShopBuilder\Helper\ShopBuilderRequest;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -27,11 +29,10 @@ class BlueBerryServiceProvider extends ServiceProvider {
     /**
      * Boot method check if user is logged in or not and redirect him
      */
-    public function boot(Twig $twig, Dispatcher $eventDispatcher) {
+    public function boot(Twig $twig, Dispatcher $eventDispatcher, CustomerService $customerService) {
 
         // $guard = pluginApp(AuthGuard::class);
         // $guard->assertOrRedirect( true, '/login');
-
         $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
         {
             if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem')
@@ -43,6 +44,16 @@ class BlueBerryServiceProvider extends ServiceProvider {
                 $container->setNewComponentTemplate('BlueBerry::ItemList.Components.CategoryItem');
             }
         }, 0);
+
+        $shopBuilderRequest = pluginApp(ShopBuilderRequest::class);
+        if($customerService->getContactId() > 0 && !$shopBuilderRequest->isShopBuilder())
+        {
+                $eventDispatcher->listen('IO.init.templates', function(Partial $partial)
+            {
+            $partial->set('footer', 'BlueBerry::PageDesign.Partial.Footer');
+            }, 0);
+            //return false;
+        };
     }
 
     /**
