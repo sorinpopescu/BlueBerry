@@ -11,55 +11,71 @@
 <hr>
 
 <div class="mb-5">
-    <div class="row articlenumber text-muted custom-box">
+    <div class="row articlenumber custom-box">
         <div class="col-xs-6 col-md-5">
             <b>{{ trans("Ceres::Template.singleItemNumber") }}: </b>
         </div>
         <div class="col-xs-6 col-md-7">
             <span>${ currentVariation.variation.number }</span>
         </div>
-        <p>
+        <div class="col-xs-6 col-md-5">
             <b>EAN: </b>
+        </div>
+        <div class="col-xs-6 col-md-7">
             <span>${ currentVariation.barcodes[0].code }</span>
-        </p>
+        </div>
         {% if 'item.condition' in itemData or 'all' in itemData %}
-        <p>
+        <div class="col-xs-6 col-md-5">
             <b>{{ trans("Ceres::Template.singleItemCondition") }}: </b>
+        </div>
+        <div class="col-xs-6 col-md-7">
             <span>${ currentVariation.item.condition.names.name }</span>
-        </p>
+        </div>
         {% endif %}
         {% if ('item.variation_model' in itemData or 'all' in itemData) %}
-        <p>
+        <div class="col-xs-6 col-md-5">
             <b>{{ trans("Ceres::Template.singleItemModel") }}: </b>
+        </div>
+        <div class="col-xs-6 col-md-7">
             <span>${ currentVariation.variation.model }</span>
-        </p>
+        </div>
         {% endif %}
         {% if 'item.manufacturer' in itemData or 'all' in itemData %}
-        <p>
+        <div class="col-xs-6 col-md-5">
             <b>{{ trans("Ceres::Template.singleItemManufacturer") }}: </b>
+        </div>
+        <div class="col-xs-6 col-md-7">
             <span>${ currentVariation.item.manufacturer.externalName }</span>
-        </p>
+        </div>
         {% endif %}
         {% if 'item.producerCountry' in itemData or 'all' in itemData %}
-            <p>
+            <div class="col-xs-6 col-md-5">
                 <b>{{ trans("Ceres::Template.singleItemManufacturingCountry") }}: </b>
+            </div>
+            <div class="col-xs-6 col-md-7">
                 <span>${ currentVariation.item.producingCountry.names.name }</span>
-            </p>
+            </div>
         {% endif %}
         {% if 'item.weightNetG' in itemData or 'all' in itemData %}
-            <p>
+            <div class="col-xs-6 col-md-5">
                 <b>{{ trans("Ceres::Template.singleItemNetWeight") }}: </b>
+            </div>
+            <div class="col-xs-6 col-md-7">
                 <span>${ currentVariation.variation.weightNetG } g</span>
-            </p>
+            </div>
         {% endif %}
-        <p>
+        <div class="col-xs-6 col-md-5">
             <b>{% if item.documents[0].data.texts.lang == 'en' %}Stock{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}Bestand{% endif %}: </b>
+        </div>
+        <div class="col-xs-6 col-md-7">
             <span>${ currentVariation.stock.net }</span>
-        </p>
-        <p>
+        </div>
+        <div class="col-xs-6 col-md-5">
             <b>{{ trans("Ceres::Template.orderHistoryStatus") }} </b>
+        </div>
+        <div class="col-xs-6 col-md-7">
             <span>${ currentVariation.variation.availability.names.name }</span>
-        </p>
+        </div>
     </div>
 </div>
 <!-- Variation -->
