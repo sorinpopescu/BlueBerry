@@ -88,8 +88,8 @@
                     {{ AddToBasket.printVueComponent( "item", false, false, { ":has-price": "item | hasItemDefaultPrice" } ) }}
 
                     <span class="vat small text-muted">
-                        <span v-if="item.texts.lang === 'en'">Availabke: ${ item.stock.net }</span>
-                        <span v-if="item.texts.lang === 'de'">Erhältlich: ${ item.stock.net }</span>
+                        <span v-if="item.texts.lang === 'en'">Availabke: </span>
+                        <span v-if="item.texts.lang === 'de'">Erhältlich: </span>
                     </span>
                 </div>
             </slot>
