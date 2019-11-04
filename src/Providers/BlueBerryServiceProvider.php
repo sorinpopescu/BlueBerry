@@ -45,8 +45,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
             }
         }, 0);
 
-        $shopBuilderRequest = pluginApp(ShopBuilderRequest::class);
-        if($customerService->getContactId() > 0 && !$shopBuilderRequest->isShopBuilder())
+        //$shopBuilderRequest = pluginApp(ShopBuilderRequest::class);
+        if($customerService->getContactId() > 0)
         {
                 $eventDispatcher->listen('IO.init.templates', function(Partial $partial)
             {
