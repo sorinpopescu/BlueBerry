@@ -29,7 +29,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
     /**
      * Boot method check if user is logged in or not and redirect him
      */
-    public function boot(Twig $twig, Dispatcher $eventDispatcher, CustomerService $customerService) {
+    public function boot(Twig $twig, Dispatcher $eventDispatcher) {
 
         // $guard = pluginApp(AuthGuard::class);
         // $guard->assertOrRedirect( true, '/login');
