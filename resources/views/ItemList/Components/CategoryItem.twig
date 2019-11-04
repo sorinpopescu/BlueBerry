@@ -12,10 +12,8 @@
     {% endif %}
 {% endif %}
 
-{% set discountNew = 100 - ((item.prices.default.price.value * 100) / item.prices.rrp.data.basePrice) %}
-
 <script type="x/template" id="vue-category-item">
-    <article class="cmp cmp-product-thumb cmp-product-thumb--grid"> {{ item.data | json_encode }}
+    <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
         <div class="thumb-inner" :class="paddingClasses" :style="paddingInlineStyles">
 
             {{ AddToBasket.printVueComponent( "item", true, false, { ":has-price": "item | hasItemDefaultPrice" } ) }}
