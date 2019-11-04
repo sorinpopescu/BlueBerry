@@ -12,9 +12,6 @@ use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ServiceProvider;
 use BlueBerry\Providers\BlueBerryRouteServiceProvider;
 use Plenty\Plugin\Templates\Twig;
-use IO\Services\CustomerService;
-use Plenty\Modules\ShopBuilder\Helper\ShopBuilderRequest;
-use Plenty\Modules\Authorization\Services\AuthHelper
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -32,8 +29,9 @@ class BlueBerryServiceProvider extends ServiceProvider {
      */
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
 
-        // $guard = pluginApp(AuthGuard::class);
-        // $guard->assertOrRedirect( true, '/login');
+        $guard = pluginApp(AuthGuard::class);
+        $guard->assertOrRedirect( true, '/login');
+
         $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
         {
             if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem')
@@ -45,9 +43,6 @@ class BlueBerryServiceProvider extends ServiceProvider {
                 $container->setNewComponentTemplate('BlueBerry::ItemList.Components.CategoryItem');
             }
         }, 0);
-
-        //$authHelper = pluginApp(AuthHelper::class);
-
     }
 
     /**
