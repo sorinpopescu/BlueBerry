@@ -184,6 +184,13 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     color: #000000;
 }
 
+.discount-list {
+    position: absolute;
+    right: 27px;
+    bottom: 41px;
+    z-index: 1001;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
