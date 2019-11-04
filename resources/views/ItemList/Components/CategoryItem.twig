@@ -91,7 +91,7 @@
                         <span v-if="item.texts.lang === 'en'">Available: ${ item.stock.net }</span>
                         <span v-if="item.texts.lang === 'de'">Erhältlich: ${ item.stock.net }</span>
                     </span>
-
+                    <script >
                     new Vue({
                         el: '#discount',
                         data: {
@@ -104,6 +104,7 @@
                             }
                         }
                     });
+                    </script>
                     <div id="discount" class="price" v-if="item.prices.rrp && item.prices.rrp.data.basePrice > 0 && item.prices.rrp.data.basePrice > item.prices.default.unitPrice.value">
                         {{ result }}
                     </div>
