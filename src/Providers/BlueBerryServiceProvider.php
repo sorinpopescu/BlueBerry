@@ -14,7 +14,7 @@ use BlueBerry\Providers\BlueBerryRouteServiceProvider;
 use Plenty\Plugin\Templates\Twig;
 use IO\Services\CustomerService;
 use Plenty\Modules\ShopBuilder\Helper\ShopBuilderRequest;
-use Plenty\Modules\Authentication\Events\AfterAccountAuthentication;
+use Plenty\Modules\Authorization\Services\AuthHelper
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -46,13 +46,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             }
         }, 0);
 
-        $dispatcher->listen(AfterAccountAuthentication::class, function($event)
-        {
-            $eventDispatcher->listen('IO.init.templates', function(Partial $partial)
-            {
-            $partial->set('footer', 'BlueBerry::PageDesign.Partial.Footer');
-            }, 0);
-        });
+        $authHelper = pluginApp(AuthHelper::class);
         //$shopBuilderRequest = pluginApp(ShopBuilderRequest::class);
         /*if($customerService->getContactId() > 0)
         {
