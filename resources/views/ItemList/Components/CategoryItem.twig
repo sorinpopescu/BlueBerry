@@ -12,6 +12,8 @@
     {% endif %}
 {% endif %}
 
+{% set discountNew = 100 - ((item.prices.default.price.value * 100) / item.prices.rrp.data.basePrice) %}
+{{ item.prices.default.price.value }}
 <script type="x/template" id="vue-category-item">
     <article class="cmp cmp-product-thumb cmp-product-thumb--grid">
         <div class="thumb-inner" :class="paddingClasses" :style="paddingInlineStyles">
@@ -91,23 +93,8 @@
                         <span v-if="item.texts.lang === 'en'">Available: ${ item.stock.net }</span>
                         <span v-if="item.texts.lang === 'de'">Erhältlich: ${ item.stock.net }</span>
                     </span>
-                    <script >
-                    new Vue({
-                        el: '#discount',
-                        data: {
-                            number1: 1,
-                            number2: 0,
-                        },
-                        computed: {
-                            result() {
-                                return parseInt(this.number1) + parseInt(this.number2);
-                            }
-                        }
-                    });
-                    </script>
-                    <div id="discount" class="price" v-if="item.prices.rrp && item.prices.rrp.data.basePrice > 0 && item.prices.rrp.data.basePrice > item.prices.default.unitPrice.value">
-                        {{ result }}
-                    </div>
+
+
                 </div>
             </slot>
             <!-- ./ITEM DETAILS  -->
