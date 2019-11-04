@@ -180,6 +180,10 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     font-size: 1.8rem;
 }
 
+.single .vat {
+    color: #000000;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
