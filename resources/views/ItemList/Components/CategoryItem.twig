@@ -93,7 +93,8 @@
                     </span>
 
                     <div class="price" v-if="item.prices.rrp && item.prices.rrp.data.basePrice > 0 && item.prices.rrp.data.basePrice > item.prices.default.unitPrice.value">
-                    aaa
+                    {% set discountNew = 100 - ((item.data.prices.default.price.value * 100) / item.data.prices.rrp.data.basePrice) %}
+                    {% if item.data.texts.lang == 'en' %}Discount:{% endif %}{% if item.data.texts.lang == 'de' %}Ersparnis:{% endif %} {{ discountNew|round }}%
                     </div>
                 </div>
             </slot>
