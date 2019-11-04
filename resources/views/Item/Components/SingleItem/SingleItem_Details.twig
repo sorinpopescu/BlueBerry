@@ -65,16 +65,23 @@
             </div>
         {% endif %}
         <div class="col-xs-6 col-md-5">
+            <b>{{ trans("Ceres::Template.orderHistoryStatus") }}: </b>
+        </div>
+        <div class="col-xs-6 col-md-7">
+            <span>${ currentVariation.variation.availability.names.name }</span>
+        </div>
+        <div class="col-xs-6 col-md-5">
+            <b>{{ trans("Ceres::Template.singleItemContent") }}: </b>
+        </div>
+        <div class="col-xs-6 col-md-7">
+            <span>${ currentVariation.unit.content | numberFormat } </span>
+            <span>${ currentVariation.unit.names.name }</span>
+        </div>
+        <div class="col-xs-6 col-md-5">
             <b>{% if item.documents[0].data.texts.lang == 'en' %}Stock{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}Bestand{% endif %}: </b>
         </div>
         <div class="col-xs-6 col-md-7">
             <span>${ currentVariation.stock.net }</span>
-        </div>
-        <div class="col-xs-6 col-md-5">
-            <b>{{ trans("Ceres::Template.orderHistoryStatus") }} </b>
-        </div>
-        <div class="col-xs-6 col-md-7">
-            <span>${ currentVariation.variation.availability.names.name }</span>
         </div>
     </div>
 </div>
@@ -118,12 +125,7 @@
     <span :content="currentVariation.prices.default.currency"></span>
 </span>
 
-<div class="base-price text-muted my-3" v-if="currentVariation.unit">
-    <div>
-        {{ trans("Ceres::Template.singleItemContent") }}
-        <span>${ currentVariation.unit.content | numberFormat } </span>
-        <span>${ currentVariation.unit.names.name }</span>
-    </div>
+<div class="base-price my-3" v-if="currentVariation.unit">
     <div v-if="currentVariation.variation.mayShowUnitPrice">
         {{ trans("Ceres::Template.singleItemUnitPrice") }}
         <span class="base-price-value">
