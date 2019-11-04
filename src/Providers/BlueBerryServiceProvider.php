@@ -46,14 +46,14 @@ class BlueBerryServiceProvider extends ServiceProvider {
         }, 0);
 
         //$shopBuilderRequest = pluginApp(ShopBuilderRequest::class);
-        if($customerService->getContactId() > 0)
+        /*if($customerService->getContactId() > 0)
         {
                 $eventDispatcher->listen('IO.init.templates', function(Partial $partial)
             {
             $partial->set('footer', 'BlueBerry::PageDesign.Partial.Footer');
             }, 0);
             //return false;
-        };
+        };*/
     }
 
     /**
