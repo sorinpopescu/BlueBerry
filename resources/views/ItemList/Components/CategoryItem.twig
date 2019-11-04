@@ -15,7 +15,7 @@
 {% set discountNew = 100 - ((item.prices.default.price.value * 100) / item.prices.rrp.data.basePrice) %}
 
 <script type="x/template" id="vue-category-item">
-    <article class="cmp cmp-product-thumb cmp-product-thumb--grid"> {{ var a = item.prices.default.price.value }}  {{ a }}
+    <article class="cmp cmp-product-thumb cmp-product-thumb--grid"> {{ var a = 1 }}  {{ a }}
         <div class="thumb-inner" :class="paddingClasses" :style="paddingInlineStyles">
 
             {{ AddToBasket.printVueComponent( "item", true, false, { ":has-price": "item | hasItemDefaultPrice" } ) }}
