@@ -95,7 +95,7 @@
 	                    {% for item in itemList %}
                             {% set discountNew = 100 - ((item.data.prices.default.price.value * 100) / item.data.prices.rrp.data.basePrice) %}
 	                        <li class="col-12 aaaaa col-sm-6 col-md-4 col-lg-{% if category is defined and ceresConfig.header.showNavBars in ["side", "both"] %}4{% else %}3{% endif %}">
-	                            <div class="discount">{{ discountNew|round }}</div>
+
                                 <category-item
 	                                item-data-ref="{{ item.data | json_data }}"
 	                                :decimal-count="{{ ceresConfig.item.storeSpecial }}">
@@ -107,7 +107,7 @@
 	                                    <span>{{ item.data | itemName }}</span>
 	                                </a>
 
-
+                                    <div class="discount-list">{% if item.data.texts.lang == 'en' %}Discount:{% endif %}{% if item.data.texts.lang == 'de' %}Ersparnis:{% endif %} {{ discountNew|round }}% {{ discountNew|round }}</div>
 	                            </category-item>
 	                        </li>
 	                    {% endfor %}
