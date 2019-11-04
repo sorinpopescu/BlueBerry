@@ -169,8 +169,15 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
 }
 
 .discount {
-    font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.crossprice .rrp {
+    font-size: 1.8rem;
+}
+
+.single .price {
+    font-size: 1.8rem;
 }
 
 @media (min-width: 992px) {

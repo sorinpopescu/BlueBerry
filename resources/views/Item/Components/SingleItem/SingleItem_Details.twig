@@ -65,7 +65,7 @@
             </div>
         {% endif %}
         <div class="col-xs-6 col-md-5">
-            <b>{{ trans("Ceres::Template.orderHistoryStatus") }}: </b>
+            <b>{{ trans("Ceres::Template.orderHistoryStatus") }} </b>
         </div>
         <div class="col-xs-6 col-md-7">
             <span>${ currentVariation.variation.availability.names.name }</span>
@@ -105,7 +105,7 @@
 
 {% if ('item.recommendedPrice' in itemData or 'all' in itemData) %}
     <div class="crossprice" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.data.basePrice > 0 && currentVariation.prices.rrp.data.basePrice > currentVariation.prices.default.unitPrice.value">
-        <del class="text-muted small">
+        <del class="rrp">
             {% if item.documents[0].data.texts.lang == 'en' %}RRP ${ currentVariation.prices.rrp.currency } ${ currentVariation.prices.rrp.data.basePrice } {% endif %}{% if item.documents[0].data.texts.lang == 'de' %}UVP ${ currentVariation.prices.rrp.data.basePrice } ${ currentVariation.prices.rrp.currency }{% endif %}
         </del>
     </div>
