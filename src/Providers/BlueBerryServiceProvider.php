@@ -45,7 +45,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             }
         }, 0);
 
-        $this->overrideTemplate("Ceres::Category.Item.CategoryItem", "BlueBerry::Category.Item.CategoryItem");
+        //$this->overrideTemplate("Ceres::Category.Item.CategoryItem", "BlueBerry::Category.Item.CategoryItem");
     }
 
     /**
