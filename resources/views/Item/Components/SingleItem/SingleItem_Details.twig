@@ -1,7 +1,3 @@
-<div class="producertag h6 producer text-muted" v-if="currentVariation.filter.hasManufacturer">
-    ${ currentVariation.item.manufacturer.externalName }
-</div>
-
 <h1 class="h2 title">
     <span>
         ${ currentVariation | itemName }
@@ -15,11 +11,13 @@
 <hr>
 
 <div class="mb-5">
-    <span class="articlenumber small text-muted custom-box">
-        <p>
+    <div class="row articlenumber text-muted custom-box">
+        <div class="col-xs-6 col-md-5">
             <b>{{ trans("Ceres::Template.singleItemNumber") }}: </b>
+        </div>
+        <div class="col-xs-6 col-md-7">
             <span>${ currentVariation.variation.number }</span>
-        </p>
+        </div>
         <p>
             <b>EAN: </b>
             <span>${ currentVariation.barcodes[0].code }</span>
@@ -62,7 +60,7 @@
             <b>{{ trans("Ceres::Template.orderHistoryStatus") }} </b>
             <span>${ currentVariation.variation.availability.names.name }</span>
         </p>
-    </span>
+    </div>
 </div>
 <!-- Variation -->
 <div class="mb-3" v-if="attributes.length || Object.keys(units).length">
