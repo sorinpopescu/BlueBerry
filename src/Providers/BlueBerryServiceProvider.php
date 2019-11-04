@@ -46,7 +46,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             }
         }, 0);
 
-        $authHelper = pluginApp(AuthHelper::class);
+        //$authHelper = pluginApp(AuthHelper::class);
 
     }
 
