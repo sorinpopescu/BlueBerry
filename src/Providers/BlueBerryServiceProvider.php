@@ -45,6 +45,12 @@ class BlueBerryServiceProvider extends ServiceProvider {
             }
         }, 0);
 
+        $eventDispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container)
+            {
+                $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
+                return false;
+            }, 0);
+
         //$this->overrideTemplate("Ceres::Category.Item.CategoryItem", "BlueBerry::Category.Item.CategoryItem");
     }
 
