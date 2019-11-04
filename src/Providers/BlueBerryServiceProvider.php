@@ -12,6 +12,7 @@ use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ServiceProvider;
 use BlueBerry\Providers\BlueBerryRouteServiceProvider;
 use Plenty\Plugin\Templates\Twig;
+use Plenty\Modules\Webshop\Template\Providers\TemplateServiceProvider;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -38,15 +39,13 @@ class BlueBerryServiceProvider extends ServiceProvider {
             {
                 $container->setNewComponentTemplate('BlueBerry::Item.Components.SingleItem');
             }
-            if ($container->getOriginComponentTemplate()=='Ceres::Category.Item.CategoryItem')
-            {
-                $container->setNewComponentTemplate('BlueBerry::Category.Item.CategoryItem');
-            }
             if ($container->getOriginComponentTemplate()=='Ceres::ItemList.Components.CategoryItem')
             {
                 $container->setNewComponentTemplate('BlueBerry::ItemList.Components.CategoryItem');
             }
         }, 0);
+
+        $this->overrideTemplate("Ceres::Category.Item.CategoryItem", "BlueBerry::Category.Item.CategoryItem");
     }
 
     /**
