@@ -174,11 +174,12 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
 
 .crossprice .rrp {
     font-size: 1.8rem;
-    line-height: 1;
+    line-height: 1.5;
 }
 
 .single .price {
     font-size: 1.8rem;
+    line-height: 1.5;
 }
 
 .single .vat {
@@ -190,6 +191,14 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     right: 27px;
     bottom: 43px;
     z-index: 1001;
+}
+
+h1.price {
+    line-height: 1.5;
+}
+
+.mb-5.custom-properties {
+    margin-bottom: 1 rem !important;
 }
 
 @media (min-width: 992px) {
