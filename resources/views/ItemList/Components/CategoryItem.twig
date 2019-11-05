@@ -72,7 +72,7 @@
                             </div>
 
                             <div class="price">
-                                ${ item.prices.default.unitPrice.formatted | specialOffer(item.prices, "unitPrice", "formatted") }*
+                                ${ item.prices.default.unitPrice.formatted | currency(item.prices.default.currency) }*
                             </div>
                         </div>
                     </div>
