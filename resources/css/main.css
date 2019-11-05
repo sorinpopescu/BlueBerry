@@ -182,6 +182,11 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     line-height: 1.5;
 }
 
+.single .cmp-product-thumb .price {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
 .single .vat {
     color: #000000;
 }
