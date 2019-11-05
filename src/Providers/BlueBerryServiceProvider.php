@@ -12,11 +12,10 @@ use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ServiceProvider;
 use BlueBerry\Providers\BlueBerryRouteServiceProvider;
 use Plenty\Plugin\Templates\Twig;
-use Plenty\Modules\Webshop\Template\Providers\TemplateServiceProvider;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
-    const EVENT_LISTENER_PRIORITY = 100;
+    const EVENT_LISTENER_PRIORITY = 0;
     /**
      * Register the service provider.
      */
@@ -33,25 +32,25 @@ class BlueBerryServiceProvider extends ServiceProvider {
         //$guard = pluginApp(AuthGuard::class);
         //$guard->assertOrRedirect( true, '/login');
 
-        $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container)
-        {
-            if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem')
-            {
+        $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container) {
+            if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem') {
                 $container->setNewComponentTemplate('BlueBerry::Item.Components.SingleItem');
-            }
-            if ($container->getOriginComponentTemplate()=='Ceres::ItemList.Components.CategoryItem')
-            {
+            };
+
+            if ($container->getOriginComponentTemplate()=='Ceres::ItemList.Components.CategoryItem') {
                 $container->setNewComponentTemplate('BlueBerry::ItemList.Components.CategoryItem');
-            }
-        }, 0);
+            };
+        }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container)
-            {
-                $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
-                return false;
-            }, 0);
+        $eventDispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container) {
+            $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
+            return false;
+        }, self::EVENT_LISTENER_PRIORITY);
 
-        //$this->overrideTemplate("Ceres::Category.Item.CategoryItem", "BlueBerry::Category.Item.CategoryItem");
+        $eventDispatcher->listen('IO.tpl.search', function (TemplateContainer $container) {
+            $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
+            return false;
+        }, self::EVENT_LISTENER_PRIORITY);
     }
 
     /**
