@@ -65,12 +65,6 @@
             </div>
         {% endif %}
         <div class="col-xs-6 col-md-5">
-            <b>{{ trans("Ceres::Template.orderHistoryStatus") }} </b>
-        </div>
-        <div class="col-xs-6 col-md-7">
-            <span>${ currentVariation.variation.availability.names.name }</span>
-        </div>
-        <div class="col-xs-6 col-md-5">
             <b>{{ trans("Ceres::Template.singleItemContent") }}: </b>
         </div>
         <div class="col-xs-6 col-md-7">
@@ -125,10 +119,6 @@
     <span :content="currentVariation.prices.default.currency"></span>
 </span>
 
-<span class="vat">
-    * {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
-    <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
-</span>
 <div class="base-price my-3" v-if="currentVariation.unit">
     <div v-if="currentVariation.variation.mayShowUnitPrice">
         {{ trans("Ceres::Template.singleItemUnitPrice") }}
