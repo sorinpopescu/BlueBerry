@@ -4,7 +4,7 @@ namespace BlueBerry\Containers;
 
 use Plenty\Plugin\Templates\Twig;
 
-class BlueBerryContainer
+class BlueBerryItemListContainer1
 {
     public function call(Twig $twig):string
     {
