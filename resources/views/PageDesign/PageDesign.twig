@@ -78,8 +78,10 @@
             {% endblock %}
         </div>
 
-        {% include getPartial('footer') %}
+        {% if userObjectForTemplate %}
+            {% include getPartial('footer') %}
 
+        {% endif %}
         {% block PartialFooter %}
         {% endblock %}
     </div>
