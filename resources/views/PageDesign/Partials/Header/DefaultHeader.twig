@@ -81,8 +81,7 @@
                 </ul>
             </div>
         </div>
-        {% set userObject = services.customer.getContact() %}
-        {% if userObject %}
+        {% if userObjectForTemplate %}
             {% include "Ceres::PageDesign.Partials.Header.Navigation" %}
         {% endif %}
     </div>

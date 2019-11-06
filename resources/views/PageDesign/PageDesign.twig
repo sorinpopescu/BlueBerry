@@ -16,6 +16,8 @@
 {{ component( "Ceres::Newsletter.Components.NewsletterInput" ) }}
 {{ component( "Ceres::PageDesign.Components.Carousel" ) }}
 
+{% set userObjectForTemplate = services.customer.getContact() %}
+
 {% if isShopBuilder %}
     {% include "Ceres::Widgets.WidgetComponents" %}
 {% endif %}
