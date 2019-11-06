@@ -255,12 +255,17 @@ h1.price {
 .quick-nav-new li {
     display: inline-block;
 }
+
 .first-desc-li {
     padding: 10px;
     line-height: 14px;
     word-wrap: break-word;
     white-space: normal;
     max-width: 400px;
+}
+
+.other-desc-li {
+    padding: 10px 20px
 }
 
 @media (min-width: 992px) {
