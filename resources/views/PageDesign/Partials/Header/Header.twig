@@ -16,7 +16,8 @@
 
 {% include "BlueBerry::PageDesign.Partials.Header.DefaultHeader" %}
 
-{{ services.customer }}
+{% set userObject = services.customer.getContact() %}
+{{ userObject }}
 
 {% set scriptId = uid() %}
 <script id="{{ scriptId }}">
