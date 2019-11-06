@@ -1,7 +1,21 @@
 <div class="page-background">
     <div class="placeholder-new">
         <div class="strap">
-            {{ lang }}
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <ul class="quick-nav-new">
+                            <li class="first-desc-li">
+                                {% if lang == 'de' %}
+                                    Unsere Angebote richten sich ausschließlich an Händler. Wenn Sie noch keine Zugangsdaten haben, registrieren Sie sich bitte mit Ihren Firmendaten. Wir schalten Sie nach Prüfung Ihrer Angaben frei und senden Ihnen eine eMail.
+                                {% else %}
+                                    Our offers are adressed to merchants only. If you don't have an account with us yet, please register with your full company data. We will unlock your account after the proof of the details and inform you via eMail.
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
