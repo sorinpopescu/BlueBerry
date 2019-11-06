@@ -16,6 +16,8 @@
 
 {% include "BlueBerry::PageDesign.Partials.Header.DefaultHeader" %}
 
+{{ services.customer }}
+
 {% set scriptId = uid() %}
 <script id="{{ scriptId }}">
     var vueApp = document.getElementById("vue-app");
