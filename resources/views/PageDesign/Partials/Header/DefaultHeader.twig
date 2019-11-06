@@ -81,7 +81,10 @@
                 </ul>
             </div>
         </div>
-        {% include "Ceres::PageDesign.Partials.Header.Navigation" %}
+        {% set userObject = services.customer.getContact() %}
+        {% if userObject %}
+            {% include "Ceres::PageDesign.Partials.Header.Navigation" %}
+        {% endif %}
     </div>
 </header>
 
