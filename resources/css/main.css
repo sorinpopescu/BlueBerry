@@ -296,3 +296,13 @@ h1.price {
         color: #828282;
     }
 }
+
+@media (max-width: 767px) {
+    .first-desc-li {
+        text-align: center;
+    }
+
+    .imprint .container-fluid {
+        text-align: center;
+    }
+}
