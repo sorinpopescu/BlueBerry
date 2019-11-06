@@ -72,7 +72,7 @@
     <div class="wrapper wrapper-main {% if ceresConfig.header.fixNavBarPos %}isSticky{% endif %}">
         {% include getPartial('header') %}
 
-        <div id="page-body" class="main {% if !userObjectForTemplate %}user-not-logged{% endif %}">
+        <div id="page-body" class="main {% if userObjectForTemplate %}user-logged{% else %}user-not-logged{% endif %}">
             {% block PageBody %}
                 <!-- inject content of inherited templates here -->
             {% endblock %}
