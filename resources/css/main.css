@@ -226,6 +226,19 @@ h1.price {
     display: table;
 }
 
+.page-background .placeholder-new {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+.page-background .placeholder-new .strap {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 30px;
+    text-align: right;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
