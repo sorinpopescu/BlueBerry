@@ -39,17 +39,18 @@
         <div class="col-12">
             <carousel>
                 {% for item in itemList %}
-                    {% if item.data.prices.rrp and item.data.prices.rrp.data.basePrice > 0 and item.data.prices.rrp.data.basePrice > item.data.prices.default.price.value and item.data.prices.default.price.value > 0 %}
-                        <div class="discount-list small text-muted">{% if item.data.texts.lang == 'en' %}Discount:{% endif %}{% if item.data.texts.lang == 'de' %}Rabatt:{% endif %} {{ discountNew|round }}%</div>
-                        {% set discountNew = 100 - ((item.data.prices.default.price.value * 100) / item.data.prices.rrp.data.basePrice) %}
-                    {% endif %}
-                    <template slot="items">aaacccc
+                    {% set discountNew = 100 - ((item.data.prices.default.price.value * 100) / item.data.prices.rrp.data.basePrice) %}
+                    <template slot="items">
                         <category-item
                             :item-data="{{ item.data | json_encode }}"
                             :decimal-count="{{ ceresConfig.item.storeSpecial }}"
                             :disable-carousel-on-mobile="true">
                             <template #before-prices>{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
                             <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
+                            ddfg
+                            {% if item.data.prices.rrp and item.data.prices.rrp.data.basePrice > 0 and item.data.prices.rrp.data.basePrice > item.data.prices.default.price.value and item.data.prices.default.price.value > 0 %}
+                                <div class="discount-list small text-muted">{% if item.data.texts.lang == 'en' %}Discount:{% endif %}{% if item.data.texts.lang == 'de' %}Rabatt:{% endif %} {{ discountNew|round }}%</div>
+                            {% endif %}
                         </category-item>
                     </template>
                 {% endfor %}
