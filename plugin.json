@@ -17,6 +17,11 @@
             "key": "BlueBerry\\Containers\\BlueBerryContainer",
             "name": "Stylesheet",
             "description": "Add changes to the CSS file"
+        },
+        {
+            "key": "BlueBerry\\Containers\\CeresVanillaItemListContainer1",
+            "name": "First item list",
+            "description": "Display a configurable list of items in your online store"
         }
     ]
 }
