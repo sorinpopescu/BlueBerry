@@ -46,11 +46,10 @@
                             :decimal-count="{{ ceresConfig.item.storeSpecial }}"
                             :disable-carousel-on-mobile="true">
                             <template #before-prices>{{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}</template>
-                            <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
-                            ddfg
-                            {% if item.data.prices.rrp and item.data.prices.rrp.data.basePrice > 0 and item.data.prices.rrp.data.basePrice > item.data.prices.default.price.value and item.data.prices.default.price.value > 0 %}
+                            <template #after-prices>{% if item.data.prices.rrp and item.data.prices.rrp.data.basePrice > 0 and item.data.prices.rrp.data.basePrice > item.data.prices.default.price.value and item.data.prices.default.price.value > 0 %}
                                 <div class="discount-list small text-muted">{% if item.data.texts.lang == 'en' %}Discount:{% endif %}{% if item.data.texts.lang == 'de' %}Rabatt:{% endif %} {{ discountNew|round }}%</div>
-                            {% endif %}
+                            {% endif %} cccc</template>
+
                         </category-item>
                     </template>
                 {% endfor %}
