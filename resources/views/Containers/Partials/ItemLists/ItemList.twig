@@ -43,7 +43,7 @@
                         <div class="discount-list small text-muted">{% if item.data.texts.lang == 'en' %}Discount:{% endif %}{% if item.data.texts.lang == 'de' %}Rabatt:{% endif %} {{ discountNew|round }}%</div>
                         {% set discountNew = 100 - ((item.data.prices.default.price.value * 100) / item.data.prices.rrp.data.basePrice) %}
                     {% endif %}
-                    <template slot="items">
+                    <template slot="items">aaacccc
                         <category-item
                             :item-data="{{ item.data | json_encode }}"
                             :decimal-count="{{ ceresConfig.item.storeSpecial }}"
