@@ -73,8 +73,8 @@
         {% include getPartial('header') %}
 
         <div id="page-body" class="main {% if userObjectForTemplate %}user-logged{% else %}user-not-logged{% endif %}">
-            {{ userObjectForTemplate.classId }}
-            {% if userObjectForTemplate %}
+
+            {% if userObjectForTemplate == 3 %}
                 {% block PageBody %}
                     <!-- inject content of inherited templates here -->
                 {% endblock %}
