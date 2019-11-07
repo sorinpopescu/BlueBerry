@@ -36,9 +36,13 @@
 
             {% include 'Ceres::Containers.Partials.ItemLists.ItemListHeader' with { itemListNo: itemListNo, listType: listType, isHome: isHome } %}
         </div>
-        <div class="col-12 abcdef">
+        <div class="col-12">
             <carousel>
                 {% for item in itemList %}
+                    {% if item.data.prices.rrp and item.data.prices.rrp.data.basePrice > 0 and item.data.prices.rrp.data.basePrice > item.data.prices.default.price.value and item.data.prices.default.price.value > 0 %}
+                        <div class="discount-list small text-muted">{% if item.data.texts.lang == 'en' %}Discount:{% endif %}{% if item.data.texts.lang == 'de' %}Rabatt:{% endif %} {{ discountNew|round }}%</div>
+                        {% set discountNew = 100 - ((item.data.prices.default.price.value * 100) / item.data.prices.rrp.data.basePrice) %}
+                    {% endif %}
                     <template slot="items">
                         <category-item
                             :item-data="{{ item.data | json_encode }}"
