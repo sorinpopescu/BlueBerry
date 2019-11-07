@@ -74,7 +74,7 @@
 
         <div id="page-body" class="main {% if userObjectForTemplate %}user-logged{% else %}user-not-logged{% endif %}">
 
-            {% if userObjectForTemplate == 3 %}
+            {% if userObjectForTemplate.classId == 4 or userObjectForTemplate.classId == 5 %}
                 {% block PageBody %}
                     <!-- inject content of inherited templates here -->
                 {% endblock %}
