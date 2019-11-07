@@ -193,15 +193,15 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
 
 .discount-list {
     position: absolute;
-    right: 12px;
-    bottom: 14px;
+    right: 27px;
+    bottom: 43px;
     z-index: 1001;
 }
 
 .discount-list-related {
     position: absolute;
-    right: 27px;
-    bottom: 43px;
+    right: 12px;
+    bottom: 14px;
     z-index: 1001;
 }
 
