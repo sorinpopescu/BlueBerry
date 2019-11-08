@@ -79,13 +79,9 @@
                     <!-- inject content of inherited templates here -->
                 {% endblock %}
             {% else %}
-                {% if templateEvent == 'tpl.password-reset' %}
-                    {% block PageBody %}
-                        <!-- inject content of inherited templates here -->
-                    {% endblock %}
-                {% else %}
+
                     {% include "BlueBerry::PageDesign.Partials.Homepage" %}
-                {% endif %}
+
             {% endif %}
         </div>
 
