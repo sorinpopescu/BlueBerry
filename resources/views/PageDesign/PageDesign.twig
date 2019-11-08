@@ -18,6 +18,10 @@
 
 {% set userObjectForTemplate = services.customer.getContact() %}
 
+{% set cat = services.category.getCurrentCategory() %}
+
+{{ cat }}
+
 {% if isShopBuilder %}
     {% include "Ceres::Widgets.WidgetComponents" %}
 {% endif %}
