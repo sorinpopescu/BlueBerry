@@ -73,18 +73,13 @@
         {% include getPartial('header') %}
 
         <div id="page-body" class="main {% if userObjectForTemplate %}user-logged{% else %}user-not-logged{% endif %}">
-
-            {% if userObjectForTemplate.classId == 4 or userObjectForTemplate.classId == 5 %}
+            {% set templateLoaddd = templateEvent %}
+            {% if userObjectForTemplate.classId == 4 or userObjectForTemplate.classId == 5 or templateLoaddd == 'tpl.password-reset' %}
                 {% block PageBody %}
                     <!-- inject content of inherited templates here -->
                 {% endblock %}
             {% else %}
-                {% set templateLoaddd = templateEvent %}
-                {% if templateLoaddd == 'tpl.password-reset' %}
-
-                {% else %}
-                    {% include "BlueBerry::PageDesign.Partials.Homepage" %}
-                {% endif %}
+                {% include "BlueBerry::PageDesign.Partials.Homepage" %}
             {% endif %}
         </div>
 
