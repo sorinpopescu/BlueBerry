@@ -80,6 +80,7 @@
                 {% endblock %}
             {% else %}
                 {% include "BlueBerry::PageDesign.Partials.Homepage" %}
+
             {% endif %}
         </div>
 
@@ -89,12 +90,11 @@
 
         {% block PartialFooter %}
         {% endblock %}
-        <div class=bbbb"">
-        {% set templateeeee = services.template.isSearch() %}
-        {{ templateeeee }}
-        </div>
-    </div>
 
+    </div>
+    <div class="abcddd">
+    {{ templateEvent }} {{ lang }}
+    </div>
     {% if basket is not defined %}
         {% set basket = services.basket.getBasketForTemplate() %}
     {% endif %}
