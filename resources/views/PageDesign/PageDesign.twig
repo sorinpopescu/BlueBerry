@@ -79,8 +79,13 @@
                     <!-- inject content of inherited templates here -->
                 {% endblock %}
             {% else %}
-                {% include "BlueBerry::PageDesign.Partials.Homepage" %}
-
+                {% if templateEvent == 'tpl.password-reset' %}
+                    {% block PageBody %}
+                        <!-- inject content of inherited templates here -->
+                    {% endblock %}
+                {% else %}
+                    {% include "BlueBerry::PageDesign.Partials.Homepage" %}
+                {% endif %}
             {% endif %}
         </div>
 
@@ -92,9 +97,7 @@
         {% endblock %}
 
     </div>
-    <div class="abcddd">
-    {{ templateEvent }} {{ lang }}
-    </div>
+
     {% if basket is not defined %}
         {% set basket = services.basket.getBasketForTemplate() %}
     {% endif %}
