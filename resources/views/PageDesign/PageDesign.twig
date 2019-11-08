@@ -79,7 +79,7 @@
                     <!-- inject content of inherited templates here -->
                 {% endblock %}
             {% else %}
-                {{ set templateLoaddd = templateEvent }}
+                {% set templateLoaddd = templateEvent %}
 
                 {% if templateLoaddd == 'tpl.password-reset' %}
 
