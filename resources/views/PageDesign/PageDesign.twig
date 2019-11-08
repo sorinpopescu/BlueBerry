@@ -81,9 +81,7 @@
             {% else %}
                 {% set templateLoaddd = templateEvent %}
                 {% if templateLoaddd == 'tpl.password-reset' %}
-                    {% block PageBody %}
-                        <!-- inject content of inherited templates here -->
-                    {% endblock %}
+
                 {% else %}
                     {% include "BlueBerry::PageDesign.Partials.Homepage" %}
                 {% endif %}
