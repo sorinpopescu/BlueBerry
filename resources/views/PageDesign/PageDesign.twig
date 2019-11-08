@@ -18,8 +18,6 @@
 
 {% set userObjectForTemplate = services.customer.getContact() %}
 
-{% set cat = services.category.getCurrentCategory() %}
-
 {% if isShopBuilder %}
     {% include "Ceres::Widgets.WidgetComponents" %}
 {% endif %}
@@ -92,7 +90,7 @@
         {% block PartialFooter %}
         {% endblock %}
 
-        {{ cat }}
+
     </div>
 
     {% if basket is not defined %}
