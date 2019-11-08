@@ -20,8 +20,6 @@
 
 {% set cat = services.category.getCurrentCategory() %}
 
-{{ cat }}
-
 {% if isShopBuilder %}
     {% include "Ceres::Widgets.WidgetComponents" %}
 {% endif %}
@@ -93,6 +91,8 @@
 
         {% block PartialFooter %}
         {% endblock %}
+
+        {{ cat }}
     </div>
 
     {% if basket is not defined %}
