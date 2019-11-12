@@ -103,7 +103,11 @@
 	                                :decimal-count="{{ ceresConfig.item.storeSpecial }}">
 
                                     <template #before-prices>
-
+                                        <script type="text/javascript">
+                                            $( document ).ready(function() {
+                                            console.log('aaaa');
+                                            });
+                                        </script>
                                         {{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}
                                     </template>
 	                                <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
