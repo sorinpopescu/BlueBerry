@@ -40,8 +40,8 @@
 
             <!-- STORE SPECIALS -->
             <div class="special-tags">
-				<span v-for="tag in itemData.tags">
-  					<span class="badge badge-offer badge-danger" v-if="tag.names.name == 'Angebot' && itemData.prices.rrp.price.value != 0 ">-${    (100 - ( itemData.prices.default.price.value) / (itemData.prices.rrp.price.value) * 100).toFixed(0) } %</span>
+				<span v-for="tag in item.tags">
+  					<span class="badge badge-offer badge-danger" v-if="tag.names.name == 'Angebot' && item.prices.rrp.price.value != 0 ">-${    (100 - ( item.prices.default.price.value) / (item.prices.rrp.price.value) * 100).toFixed(0) } %</span>
   					<span class="badge badge-new badge-primary" v-if="tag.names.name == 'Neu'">${ tag.names.name }</span>
 				</span>
 	        </div>
