@@ -8,8 +8,8 @@
 
                 <ul id="controlsList" class="controls-list list-inline">
                     <li class="list-inline-item control-user">
-
-                            <a data-toggle="modal">
+                        {% if userObjectForTemplate.classId == 4 or userObjectForTemplate.classId == 5 %}
+                            <a data-toggle="modal" href="#login">
                                 <i class="mr-1 fa fa-user" aria-hidden="true"></i>
                                 <span class="hidden-xs-down">{{ trans("Ceres::Template.login") }}</span>
                             </a>
@@ -18,7 +18,19 @@
                                 <i class="mr-1 fa fa-user-plus" aria-hidden="true"></i>
                                 <span class="hidden-xs-down">{{ trans("Ceres::Template.loginRegister") }}</span>
                             </a>
-
+                        {% else %}
+                            <user-login-handler>
+                                <a data-toggle="modal">
+                                    <i class="mr-1 fa fa-user" aria-hidden="true"></i>
+                                    <span class="hidden-xs-down">{{ trans("Ceres::Template.login") }}</span>
+                                </a>
+                                <span class="pipe"></span>
+                                <a href="https://www.blue-berry.eu/{{ lang }}/register">
+                                    <i class="mr-1 fa fa-user-plus" aria-hidden="true"></i>
+                                    <span class="hidden-xs-down">{{ trans("Ceres::Template.loginRegister") }}</span>
+                                </a>
+                            </user-login-handler>
+                        {% endif %}
                     </li>
                     <li class="list-inline-item dropdown control-languages">
                         <a data-toggle="collapse" href="#countrySettings" aria-expanded="false"
