@@ -103,9 +103,9 @@
 	                                :decimal-count="{{ ceresConfig.item.storeSpecial }}">
 
                                     <template #before-prices>
-                                        {% if item.data.prices.rrp and item.data.prices.rrp.data.basePrice > 0 and item.data.prices.rrp.data.basePrice > item.data.prices.default.price.value and item.data.prices.default.price.value > 0 %}
-                                            <div class="discount-overwrite">- {{ discountNew|round }}%</div>
-                                        {% endif %}
+                                        <script type="text/javascript">
+                                            console.log('aaaa');
+                                        </script>
                                         {{ LayoutContainer.show("Ceres::CategoryItem.BeforePrices", item.data) }}
                                     </template>
 	                                <template #after-prices>{{ LayoutContainer.show("Ceres::CategoryItem.AfterPrices", item.data) }}</template>
