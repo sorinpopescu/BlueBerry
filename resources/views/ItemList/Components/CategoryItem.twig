@@ -39,15 +39,12 @@
             </div>
 
             <!-- STORE SPECIALS -->
-            <slot name="store-special">
-                <item-store-special v-if="storeSpecial || item.variation.bundleType == 'bundle'"
-                                    :store-special="storeSpecial"
-                                    :recommended-retail-price="item.prices.rrp"
-                                    :variation-retail-price="item.prices.default"
-                                    :special-offer-price="item.prices.specialOffer"
-                                    :decimal-count="decimalCount"
-                                    :bundle-type="item.variation.bundleType"></item-store-special>
-            </slot>
+            <div class="special-tags">
+				<span v-for="tag in itemData.tags">
+  					<span class="badge badge-offer badge-danger" v-if="tag.names.name == 'Angebot' && itemData.prices.rrp.price.value != 0 ">-${    (100 - ( itemData.prices.default.price.value) / (itemData.prices.rrp.price.value) * 100).toFixed(0) } %</span>
+  					<span class="badge badge-new badge-primary" v-if="tag.names.name == 'Neu'">${ tag.names.name }</span>
+				</span>
+	        </div>
             <!-- ./STORE SPECIALS -->
 
             <!-- ITEM DETAILS -->
