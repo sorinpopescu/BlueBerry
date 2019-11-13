@@ -284,7 +284,9 @@ h1.price {
     text-align: right;
 }
 
-.page-legal-disclosure hr.my-5, .page-terms-conditions hr.my-5 {
+.page-legal-disclosure hr.my-5,
+.page-terms-conditions hr.my-5,
+.page-privacy-policy hr.my-5 {
     margin-top: 1rem !important;
     margin-bottom: 1rem !important;
 }
