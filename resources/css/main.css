@@ -289,6 +289,10 @@ h1.price {
     margin-bottom: 1rem !important;
 }
 
+.page-legal-disclosure p {
+    margin-bottom: 0.4rem;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
