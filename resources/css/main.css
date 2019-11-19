@@ -357,4 +357,9 @@ h1.price {
         flex: 0 0 100%;
         max-width: 100%;
     }
+
+    .discount-list {
+        right: 42px;
+        bottom: 29px;
+    }
 }
