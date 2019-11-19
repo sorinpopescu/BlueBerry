@@ -52,10 +52,10 @@ class BlueBerryServiceProvider extends ServiceProvider {
             return false;
         }, self::EVENT_LISTENER_PRIORITY);
                 
-        /*$eventDispatcher->listen('IO.tpl.confirmation', function (TemplateContainer $container) {
+        $eventDispatcher->listen('IO.tpl.confirmation', function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Checkout.OrderConfirmation');
             return false;
-        }, self::EVENT_LISTENER_PRIORITY); */
+        }, self::EVENT_LISTENER_PRIORITY); 
         
 
         $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
