@@ -68,7 +68,7 @@
 
             <!-- LAST PAGE LINK -->
             {% if ceresConfig.pagination.showLastPage and pageMax > 3 and currentPage < pageMax - 1 %}
-                <li class="page-item">
+                <li class="page-item last-item-pagination">
                     <a class="page-link" href="{{ baseURL ~ queryString({ 'page': pageMax }) }}">
                         {{ pageMax }}
                     </a>

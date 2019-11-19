@@ -307,6 +307,10 @@ h1.price {
     clear: both;
 }
 
+.last-item-pagination {
+    margin-left: 5px;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
