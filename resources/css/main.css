@@ -346,4 +346,11 @@ h1.price {
     .imprint .container-fluid {
         text-align: center;
     }
+
+    .col-20-percent {
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 }
