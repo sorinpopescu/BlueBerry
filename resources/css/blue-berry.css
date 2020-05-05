@@ -114,6 +114,10 @@ body>#vue-app, body>#vue-error {
     height: 20px;
 }
 
+.top-bar {
+    background-color: #ffffff;
+}
+
 @media only screen and (max-width: 768px) {
     #page-body {
         position: relative;
