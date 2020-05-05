@@ -14,6 +14,7 @@
                             </li>
                             {% if userObjectForTemplate %}
                             {% else %}
+                            <user-login-handler>
                             <li class="other-desc-li">
                                 <a href="#login" data-toggle="modal">
                                     <i class="mr-1 fa fa-user" aria-hidden="true"></i>
@@ -31,6 +32,7 @@
                                     <span>{{ trans("Ceres::Template.loginForgotPassword") }}</span>
                                 </a>
                             </li>
+                            </user-login-handler>
                             {% endif %}
                         </ul>
                     </div>
