@@ -23,8 +23,16 @@ body>#vue-error {
     background-color: #ffffff;
 }
 
+.top-bar {
+    background-color: #ffffff;
+}
+
 .top-bar .controls-list>li a:not(.btn) {
     color: #000000;
+}
+
+.control-user .dropdown .dropdown-menu a {
+    background-color: #ffffff;
 }
 
 .cmp-product-thumb:hover {
