@@ -345,6 +345,10 @@ h1.price {
     max-width: 20%;
 }
 
+.other-login-bottom .nav-link:last-child {
+    display: none !important;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
