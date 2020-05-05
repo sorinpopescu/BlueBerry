@@ -349,6 +349,10 @@ h1.price {
     display: none !important;
 }
 
+.other-login-bottom .nav-link {
+    padding: 0px;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
