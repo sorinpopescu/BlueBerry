@@ -32,7 +32,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         //$guard = pluginApp(AuthGuard::class);
         //$guard->assertOrRedirect( true, '/login');
 
-        $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container) { die('aaa');
+        $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container) {
             if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem') {
                 $container->setNewComponentTemplate('BlueBerry::Item.Components.SingleItem');
             };
