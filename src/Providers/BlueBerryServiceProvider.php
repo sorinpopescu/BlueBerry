@@ -32,7 +32,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         //$guard = pluginApp(AuthGuard::class);
         //$guard->assertOrRedirect( true, '/login');
 
-        $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container) {
+        $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container) { die('aaa');
             if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem') {
                 $container->setNewComponentTemplate('BlueBerry::Item.Components.SingleItem');
             };
@@ -51,12 +51,12 @@ class BlueBerryServiceProvider extends ServiceProvider {
             $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
             return false;
         }, self::EVENT_LISTENER_PRIORITY);
-                
+
         $eventDispatcher->listen('IO.tpl.confirmation', function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Checkout.OrderConfirmation');
             return false;
-        }, self::EVENT_LISTENER_PRIORITY); 
-        
+        }, self::EVENT_LISTENER_PRIORITY);
+
 
         $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
             $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
