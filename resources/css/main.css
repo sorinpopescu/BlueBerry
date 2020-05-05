@@ -233,7 +233,7 @@ h1.price {
     line-height: 1.5;
 }
 
-.col-20-percent .vat.small.text-muted {
+.col-20-percent .vat.small.text-muted, .vat.small.text-muted {
     font-size: 9px;
     color: #ffffff !important;
 }
