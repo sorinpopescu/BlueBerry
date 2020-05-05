@@ -218,7 +218,7 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
 .discount-list {
     position: absolute;
     right: 27px;
-    bottom: 43px;
+    bottom: 41px;
     z-index: 1001;
 }
 
@@ -231,6 +231,9 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
 
 h1.price {
     line-height: 1.5;
+}
+.col-20-percent .vat.small.text-muted {
+    font-size: 9px;
 }
 
 .mb-5.custom-properties {
