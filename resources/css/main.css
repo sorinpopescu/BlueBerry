@@ -39,6 +39,18 @@ body>#vue-error {
     background-color: #e3e7eb;
 }
 
+.top-bar .cmp {
+    background: #e3e7eb;
+}
+
+.top-bar .cmp-search-box {
+    background-color: #e3e7eb;
+}
+
+.top-bar .nav-link {
+    color: #000000;
+}
+
 .cmp-product-thumb:hover {
     -website-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.25);
