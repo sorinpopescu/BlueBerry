@@ -355,6 +355,15 @@ h1.price {
     padding: 0px;
 }
 
+.breadcrumbs {
+    background-color: #ffffff;
+    border-bottom: 1px solid #123479;
+}
+
+.list-controls .list-controls-inner {
+    background-color: #ffffff;
+    border: 1px solid #123479;
+}
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
