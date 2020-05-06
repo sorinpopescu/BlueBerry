@@ -10,9 +10,6 @@ body>#vue-error {
     border-bottom: 1px solid #123479;
 }
 
-#page-header.top-bar {
-    background-color: #ffffff !important;
-}
 
 .wrapper-main>nav.container-max {
     background: #ffffff;
@@ -24,7 +21,8 @@ body>#vue-error {
 }
 
 .top-bar {
-    background-color: #e3e7eb;
+    background-color: #ffffff;
+    border-bottom: 1px solid #123479;
 }
 
 .controls-list .nav-link[aria-expanded="true"] {
