@@ -265,6 +265,9 @@ h1.price {
 .page-background .placeholder-new {
     display: table-cell;
     vertical-align: bottom;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }
 
 .page-background .placeholder-new .strap {
