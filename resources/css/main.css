@@ -360,6 +360,10 @@ h1.price {
     border-bottom: 1px solid #123479;
 }
 
+.breadcrumb {
+    background-color: #ffffff;
+}
+
 .list-controls .list-controls-inner {
     background-color: #ffffff;
     border: 1px solid #123479;
