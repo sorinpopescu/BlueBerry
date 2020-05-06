@@ -7,7 +7,7 @@ body>#vue-error {
 .navbar {
     background-color: #ffffff;
     border-top: 1px solid #123479;
-    border-bottom: 1px solid #123479;
+    border-bottom: 1px solid #123479 !important;
 }
 
 
@@ -22,7 +22,6 @@ body>#vue-error {
 
 .top-bar {
     background-color: #ffffff;
-    border-bottom: 1px solid #123479;
 }
 
 .controls-list .nav-link[aria-expanded="true"] {
