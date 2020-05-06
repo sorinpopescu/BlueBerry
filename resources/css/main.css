@@ -368,6 +368,15 @@ h1.price {
     background-color: #ffffff;
     border: 1px solid #123479;
 }
+
+.background-grey {
+    margin-bottom: 20px;
+    padding: 20px 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: #eeeeee;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
