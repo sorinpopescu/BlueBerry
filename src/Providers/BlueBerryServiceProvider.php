@@ -45,7 +45,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
         $eventDispatcher->listen('IO.tpl.item', function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Item.SingleItemWrapper');
             return false;
-        }, self::PRIORITY);
+        }, self::EVENT_LISTENER_PRIORITY);
 
         $eventDispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
