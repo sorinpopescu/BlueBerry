@@ -57,10 +57,10 @@
 
                         <div class="prices">
                             <div v-if="item.prices.rrp && item.prices.rrp.data.basePrice > 0 && item.prices.rrp.data.basePrice > item.prices.default.unitPrice.value" class="price-view-port">
-                                <del class="crossprice" v-if="item.prices.specialOffer">
+                                <del class="crossprice det" v-if="item.prices.specialOffer">
                                     ${ item.prices.default.unitPrice.formatted | itemCrossPrice(true) }
                                 </del>
-                                <del class="crossprice" v-else>
+                                <del class="crossprice det" v-else>
                                     <span v-if="item.texts.lang === 'en'">RRP ${ item.prices.rrp.data.basePrice | currency(item.prices.rrp.currency ) }</span>
                                     <span v-if="item.texts.lang === 'de'">UVP ${ item.prices.rrp.data.basePrice | currency(item.prices.rrp.currency ) }</span>
                                 </del>
