@@ -65,12 +65,6 @@ class BlueBerryServiceProvider extends ServiceProvider {
             return false;
         }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen('IO.tpl.confirmation', function (TemplateContainer $container) {
-            $container->setTemplate('BlueBerry::Checkout.OrderConfirmation');
-            return false;
-        }, self::EVENT_LISTENER_PRIORITY);
-
-
         $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
             $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
             $partial->set('page-design', 'BlueBerry::PageDesign.PageDesign');
