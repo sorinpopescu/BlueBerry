@@ -9,7 +9,7 @@
     <span class="price h1">
         <span>
             <template v-if="showDynamicPrice">
-
+                ${ variationTotalPrice | currency(currentVariation.prices.default.currency) }
             </template>
 
             <template v-else>
