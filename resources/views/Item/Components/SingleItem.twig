@@ -87,7 +87,7 @@
                                         <span>${ currentVariation.unit.names.name }</span>
                                     </div>
                                     <div class="col-xs-6 col-md-5">
-                                        <b>{% if item.documents[0].data.texts.lang == 'en' %}Stock{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}Verfügbar{% endif %}: </b>
+                                        <b v-if="currentVariation.texts.lang == 'en'">Stock</b><b v-if="currentVariation.texts.lang == 'de'">Verfügbar: </b>
                                     </div>
                                     <div class="col-xs-6 col-md-7">
                                         <span>${ currentVariation.stock.net }</span>
@@ -95,12 +95,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-5">
-                                <span class="articlenumber small text-muted">
-                                    <b>${ $translate("Ceres::Template.singleItemNumber") } </b>
-                                    <span>${ currentVariation.variation.number }</span>
-                                </span>
-                            </div>
+
 
                             <!-- Variation -->
                             <div class="mb-3" v-if="attributes.length || Object.keys(units).length">
