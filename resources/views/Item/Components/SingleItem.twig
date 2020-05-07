@@ -41,7 +41,7 @@
                                         <b>EAN: </b>
                                     </div>
                                     <div class="col-xs-6 col-md-7" v-for="barcodeRow in currentVariation.barcodes">
-                                        <span v-if="barcodeRow.code">${ cbarcodeRow.code }&nbsp;</span>
+                                        <span v-if="barcodeRow.name == 'EAN_13 1'">${ barcodeRow.code }&nbsp;</span>
                                     </div>
 
                                     <div class="col-xs-6 col-md-5" v-if="currentVariation.item.condition && currentVariation.item.condition.names.name !== '' && (itemConfig.includes('item.condition') || itemConfig.includes('all'))">
