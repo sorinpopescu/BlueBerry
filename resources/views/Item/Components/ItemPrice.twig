@@ -14,7 +14,7 @@
     <span class="price h1">
         <span>
             <template v-if="showDynamicPrice">
-                {{ variationTotalPrice | currency(currentVariation.prices.default.currency) }}
+                ${ (currentVariation.unit.content * $store.state.item.variationOrderQuantity).toFixed(2) }
             </template>
 
             <template v-else>
