@@ -29,6 +29,72 @@
 
                             <hr>
 
+                            <div class="mb-5 custom-properties">
+                                <div class="row articlenumber custom-box">
+                                    <div class="col-xs-6 col-md-5">
+                                        <b>${ $translate("Ceres::Template.singleItemNumber") }: </b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7">
+                                        <span>${ currentVariation.variation.number }</span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-5">
+                                        <b>EAN: </b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7">
+                                        <span>${ currentVariation.barcodes[0].code }</span>
+                                    </div>
+
+                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.item.condition && currentVariation.item.condition.names.name !== '' && (itemConfig.includes('item.condition') || itemConfig.includes('all'))">
+                                        <b>${ $translate("Ceres::Template.singleItemCondition") }: </b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.item.condition && currentVariation.item.condition.names.name !== '' && (itemConfig.includes('item.condition') || itemConfig.includes('all'))">
+                                        <span>${ currentVariation.item.condition.names.name }</span>
+                                    </div>
+
+                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.variation.model !== '' && (itemConfig.includes('item.variation_model') || itemConfig.includes('all'))">
+                                        <b>${ $translate("Ceres::Template.singleItemModel") }: </b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.variation.model !== '' && (itemConfig.includes('item.variation_model') || itemConfig.includes('all'))">
+                                        <span>${ currentVariation.variation.model }</span>
+                                    </div>
+
+                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.filter.hasManufacturer && currentVariation.item.manufacturer.externalName !== '' && (itemConfig.includes('item.manufacturer') || itemConfig.includes('all'))">
+                                        <b>${ $translate("Ceres::Template.singleItemManufacturer") }: </b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.filter.hasManufacturer && currentVariation.item.manufacturer.externalName !== '' && (itemConfig.includes('item.manufacturer') || itemConfig.includes('all'))">
+                                        <span>${ currentVariation.item.manufacturer.externalName }</span>
+                                    </div>
+
+                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.item.producingCountry && currentVariation.item.producingCountry.names.name !== '' && (itemConfig.includes('item.producerCountry') || itemConfig.includes('all'))">
+                                        <b>${ $translate("Ceres::Template.singleItemManufacturingCountry") }: </b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.item.producingCountry && currentVariation.item.producingCountry.names.name !== '' && (itemConfig.includes('item.producerCountry') || itemConfig.includes('all'))">
+                                        <span>${ currentVariation.item.producingCountry.names.name }</span>
+                                    </div>
+
+                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.variation.weightNetG !== '' && (itemConfig.includes('item.weightNetG') || itemConfig.includes('all'))">
+                                        <b>${ $translate("Ceres::Template.singleItemNetWeight") }: </b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.variation.weightNetG !== '' && (itemConfig.includes('item.weightNetG') || itemConfig.includes('all'))">
+                                        <span>${ currentVariation.variation.weightNetG } g</span>
+                                    </div>
+
+                                    <div class="col-xs-6 col-md-5">
+                                        <b>${ $translate("Ceres::Template.singleItemContent") }: </b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7">
+                                        <span>${ currentVariation.unit.content | numberFormat } </span>
+                                        <span>${ currentVariation.unit.names.name }</span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-5">
+                                        <b>{% if item.documents[0].data.texts.lang == 'en' %}Stock{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}Verfügbar{% endif %}: </b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7">
+                                        <span>${ currentVariation.stock.net }</span>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="mb-5">
                                 <span class="articlenumber small text-muted">
                                     <b>${ $translate("Ceres::Template.singleItemNumber") } </b>
