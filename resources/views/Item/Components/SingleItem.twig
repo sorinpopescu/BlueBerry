@@ -51,14 +51,14 @@
                                         <span>${ currentVariation.item.condition.names.name }</span>
                                     </div>
                                     {% endif %}
-                                    {% if currentVariation.variation.model !== '' && (itemConfig.includes('item.variation_model') || itemConfig.includes('all')) %}
-                                    <div class="col-xs-6 col-md-5">
+
+                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.variation.model !== '' && (itemConfig.includes('item.variation_model') || itemConfig.includes('all'))">
                                         <b>${ $translate("Ceres::Template.singleItemModel") }: </b>
                                     </div>
-                                    <div class="col-xs-6 col-md-7">
+                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.variation.model !== '' && (itemConfig.includes('item.variation_model') || itemConfig.includes('all'))">
                                         <span>${ currentVariation.variation.model }</span>
                                     </div>
-                                    {% endif %}
+
                                     {% if 'item.manufacturer' in itemData or 'all' in itemData %}
                                     <div class="col-xs-6 col-md-5">
                                         <b>${ $translate("Ceres::Template.singleItemManufacturer") }: </b>
@@ -75,14 +75,14 @@
                                             <span>${ currentVariation.item.producingCountry.names.name }</span>
                                         </div>
                                     {% endif %}
-                                    {% if currentVariation.variation.weightNetG !== '' && (itemConfig.includes('item.weightNetG') || itemConfig.includes('all')) %}
-                                        <div class="col-xs-6 col-md-5">
+
+                                        <div class="col-xs-6 col-md-5" v-if="currentVariation.variation.weightNetG !== '' && (itemConfig.includes('item.weightNetG') || itemConfig.includes('all'))">
                                             <b>${ $translate("Ceres::Template.singleItemNetWeight") }: </b>
                                         </div>
-                                        <div class="col-xs-6 col-md-7">
+                                        <div class="col-xs-6 col-md-7" v-if="currentVariation.variation.weightNetG !== '' && (itemConfig.includes('item.weightNetG') || itemConfig.includes('all'))">
                                             <span>${ currentVariation.variation.weightNetG } g</span>
                                         </div>
-                                    {% endif %}
+
                                     <div class="col-xs-6 col-md-5">
                                         <b>${ $translate("Ceres::Template.singleItemContent") }: </b>
                                     </div>
