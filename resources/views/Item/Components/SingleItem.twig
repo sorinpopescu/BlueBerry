@@ -40,8 +40,10 @@
                                     <div class="col-xs-6 col-md-5">
                                         <b>EAN: </b>
                                     </div>
-                                    <div class="col-xs-6 col-md-7" v-for="barcodeRow in currentVariation.barcodes">
-                                        <span v-if="barcodeRow.name == 'EAN_13 1'">${ barcodeRow.code }&nbsp;</span>
+                                    <div class="col-xs-6 col-md-7">
+                                        <span v-for="barcodeRow in currentVariation.barcodes">
+                                            <span v-if="barcodeRow.name == 'EAN_13 1'">${ barcodeRow.code }&nbsp;</span>
+                                        </span>
                                     </div>
 
                                     <div class="col-xs-6 col-md-5" v-if="currentVariation.item.condition && currentVariation.item.condition.names.name !== '' && (itemConfig.includes('item.condition') || itemConfig.includes('all'))">
@@ -190,7 +192,7 @@
                         <!-- ITEM DESCRIPTION -->
                         <div class="my-5">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item" v-if="isDescriptionTabActive">
+                                <li class="nav-item" v-if="currentVariation.properties">
                                     <a class="nav-link active" data-toggle="tab" :href="'#details-' + currentVariation.variation.id" role="tab">${ $translate("Ceres::Template.singleItemDescription") }</a>
                                 </li>
 
@@ -207,7 +209,21 @@
 
                             <div class="tab-content overflow-hidden">
                                 <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel" v-if="isDescriptionTabActive">
-                                    <div class="my-4" v-html="currentVariation.texts.description">
+                                    <div class="my-4" v-if="currentVariation.properties">
+                                        <div slot="MyProperty" class="my-property">
+                                            <div class="row" v-for="propertyRow in currentVariation.properties">
+                                                <div class="col-xs-6 col-md-5" v-if="propertyRow.texts.value !== '' || propertyRow.selection.name !== '' || propertyRow.selection.description !== '' || propertyRow.valueFloat !== '' || propertyRow.valueInt !== ''">
+                                                    <b>${ propertyRow.property.names.name }:</b>
+                                                </div>
+                                                <div class="col-xs-6 col-md-7" v-if="propertyRow.texts.value !== '' || propertyRow.selection.name !== '' || propertyRow.selection.description !== '' || propertyRow.valueFloat !== '' || propertyRow.valueInt !== ''">
+                                                    <span v-if="propertyRow.texts.value">${ propertyRow.texts.value  }</span>
+                                                    <span v-if="propertyRow.selection.name">${ propertyRow.selection.name }</span>
+                                                    <span v-if="propertyRow.selection.description">${ propertyRow.selection.description }</span>
+                                                    <span v-if="propertyRow.valueFloa">${ propertyRow.valueFloat } Millimeter</span>
+                                                    <span v-if="propertyRow.valueInt">${ propertyRow.valueInt }Millimeter</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
