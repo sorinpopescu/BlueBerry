@@ -1,5 +1,5 @@
 <script type="x/template" data-component="item-price">
-<div :class="{ 'has-crossprice': hasCrossPrice }">
+<div>
     <div class="crossprice" v-if="showCrossPrice && hasCrossPrice">
         <del class="text-muted small text-appearance aaabbb">
             ${ currentVariation.prices.rrp.unitPrice.formatted | itemCrossPrice }
