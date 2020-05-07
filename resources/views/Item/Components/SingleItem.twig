@@ -51,7 +51,7 @@
                                         <span>${ currentVariation.item.condition.names.name }</span>
                                     </div>
                                     {% endif %}
-                                    {% if (currentVariation.variation.model !== '' && (itemConfig.includes('item.variation_model') || itemConfig.includes('all'))) %}
+                                    {% if currentVariation.variation.model !== '' && (itemConfig.includes('item.variation_model') || itemConfig.includes('all')) %}
                                     <div class="col-xs-6 col-md-5">
                                         <b>${ $translate("Ceres::Template.singleItemModel") }: </b>
                                     </div>
@@ -75,7 +75,7 @@
                                             <span>${ currentVariation.item.producingCountry.names.name }</span>
                                         </div>
                                     {% endif %}
-                                    {% if 'item.weightNetG' in itemData or 'all' in itemData %}
+                                    {% if currentVariation.variation.weightNetG !== '' && (itemConfig.includes('item.weightNetG') || itemConfig.includes('all')) %}
                                         <div class="col-xs-6 col-md-5">
                                             <b>${ $translate("Ceres::Template.singleItemNetWeight") }: </b>
                                         </div>
@@ -185,19 +185,19 @@
                                     <a class="nav-link active" data-toggle="tab" :href="'#details-' + currentVariation.variation.id" role="tab">${ $translate("Ceres::Template.singleItemDescription") }</a>
                                 </li>
 
-                                <li class="nav-item" v-if="isTechnicalDataTabActive">
+                                <li class="nav-item aaa" v-if="isTechnicalDataTabActive">
                                     <a :class="{ 'active': !isDescriptionTabActive && isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" :href="'#data-' + currentVariation.variation.id" role="tab">${ $translate("Ceres::Template.singleItemTechnicalData") }</a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a :class="{ 'active': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" href="#assessments-details" role="tab">${ $translate("Ceres::Template.singleItemMoreDetails") }</a>
+                                <li class="nav-item bbb">
+                                    <a :class="{ '': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" href="#assessments-details" role="tab">${ $translate("Ceres::Template.singleItemMoreDetails") }</a>
                                 </li>
 
                                 <slot name="add-detail-tabs"></slot>
                             </ul>
 
                             <div class="tab-content overflow-hidden">
-                                <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel" v-if="isDescriptionTabActive">
+                                <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel">
                                     <div class="my-4">
                                         <div slot="MyProperty" class="my-property">
                                             <div class="row">
@@ -228,7 +228,7 @@
                                     </div>
                                 </div>
 
-                                <div :class="{ 'active': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="tab-pane overflow-auto" id="assessments-details" role="tabpanel">
+                                <div :class="{ '': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="tab-pane overflow-auto" id="assessments-details" role="tabpanel">
                                     <div class="my-4">
                                         <table class="table table-striped table-hover table-sm">
                                             <tbody>
