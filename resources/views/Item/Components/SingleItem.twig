@@ -51,7 +51,7 @@
                                         <span>${ currentVariation.item.condition.names.name }</span>
                                     </div>
                                     {% endif %}
-                                    {% if ('item.variation_model' in itemData or 'all' in itemData) %}
+                                    {% if (currentVariation.variation.model !== '' && (itemConfig.includes('item.variation_model') || itemConfig.includes('all'))) %}
                                     <div class="col-xs-6 col-md-5">
                                         <b>${ $translate("Ceres::Template.singleItemModel") }: </b>
                                     </div>
@@ -181,7 +181,7 @@
                         <!-- ITEM DESCRIPTION -->
                         <div class="my-5">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item" v-if="isDescriptionTabActive">
+                                <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" :href="'#details-' + currentVariation.variation.id" role="tab">${ $translate("Ceres::Template.singleItemDescription") }</a>
                                 </li>
 
