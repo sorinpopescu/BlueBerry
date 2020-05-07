@@ -14,7 +14,7 @@
     <span class="price h1">
         <span>
             <template v-if="showDynamicPrice">
-                ${ $translate("Ceres::Template.dynamicVariationPrice", {  $options.filters.currency(variationTotalPrice, currentVariation.prices.default.currency) } )
+                {{ variationTotalPrice | currency(currentVariation.prices.default.currency) }}
             </template>
 
             <template v-else>
