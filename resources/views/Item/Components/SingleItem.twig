@@ -8,7 +8,7 @@
                         <slot name="image-carousel"></slot>
                     </div>
 
-                    <div class="col-12 col-md-5 mt-md-5 aaabbbcccc">
+                    <div class="col-12 col-md-5 mt-md-5">
                         <div v-stick-in-parent>
                             <!-- START SINGLEITEM_DETAILS -->
                             <div class="producertag h6 producer text-muted" v-if="currentVariation.filter.hasManufacturer">
@@ -29,70 +29,11 @@
 
                             <hr>
 
-                            <div class="mb-5 custom-properties">
-                                <div class="row articlenumber custom-box">
-                                    <div class="col-xs-6 col-md-5">
-                                        <b>${ $translate("Ceres::Template.singleItemNumber") }: </b>
-                                    </div>
-                                    <div class="col-xs-6 col-md-7">
-                                        <span>${ currentVariation.variation.number }</span>
-                                    </div>
-                                    <div class="col-xs-6 col-md-5">
-                                        <b>EAN: </b>
-                                    </div>
-                                    <div class="col-xs-6 col-md-7">
-                                        <span>${ currentVariation.barcodes[0].code }</span>
-                                    </div>
-
-                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.item.condition && currentVariation.item.condition.names.name !== '' && (itemConfig.includes('item.condition') || itemConfig.includes('all'))">
-                                        <b>${ $translate("Ceres::Template.singleItemCondition") }: </b>
-                                    </div>
-                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.item.condition && currentVariation.item.condition.names.name !== '' && (itemConfig.includes('item.condition') || itemConfig.includes('all'))">
-                                        <span>${ currentVariation.item.condition.names.name }</span>
-                                    </div>
-
-                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.variation.model !== '' && (itemConfig.includes('item.variation_model') || itemConfig.includes('all'))">
-                                        <b>${ $translate("Ceres::Template.singleItemModel") }: </b>
-                                    </div>
-                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.variation.model !== '' && (itemConfig.includes('item.variation_model') || itemConfig.includes('all'))">
-                                        <span>${ currentVariation.variation.model }</span>
-                                    </div>
-
-                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.filter.hasManufacturer && currentVariation.item.manufacturer.externalName !== '' && (itemConfig.includes('item.manufacturer') || itemConfig.includes('all'))">
-                                        <b>${ $translate("Ceres::Template.singleItemManufacturer") }: </b>
-                                    </div>
-                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.filter.hasManufacturer && currentVariation.item.manufacturer.externalName !== '' && (itemConfig.includes('item.manufacturer') || itemConfig.includes('all'))">
-                                        <span>${ currentVariation.item.manufacturer.externalName }</span>
-                                    </div>
-
-                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.item.producingCountry && currentVariation.item.producingCountry.names.name !== '' && (itemConfig.includes('item.producerCountry') || itemConfig.includes('all'))">
-                                        <b>${ $translate("Ceres::Template.singleItemManufacturingCountry") }: </b>
-                                    </div>
-                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.item.producingCountry && currentVariation.item.producingCountry.names.name !== '' && (itemConfig.includes('item.producerCountry') || itemConfig.includes('all'))">
-                                        <span>${ currentVariation.item.producingCountry.names.name }</span>
-                                    </div>
-
-                                    <div class="col-xs-6 col-md-5" v-if="currentVariation.variation.weightNetG !== '' && (itemConfig.includes('item.weightNetG') || itemConfig.includes('all'))">
-                                        <b>${ $translate("Ceres::Template.singleItemNetWeight") }: </b>
-                                    </div>
-                                    <div class="col-xs-6 col-md-7" v-if="currentVariation.variation.weightNetG !== '' && (itemConfig.includes('item.weightNetG') || itemConfig.includes('all'))">
-                                        <span>${ currentVariation.variation.weightNetG } g</span>
-                                    </div>
-
-                                    <div class="col-xs-6 col-md-5">
-                                        <b>${ $translate("Ceres::Template.singleItemContent") }: </b>
-                                    </div>
-                                    <div class="col-xs-6 col-md-7">
-                                        <span>${ currentVariation.unit.content | numberFormat } </span>
-                                        <span>${ currentVariation.unit.names.name }</span>
-                                    </div>
-                                    <div class="col-xs-6 col-md-5">
-                                        <b>{% if item.documents[0].data.texts.lang == 'en' %}Stock{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}Verfügbar{% endif %}: </b>
-                                    </div>
-                                    <div class="col-xs-6 col-md-7">
-                                        <span>${ currentVariation.stock.net }</span>
-                                    </div>
-                                </div>
+                            <div class="mb-5">
+                                <span class="articlenumber small text-muted">
+                                    <b>${ $translate("Ceres::Template.singleItemNumber") } </b>
+                                    <span>${ currentVariation.variation.number }</span>
+                                </span>
                             </div>
 
                             <!-- Variation -->
@@ -112,17 +53,6 @@
                             </div>
 
                             <graduated-prices></graduated-prices>
-
-                            <div class="crossprice det" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.data.basePrice > 0 && currentVariation.prices.rrp.data.basePrice > currentVariation.prices.default.unitPrice.value">
-                                <del class="text-muted small text-appearance rrp">
-                                    {% if item.documents[0].data.texts.lang == 'en' %}RRP ${ currentVariation.prices.rrp.data.basePrice | currency(currentVariation.prices.rrp.currency) } {% endif %}{% if item.documents[0].data.texts.lang == 'de' %}UVP ${ currentVariation.prices.rrp.data.basePrice | currency(currentVariation.prices.rrp.currency) }{% endif %}
-                                </del>
-                            </div>
-
-                            <div class="discount" v-if="currentVariation.prices.rrp && currentVariation.prices.rrp.data.basePrice > 0 && currentVariation.prices.rrp.data.basePrice > currentVariation.prices.default.unitPrice.value">
-                                {% set discountNew = 100 - ((item.documents[0].data.prices.default.price.value * 100) / item.documents[0].data.prices.rrp.data.basePrice) %}
-                                {% if item.documents[0].data.texts.lang == 'en' %}Discount:{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}Rabatt:{% endif %} {{ discountNew|round }}%
-                            </div>
 
                             <item-price :show-cross-price="isRecommendedPriceActive"></item-price>
 
@@ -188,38 +118,24 @@
                         <!-- ITEM DESCRIPTION -->
                         <div class="my-5">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item" v-if="currentVariation.properties">
-                                    <a class="nav-link active aaa" data-toggle="tab" :href="'#details-' + currentVariation.variation.id" role="tab">${ $translate("Ceres::Template.singleItemDescription") }</a>
+                                <li class="nav-item" v-if="isDescriptionTabActive">
+                                    <a class="nav-link active" data-toggle="tab" :href="'#details-' + currentVariation.variation.id" role="tab">${ $translate("Ceres::Template.singleItemDescription") }</a>
                                 </li>
 
-                                <li class="nav-item aaa" v-if="isTechnicalDataTabActive">
+                                <li class="nav-item" v-if="isTechnicalDataTabActive">
                                     <a :class="{ 'active': !isDescriptionTabActive && isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" :href="'#data-' + currentVariation.variation.id" role="tab">${ $translate("Ceres::Template.singleItemTechnicalData") }</a>
                                 </li>
 
-                                <li class="nav-item bbb">
-                                    <a :class="{ '': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" href="#assessments-details" role="tab">${ $translate("Ceres::Template.singleItemMoreDetails") }</a>
+                                <li class="nav-item">
+                                    <a :class="{ 'active': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" href="#assessments-details" role="tab">${ $translate("Ceres::Template.singleItemMoreDetails") }</a>
                                 </li>
 
                                 <slot name="add-detail-tabs"></slot>
                             </ul>
 
                             <div class="tab-content overflow-hidden">
-                                <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel">
-                                    <div class="my-4" v-if="currentVariation.properties">
-                                        <div slot="MyProperty" class="my-property">
-                                            <div class="row" v-for="propertyRow in currentVariation.properties">
-                                                <div class="col-xs-6 col-md-5" v-if="propertyRow.texts.value !== '' || propertyRow.selection.name !== '' || propertyRow.selection.description !== '' || propertyRow.valueFloat !== '' || propertyRow.valueInt !== ''">
-                                                    <b>${ propertyRow.property.names.name }:</b>
-                                                </div>
-                                                <div class="col-xs-6 col-md-7" v-if="propertyRow.texts.value !== '' || propertyRow.selection.name !== '' || propertyRow.selection.description !== '' || propertyRow.valueFloat !== '' || propertyRow.valueInt !== ''">
-                                                    <span v-if="propertyRow.texts.value">${ propertyRow.texts.value  }</span>
-                                                    <span v-if="propertyRow.selection.name">${ propertyRow.selection.name }</span>
-                                                    <span v-if="propertyRow.selection.description">${ propertyRow.selection.description }</span>
-                                                    <span v-if="propertyRow.valueFloa">${ propertyRow.valueFloat } Millimeter</span>
-                                                    <span v-if="propertyRow.valueInt">${ propertyRow.valueInt }Millimeter</span>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel" v-if="isDescriptionTabActive">
+                                    <div class="my-4" v-html="currentVariation.texts.description">
                                     </div>
                                 </div>
 
@@ -228,7 +144,7 @@
                                     </div>
                                 </div>
 
-                                <div :class="{ '': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="tab-pane overflow-auto" id="assessments-details" role="tabpanel">
+                                <div :class="{ 'active': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="tab-pane overflow-auto" id="assessments-details" role="tabpanel">
                                     <div class="my-4">
                                         <table class="table table-striped table-hover table-sm">
                                             <tbody>
