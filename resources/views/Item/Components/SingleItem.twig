@@ -197,11 +197,11 @@
                                 </li>
 
                                 <li class="nav-item" v-if="isTechnicalDataTabActive">
-                                    <a :class="{ 'active': !isDescriptionTabActive && isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" :href="'#data-' + currentVariation.variation.id" role="tab">${ $translate("Ceres::Template.singleItemTechnicalData") }</a>
+                                    <a :class="{ '': !isDescriptionTabActive && isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" :href="'#data-' + currentVariation.variation.id" role="tab">${ $translate("Ceres::Template.singleItemTechnicalData") }</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a :class="{ 'active': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" href="#assessments-details" role="tab">${ $translate("Ceres::Template.singleItemMoreDetails") }</a>
+                                    <a :class="{ '': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" href="#assessments-details" role="tab">${ $translate("Ceres::Template.singleItemMoreDetails") }</a>
                                 </li>
 
                                 <slot name="add-detail-tabs"></slot>
@@ -227,12 +227,12 @@
                                     </div>
                                 </div>
 
-                                <div :class="{ 'active': !isDescriptionTabActive && isTechnicalDataTabActive }" class="tab-pane overflow-auto" :id="'data-' + currentVariation.variation.id" role="tabpanel" v-if="isTechnicalDataTabActive">
+                                <div :class="{ '': !isDescriptionTabActive && isTechnicalDataTabActive }" class="tab-pane overflow-auto" :id="'data-' + currentVariation.variation.id" role="tabpanel" v-if="isTechnicalDataTabActive">
                                     <div class="my-4" v-html="currentVariation.texts.technicalData">
                                     </div>
                                 </div>
 
-                                <div :class="{ 'active': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="tab-pane overflow-auto" id="assessments-details" role="tabpanel">
+                                <div :class="{ '': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="tab-pane overflow-auto" id="assessments-details" role="tabpanel">
                                     <div class="my-4">
                                         <table class="table table-striped table-hover table-sm">
                                             <tbody>
