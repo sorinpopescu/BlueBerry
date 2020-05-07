@@ -37,7 +37,12 @@
                                     <div class="col-xs-6 col-md-7">
                                         <span>${ currentVariation.variation.number }</span>
                                     </div>
-
+                                    <div class="col-xs-6 col-md-5">
+                                        <b>EAN: </b>
+                                    </div>
+                                    <div class="col-xs-6 col-md-7">
+                                        <span>${ currentVariation.barcodes }</span>
+                                    </div>
 
                                     <div class="col-xs-6 col-md-5" v-if="currentVariation.item.condition && currentVariation.item.condition.names.name !== '' && (itemConfig.includes('item.condition') || itemConfig.includes('all'))">
                                         <b>${ $translate("Ceres::Template.singleItemCondition") }: </b>
