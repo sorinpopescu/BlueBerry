@@ -197,17 +197,16 @@
                                     <div class="my-4" v-if="currentVariation.properties">
                                         <div slot="MyProperty" class="my-property">
                                             <div class="row" v-for="propertyRow in currentVariation.properties">
-
-                                                        <div class="col-xs-6 col-md-5">
-                                                            <b>${ propertyRow.property.names.name }:</b>
-                                                        </div>
-                                                        <div class="col-xs-6 col-md-7">
-                                                            <span v-if="propertyRow.selection.name">${ propertyRow.selection.name }</span>
-                                                            <span v-if="propertyRow.selection.description">${ propertyRow.selection.description }</span>
-                                                            <span v-if="propertyRow.valueFloa">${ propertyRow.valueFloat } Millimeter</span>
-                                                            <span v-if="propertyRow.valueInt">${ propertyRow.valueInt }Millimeter</span>
-                                                        </div>
-
+                                                <div class="col-xs-6 col-md-5">
+                                                    <b>${ propertyRow.property.names.name }:</b>
+                                                </div>
+                                                <div class="col-xs-6 col-md-7">
+                                                    <span v-if="propertyRow.texts.value">${ propertyRow.texts.value  }</span>
+                                                    <span v-if="propertyRow.selection.name">${ propertyRow.selection.name }</span>
+                                                    <span v-if="propertyRow.selection.description">${ propertyRow.selection.description }</span>
+                                                    <span v-if="propertyRow.valueFloa">${ propertyRow.valueFloat } Millimeter</span>
+                                                    <span v-if="propertyRow.valueInt">${ propertyRow.valueInt }Millimeter</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
