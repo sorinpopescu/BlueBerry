@@ -197,6 +197,8 @@
                                     <div class="my-4">
                                         <div slot="MyProperty" class="my-property">
                                             <div class="row">
+                                                {% set properties = item.documents[0].data.properties %}
+                                                ${ properties }
 
                                             </div>
                                         </div>
