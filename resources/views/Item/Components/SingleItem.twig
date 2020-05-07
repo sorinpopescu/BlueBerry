@@ -204,14 +204,14 @@
                                                 {% for property in item.documents[0].data.properties %}
                                                     {% if property.texts.value != '' or property.selection.name != '' or  property.selection.description  != '' or property.valueFloat != '' or property.valueInt != '' %}
                                                         <div class="col-xs-6 col-md-5">
-                                                            <b>{{ property.property.names.name }}:</b>
+                                                            <b>${ property.property.names.name }:</b>
                                                         </div>
                                                         <div class="col-xs-6 col-md-7">
-                                                            <span>{{ property.texts.value  }}</span>
-                                                            <span>{{ property.selection.name }}</span>
-                                                            <span>{{ property.selection.description }}</span>
-                                                            <span>{{ property.valueFloat }}</span>
-                                                            <span>{{ property.valueInt }}</span>
+                                                            <span>${ property.texts.value  }</span>
+                                                            <span>${ property.selection.name }</span>
+                                                            <span>${ property.selection.description }</span>
+                                                            <span>${ property.valueFloat }</span>
+                                                            <span>${ property.valueInt }</span>
                                                             {% if property.valueFloat != '' or  property.valueInt != '' %}
                                                                 Millimeter
                                                             {% endif %}
