@@ -34,10 +34,10 @@ class BlueBerryServiceProvider extends ServiceProvider {
         //$guard = pluginApp(AuthGuard::class);
         //$guard->assertOrRedirect( true, '/login');
 
-        $eventDispatcher->listen("IO.Resources.Import", function(ResourceContainer $container)
-        {
+        $eventDispatcher->listen("IO.Resources.Import", function(ResourceContainer $container) {
             $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
             $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
+            $container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
         },self::EVENT_LISTENER_PRIORITY);
 
         $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container) {

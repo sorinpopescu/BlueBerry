@@ -1,0 +1,40 @@
+<script type="x/template" data-component="item-price">
+<div :class="{ 'has-crossprice': hasCrossPrice }">
+    <div class="crossprice" v-if="showCrossPrice && hasCrossPrice">
+        <del class="text-muted small text-appearance aaabbb">
+            ${ currentVariation.prices.rrp.unitPrice.formatted | itemCrossPrice }
+        </del>
+    </div>
+
+    <span class="price h1">
+        <span>
+            <template v-if="showDynamicPrice">
+                ${ $translate("Ceres::Template.dynamicVariationPrice",
+                    {
+                        price: $options.filters.currency(variationTotalPrice, currentVariation.prices.default.currency)
+                    }
+                ) }
+            </template>
+
+            <template v-else>
+                ${ variationTotalPrice | currency(currentVariation.prices.default.currency) }
+            </template>
+        </span>
+        <sup>*</sup>
+    </span>
+
+    <div class="base-price text-muted my-3" v-if="currentVariation.unit">
+        <div>
+            ${ $translate("Ceres::Template.singleItemContent") }
+            <span>${ currentVariation.unit.content | numberFormat } </span>
+            <span>${ currentVariation.unit.names.name }</span>
+        </div>
+        <div v-if="currentVariation.variation.mayShowUnitPrice">
+            ${ $translate("Ceres::Template.singleItemUnitPrice") }
+            <span class="base-price-value">
+                ${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }
+            </span>
+        </div>
+    </div>
+</div>
+</script>
