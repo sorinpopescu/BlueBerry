@@ -204,10 +204,12 @@
                                                             <b>${ propertyRow.property.names.name }:</b>
                                                         </div>
                                                         <div class="col-xs-6 col-md-7">
-
+                                                            <span v-if="propertyRow.selection.name">${ propertyRow.selection.name }</span>
+                                                            <span v-if="propertyRow.selection.description">${ propertyRow.selection.description }</span>
+                                                            <span v-if="propertyRow.valueFloa">${ propertyRow.valueFloat }</span>
+                                                            <span v-if="propertyRow.valueInt">${ propertyRow.valueInt }</span>
+                                                            <span v-if="propertyRow.valueFloat !== '' || propertyRow.valueInt !== ''">Millimeter</span>
                                                         </div>
-
-
                                                 </div>
                                             </div>
                                         </div>
