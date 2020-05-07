@@ -10,8 +10,10 @@ use IO\Helper\ResourceContainer;
 use IO\Extensions\Functions\Partial;
 use Plenty\Plugin\Events\Dispatcher;
 use Plenty\Plugin\ServiceProvider;
+use Plenty\Modules\Webshop\Template\Providers\TemplateServiceProvider;
 use BlueBerry\Providers\BlueBerryRouteServiceProvider;
 use Plenty\Plugin\Templates\Twig;
+
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
@@ -31,6 +33,11 @@ class BlueBerryServiceProvider extends ServiceProvider {
 
         //$guard = pluginApp(AuthGuard::class);
         //$guard->assertOrRedirect( true, '/login');
+
+        $eventDispatcher->listen("IO.Resources.Import", function(ResourceContainer $container)
+        {
+            $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
+        },self::EVENT_LISTENER_PRIORITY);
 
         $eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container) {
             if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem') {
