@@ -208,7 +208,7 @@
                             </ul>
 
                             <div class="tab-content overflow-hidden">
-                                <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel" v-if="isDescriptionTabActive">
+                                <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel">
                                     <div class="my-4" v-if="currentVariation.properties">
                                         <div slot="MyProperty" class="my-property">
                                             <div class="row" v-for="propertyRow in currentVariation.properties">
