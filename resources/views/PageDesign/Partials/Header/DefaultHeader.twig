@@ -232,8 +232,10 @@
                     {% include "Ceres::PageDesign.Partials.Header.Navigation" %}
                 {% endif %}
                 <!-- breadcrumb -->
+                {% if userObjectForTemplate %}
                 {% if not services.template.isHome() and not services.template.isMyAccount() and not services.template.isCheckout() %}
                     {% include "Ceres::PageDesign.Partials.Header.Breadcrumb" %}
+                {% endif %}
                 {% endif %}
             </div>
         </div>
