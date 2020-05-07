@@ -177,7 +177,7 @@
                         <!-- ITEM DESCRIPTION -->
                         <div class="my-5">
                             <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
+                                <li class="nav-item" v-if="currentVariation.properties">
                                     <a class="nav-link active" data-toggle="tab" :href="'#details-' + currentVariation.variation.id" role="tab">${ $translate("Ceres::Template.singleItemDescription") }</a>
                                 </li>
 
@@ -194,11 +194,27 @@
 
                             <div class="tab-content overflow-hidden">
                                 <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel">
-                                    <div class="my-4">
+                                    <div class="my-4" v-if="currentVariation.properties">
                                         <div slot="MyProperty" class="my-property">
                                             <div class="row">
 
-
+                                                {% for propertyRow in currentVariation.properties %}
+                                                    {% if propertyRow.texts.value != '' or propertyRow.selection.name != '' or  propertyRow.selection.description  != '' or propertyRow.valueFloat != '' or propertyRow.valueInt != '' %}
+                                                        <div class="col-xs-6 col-md-5">
+                                                            <b>${ propertyRow.property.names.name }:</b>
+                                                        </div>
+                                                        <div class="col-xs-6 col-md-7">
+                                                            <span v-if="propertyRow.texts.value">${ propertyRow.texts.value  }</span>
+                                                            <span v-if="propertyRow.selection.name">${ propertyRow.selection.name }</span>
+                                                            <span v-if="propertyRow.selection.description">${ propertyRow.selection.description }</span>
+                                                            <span v-if="propertyRow.valueFloa">${ propertyRow.valueFloat }</span>
+                                                            <span v-if="propertyRow.valueInt">${ propertyRow.valueInt }</span>
+                                                            {% if propertyRow.valueFloat != '' or  propertyRow.valueInt != '' %}
+                                                                Millimeter
+                                                            {% endif %}
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
 
                                             </div>
                                         </div>
