@@ -198,8 +198,8 @@
                                         <div slot="MyProperty" class="my-property">
                                             <div class="row">
 
-                                                {% for propertyRow in currentVariation.properties %}
-                                                    {% if propertyRow.texts.value != '' or propertyRow.selection.name != '' or  propertyRow.selection.description  != '' or propertyRow.valueFloat != '' or propertyRow.valueInt != '' %}
+                                                <div v-for="propertyRow in currentVariation.properties">
+
                                                         <div class="col-xs-6 col-md-5">
                                                             <b>${ propertyRow.property.names.name }:</b>
                                                         </div>
@@ -213,9 +213,9 @@
                                                                 Millimeter
                                                             {% endif %}
                                                         </div>
-                                                    {% endif %}
-                                                {% endfor %}
 
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
