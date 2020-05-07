@@ -6,6 +6,31 @@
         </del>
     </div>
 
+    <span class="price h1">
+        <span>
+            <template v-if="showDynamicPrice">
 
+            </template>
+
+            <template v-else>
+                ${ variationTotalPrice | currency(currentVariation.prices.default.currency) }
+            </template>
+        </span>
+        <sup>*</sup>
+    </span>
+
+    <div class="base-price text-muted my-3" v-if="currentVariation.unit">
+        <div>
+            ${ $translate("Ceres::Template.singleItemContent") }
+            <span>${ currentVariation.unit.content | numberFormat } </span>
+            <span>${ currentVariation.unit.names.name }</span>
+        </div>
+        <div v-if="currentVariation.variation.mayShowUnitPrice">
+            ${ $translate("Ceres::Template.singleItemUnitPrice") }
+            <span class="base-price-value">
+                ${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }
+            </span>
+        </div>
+    </div>
 </div>
 </script>
