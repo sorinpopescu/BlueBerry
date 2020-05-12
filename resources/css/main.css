@@ -223,7 +223,7 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
     position: absolute;
     right: 27px;
     bottom: 44px;
-    z-index: 1001;
+    z-index: 99;
 }
 
 .discount-list-related {
@@ -379,7 +379,7 @@ h1.price {
     padding: 20px 0px;
     margin-left: 0px;
     margin-right: 0px;
-    background-color: #eeeeee;
+    background-color: #e3e7eb;
 }
 
 @media (min-width: 992px) {
