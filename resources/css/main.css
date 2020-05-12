@@ -288,6 +288,9 @@ h1.price {
     list-style: none;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .quick-nav-new li {
@@ -422,5 +425,13 @@ h1.price {
     .discount-list {
         right: 42px;
         bottom: 29px;
+    }
+
+    .quick-nav-new {
+        flex-direction: column;
+    }
+
+    .other-login-bottom .d-none.d-sm-inline {
+        display: block !important;
     }
 }
