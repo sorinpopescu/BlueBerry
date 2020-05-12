@@ -382,6 +382,19 @@ h1.price {
     background-color: #e3e7eb;
 }
 
+.page-singleitem .price {
+    margin-bottom: 3px;
+}
+
+.page-singleitem .base-price.text-muted.my-3 {
+    margin-top: 0px !important;
+    margin-bottom: 10px !important;
+}
+
+.page-singleitem .availability.badge.availability-5 {
+    margin-bottom: 7px;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
