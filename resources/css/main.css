@@ -302,7 +302,7 @@ h1.price {
     line-height: 14px;
     word-wrap: break-word;
     white-space: normal;
-    max-width: 750px;
+    max-width: 100%;
 }
 
 .other-desc-li {
