@@ -395,6 +395,10 @@ h1.price {
     margin-bottom: 7px;
 }
 
+.list-inline-item.control-user .position-relative .nav-link:last-child {
+    display: none;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
