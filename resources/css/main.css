@@ -399,6 +399,10 @@ h1.price {
     display: none;
 }
 
+.list-inline-item.control-user .position-relative.register .nav-link {
+    display: block !important;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
