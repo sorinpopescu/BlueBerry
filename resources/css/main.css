@@ -455,4 +455,8 @@ h1.price {
     .other-login-bottom .d-none.d-sm-inline {
         display: inline-block !important;
     }
+
+    .position-relative.register .hidden-xs-down {
+        display: none;
+    }
 }
