@@ -36,7 +36,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
 
         $eventDispatcher->listen("IO.Resources.Import", function(ResourceContainer $container) {
             $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
-            //$container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
+            $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
             //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
         },self::EVENT_LISTENER_PRIORITY);
 
@@ -50,10 +50,10 @@ class BlueBerryServiceProvider extends ServiceProvider {
             };
         }, self::EVENT_LISTENER_PRIORITY);*/
 
-        /*$eventDispatcher->listen('IO.tpl.item', function (TemplateContainer $container) {
+        $eventDispatcher->listen('IO.tpl.item', function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Item.SingleItemWrapper');
             return false;
-        }, self::EVENT_LISTENER_PRIORITY);*/
+        }, self::EVENT_LISTENER_PRIORITY);
 
         $eventDispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
