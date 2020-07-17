@@ -427,7 +427,7 @@ h1.price {
     font-weight: normal;
 }
 
-#mc-embedded-subscribe-form .mc_fieldset{
+#mc-embedded-subscribe-form .mc_fieldset {
     border:none;
     min-height: 0px;
     padding-bottom:0px;
@@ -441,6 +441,10 @@ h1.price {
     display: block;
 }
 
+#mc_embed_signup .mc-field-group input[type=text], #mc_embed_signup .mc-field-group input[type=email] {
+    border-radius: 0px;
+    border: 1px solid #dee2e6;
+}
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
