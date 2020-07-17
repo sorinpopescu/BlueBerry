@@ -129,6 +129,10 @@
                 </div>
                 <!-- ./ACCOUNT SETTINGS AREA -->
 
+                <!-- NEWSLETTER ARREA -->
+                    {{ app.request.query.get("test") }}
+                <!-- ./NEWSLETTER ARREA -->
+
             </div>
 
             {% set ordersPerPage = config("Ceres.my_account.orders_per_page") %}
