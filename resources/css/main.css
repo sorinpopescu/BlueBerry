@@ -403,12 +403,35 @@ h1.price {
     display: block !important;
 }
 
-#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+#mc_embed_signup{
+    background:#fff;
+    clear:left;
+    font:14px Helvetica,Arial,sans-serif;
+}
 
-#mc-embedded-subscribe-form input[type=checkbox]{display: inline; width: auto;margin-right: 10px;}
-                                #mergeRow-gdpr {margin-top: 20px;}
-                                #mergeRow-gdpr fieldset label {font-weight: normal;}
-                                #mc-embedded-subscribe-form .mc_fieldset{border:none;min-height: 0px;padding-bottom:0px;}
+#mc-embedded-subscribe-form input[type=checkbox] {
+    display: inline;
+    width: auto;
+    margin-right: 10px;
+}
+
+#mergeRow-gdpr {
+    margin-top: 20px;
+}
+
+#mergeRow-gdpr fieldset label {
+    font-weight: normal;
+}
+
+#mc-embedded-subscribe-form .mc_fieldset{
+    border:none;
+    min-height: 0px;
+    padding-bottom:0px;
+}
+
+#mc_embed_signup form {
+    padding: 0px;
+}
 
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
