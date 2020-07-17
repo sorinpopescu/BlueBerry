@@ -46,7 +46,7 @@
         :billing-address-list="{{ services.customer.getAddresses(1) | json_encode }}"
         :selected-billing-address="{{ services.checkout.getBillingAddressId() | json_encode }}">
         <div>
-            <div class="page-content myaccount aaaaddd container-max mb-5 mt-3 pt-3 bg-white">
+            <div class="page-content myaccount aaaadddff container-max mb-5 mt-3 pt-3 bg-white">
                 <!-- HEADER -->
                 <div class="row mb-5">
                     <div class="col-sm-9">
@@ -205,29 +205,7 @@
                                 </div>
                             </form>
                             </div>
-                            {% raw %}
-                            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[4]='COMPANY';ftypes[4]='text';fnames[3]='COUNTRY';ftypes[3]='address'; /*
-                            * Translated default messages for the $ validation plugin.
-                            * Locale: DE
-                            */
-                            $.extend($.validator.messages, {
-                                required: "Dieses Feld ist ein Pflichtfeld.",
-                                maxlength: $.validator.format("Geben Sie bitte maximal {0} Zeichen ein."),
-                                minlength: $.validator.format("Geben Sie bitte mindestens {0} Zeichen ein."),
-                                rangelength: $.validator.format("Geben Sie bitte mindestens {0} und maximal {1} Zeichen ein."),
-                                email: "Geben Sie bitte eine gültige E-Mail Adresse ein.",
-                                url: "Geben Sie bitte eine gültige URL ein.",
-                                date: "Bitte geben Sie ein gültiges Datum ein.",
-                                number: "Geben Sie bitte eine Nummer ein.",
-                                digits: "Geben Sie bitte nur Ziffern ein.",
-                                equalTo: "Bitte denselben Wert wiederholen.",
-                                range: $.validator.format("Geben Sie bitten einen Wert zwischen {0} und {1}."),
-                                max: $.validator.format("Geben Sie bitte einen Wert kleiner oder gleich {0} ein."),
-                                min: $.validator.format("Geben Sie bitte einen Wert größer oder gleich {0} ein."),
-                                creditcard: "Geben Sie bitte ein gültige Kreditkarten-Nummer ein."
-                            });}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-                            {% endraw %}
-                            <!--End mc_embed_signup-->
+
                         </div>
                     </div>
                 {% endif %}
