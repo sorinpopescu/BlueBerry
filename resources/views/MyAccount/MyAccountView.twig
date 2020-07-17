@@ -145,17 +145,17 @@
                                             <div class="mc-field-group">
                                                 <label for="mce-EMAIL">eMail Address / eMail-Adresse  <span class="asterisk">*</span>
                                             </label>
-                                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                                                <input type="email" value="{{ userObject.email }}" disabled name="EMAIL" class="required email" id="mce-EMAIL">
                                             </div>
                                             <div class="mc-field-group">
                                                 <label for="mce-FNAME">First Name / Vorname  <span class="asterisk">*</span>
                                             </label>
-                                                <input type="text" value="" name="FNAME" class="required" id="mce-FNAME">
+                                                <input type="text" value="{{ userObject.firstName }}" disbaled name="FNAME" class="required" id="mce-FNAME">
                                             </div>
                                             <div class="mc-field-group">
                                                 <label for="mce-LNAME">Last Name / Nachname  <span class="asterisk">*</span>
                                             </label>
-                                                <input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
+                                                <input type="text" value="{{ userObject.lastName }}" disabled name="LNAME" class="required" id="mce-LNAME">
                                             </div>
                                             <div class="mc-field-group">
                                                 <label for="mce-COMPANY">Company / Firma  <span class="asterisk">*</span>
