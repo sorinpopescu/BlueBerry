@@ -46,7 +46,7 @@
         :billing-address-list="{{ services.customer.getAddresses(1) | json_encode }}"
         :selected-billing-address="{{ services.checkout.getBillingAddressId() | json_encode }}">
         <div>
-            <div class="page-content myaccount aaaa container-max mb-5 mt-3 pt-3 bg-white">
+            <div class="page-content myaccount aaaaccc container-max mb-5 mt-3 pt-3 bg-white">
                 <!-- HEADER -->
                 <div class="row mb-5">
                     <div class="col-sm-9">
@@ -131,7 +131,8 @@
 
                 <!-- NEWSLETTER ARREA -->
                 <div class="row">
-                    {{ app.request.get("test") }}
+                    {% set testVariable = request.get("test") %}
+                    {{ testVariable }}
                 </div>
                 <!-- ./NEWSLETTER ARREA -->
 
