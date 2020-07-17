@@ -134,7 +134,6 @@
                 {% if testVariable == '1' %}
                     <div class="row">
                         <div class="col-md-12">
-                            {{ userObject.accounts.0.companyName }}
                             <!-- Begin Mailchimp Signup Form -->
                             <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
                             <div id="mc_embed_signup">
@@ -161,7 +160,7 @@
                                             <div class="mc-field-group">
                                                 <label for="mce-COMPANY">Company / Firma  <span class="asterisk">*</span>
                                             </label>
-                                                <input type="text" value="{{ userObject.companyName }}" name="COMPANY" disabled class="required" id="mce-COMPANY">
+                                                <input type="text" value="{{ userObject.accounts.0.companyName }}" name="COMPANY" disabled class="required" id="mce-COMPANY">
                                             </div>
                                             <div class="mc-field-group input-group">
                                                 <strong>Language / Sprache </strong>
