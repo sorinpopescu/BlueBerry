@@ -433,6 +433,10 @@ h1.price {
     padding: 0px;
 }
 
+#mc_embed_signup form .input-group {
+    display: block;
+}
+
 @media (min-width: 992px) {
     #mainNavbarCollapsable ul.mainmenu>li>ul {
         background-color: #ffffff;
