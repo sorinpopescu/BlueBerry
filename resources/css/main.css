@@ -435,7 +435,7 @@ h1.price {
 }
 
 #mc_embed_signup form {
-    padding: 20px 15px;
+    padding: 20px 15px !important;
 }
 
 #mc_embed_signup form .input-group {
