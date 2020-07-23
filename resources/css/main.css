@@ -407,6 +407,7 @@ h1.price {
     background:#fff;
     clear:left;
     font:14px Helvetica,Arial,sans-serif;
+    border: 1px solid rgba(0,0,0,0.125);
 }
 
 #mc-embedded-subscribe-form input[type=checkbox] {
@@ -434,7 +435,7 @@ h1.price {
 }
 
 #mc_embed_signup form {
-    padding: 0px;
+    padding: 20px 15px;
 }
 
 #mc_embed_signup form .input-group {
