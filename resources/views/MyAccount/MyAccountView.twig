@@ -147,17 +147,20 @@
                                                     <div class="mc-field-group">
                                                         <label for="mce-EMAIL">eMail Address / eMail-Adresse  <span class="asterisk">*</span>
                                                     </label>
-                                                        <input type="email" value="{{ userObject.email }}" disabled name="EMAIL" class="required email" id="mce-EMAIL">
+                                                        <input type="text" value="{{ userObject.email }}" disabled name="EMAIL3" class="" id="mceds-EMAIL">
+                                                        <input type="email" value="{{ userObject.email }}" style="display: none;" name="EMAIL" class="required email" id="mce-EMAIL">
                                                     </div>
                                                     <div class="mc-field-group">
                                                         <label for="mce-FNAME">First Name / Vorname
                                                     </label>
-                                                        <input type="text" value="{{ userObject.firstName }}" disabled class="" name="FNAME" id="mce-FNAME">
+                                                        <input type="text" value="{{ userObject.firstName }}" disabled name="FNAME3" class="" id="mceds-FNAME">
+                                                        <input type="text" value="{{ userObject.firstName }}" style="display: none;" class="" name="FNAME3" id="mce-FNAME">
                                                     </div>
                                                     <div class="mc-field-group">
                                                         <label for="mce-LNAME">Last Name / Nachname
                                                     </label>
-                                                        <input type="text" value="{{ userObject.lastName }}" disabled class="" name="LNAME"  id="mce-LNAME">
+                                                        <input type="text" value="{{ userObject.lastName }}" disabled name="LNAME3" class="" id="mceds-LNAME">
+                                                        <input type="text" value="{{ userObject.lastName }}" style="display: none;" class="" name="LNAME"  id="mce-LNAME">
                                                     </div>
                                                     <div class="mc-field-group">
                                                         <label for="mce-COMPANY">Company / Firma
