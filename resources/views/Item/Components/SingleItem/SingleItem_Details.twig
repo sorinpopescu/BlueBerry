@@ -72,7 +72,7 @@
             <span>${ currentVariation.unit.names.name }</span>
         </div>
         <div class="col-xs-6 col-md-5">
-            <b>{% if item.documents[0].data.texts.lang == 'en' %}Stock{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}Verfügbar{% endif %}: </b>
+            <b>{% if item.documents[0].data.texts.lang == 'en' %}Stock:{% endif %}{% if item.documents[0].data.texts.lang == 'de' %}Verfügbar:{% endif %}: </b>
         </div>
         <div class="col-xs-6 col-md-7">
             <span v-if="currentVariation.stock.net <= 25">${ currentVariation.stock.net }</span>
