@@ -97,8 +97,14 @@
                     </add-to-basket>
 
                     <span class="vat small text-muted">
-                        <span v-if="item.texts.lang === 'en'">Available: ${ item.stock.net }</span>
-                        <span v-if="item.texts.lang === 'de'">Verfügbar: ${ item.stock.net }</span>
+                        <span v-if="item.texts.lang === 'en'">Available:
+                            <span v-if="item.stock.net <= 25">${ item.stock.net }</span>
+                            <span v-else >25+</span>
+                        </span>
+                        <span v-if="item.texts.lang === 'de'">Verfügbar:
+                            <span v-if="item.stock.net <= 25">${ item.stock.net }</span>
+                            <span v-else >25+</span>
+                        </span>
                     </span>
                 </div>
             </slot>
