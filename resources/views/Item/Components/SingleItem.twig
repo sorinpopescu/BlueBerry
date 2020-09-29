@@ -89,10 +89,11 @@
                                         <span>${ currentVariation.unit.names.name }</span>
                                     </div>
                                     <div class="col-xs-6 col-md-5">
-                                        <b v-if="currentVariation.texts.lang == 'en'">Stock</b><b v-if="currentVariation.texts.lang == 'de'">Verfügbar: </b>
+                                        <b v-if="currentVariation.texts.lang == 'en'">Stock:</b><b v-if="currentVariation.texts.lang == 'de'">Verfügbar: </b>
                                     </div>
-                                    <div class="col-xs-6 col-md-7">
-                                        <span>${ currentVariation.stock.net }</span>
+                                    <div class="col-xs-6 col-md-7 sss">
+                                        <span v-if="currentVariation.stock.net <= 25">${ currentVariation.stock.net }</span>
+                                        <span v-else >25+</span>
                                     </div>
                                 </div>
                             </div>
