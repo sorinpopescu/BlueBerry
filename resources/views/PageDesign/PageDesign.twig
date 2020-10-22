@@ -321,6 +321,45 @@
         creditcard: "Geben Sie bitte ein gültige Kreditkarten-Nummer ein."
     });}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 
+    {% set testVariable = request.get("test") %}
+    {% if testVariable == '1' %}
+
+        <script type="text/javascript">
+            function putInterest() {
+                $.ajax({
+                    type: "GET",
+                    dataType: "json",
+                    url: "http://sda.cristi.dev.com.ro/api/newsletter/get-mailchimp-groups",
+                    data: {
+                        email: 'mirkogutermuth@yahoo.com'
+                    },
+                    success: function(data) {
+                        if (typeof data !== 'undefined' && parseInt(data.status) == 1) {
+                            if (typeof data.inputchecks !== 'undefined') {
+                                $.each(data.inputchecks, function(key, item) {
+                                    if ($('.input-' + item).length > 0) {
+                                        $('.input-' + item).prop( "checked", true);
+                                    };
+                                });
+                            };
+                        };
+                    },
+                    error: function(data) {
+
+                    }
+                });
+            }
+
+            $(document).ready(function() {
+                setTimeout(function(){
+                    putInterest();
+                }, 200);
+            });
+        </script>
+
+    {% endif %}
+
 {% endif %}
+
 </body>
 </html>
