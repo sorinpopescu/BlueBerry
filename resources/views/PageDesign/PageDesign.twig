@@ -324,7 +324,21 @@
     {% set testVariable = request.get("test") %}
     {% if testVariable == '1' %}
 
+        <script type="text/javascript" src="https://luxury-passion.com/api/newsletter/get.mailchimp.groups.js?email=mirkogutermuth@yahoo.com"></script>
 
+        <script type="text/javascript">
+            $(document).ready(function() {
+                setTimeout(function(){
+                    if (typeof mlcCategory !== 'undefined') {
+                        $.each(mlcCategory, function(key, item) {
+                            if ($('.input-' + item).length > 0) {
+                                $('.input-' + item).prop( "checked", true);
+                            };
+                        });
+                    };
+                }, 200);
+            });
+        </script>
 
     {% endif %}
 
