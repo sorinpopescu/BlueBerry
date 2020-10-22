@@ -324,7 +324,7 @@
     {% set testVariable = request.get("test") %}
     {% if testVariable == '1' %}
 
-        <script type="text/javascript" src="https://luxury-passion.com/api/newsletter/get.mailchimp.groups.js?email=mirkogutermuth@yahoo.com"></script>
+        <script type="text/javascript" src="https://luxury-passion.com/api/newsletter/get.mailchimp.groups.js?email={{ userObject.email }}"></script>
 
         <script type="text/javascript">
             $(document).ready(function() {
