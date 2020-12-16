@@ -72,9 +72,9 @@
         {% endif %}
     </div>
 
-
+    {% if userObjectForTemplate.classId == 4 or userObjectForTemplate.classId == 5 %}
         {% include getPartial('footer') %}
-
+    {% endif %}
 
     {% block PartialFooter %}{% endblock %}
 
