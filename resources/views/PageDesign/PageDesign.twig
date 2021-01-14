@@ -65,11 +65,9 @@
 
     <div id="page-body" class="main  {% if userObjectForTemplate %}user-logged{% else %}user-not-logged{% endif %}">
         {% set templateLoaddd = templateEvent %}
-        {% if userObjectForTemplate.classId == 4 or userObjectForTemplate.classId == 5 or templateLoaddd == 'tpl.password-reset' or templateLoaddd == 'tpl.register' %}
+
         {% block PageBody %}{% endblock %}
-        {% else %}
-            {% include "BlueBerry::PageDesign.Partials.Homepage" %}
-        {% endif %}
+
     </div>
 
     {% if userObjectForTemplate.classId == 4 or userObjectForTemplate.classId == 5 %}
