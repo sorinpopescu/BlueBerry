@@ -212,7 +212,7 @@
                                 <div class="tab-pane active overflow-auto" :id="'details-' + currentVariation.variation.id" role="tabpanel">
                                     <div class="my-4" v-if="currentVariation.properties">
                                         <div slot="MyProperty" class="my-property">
-                                            <div class="row" v-for="propertyRow in currentVariation.properties">
+                                            <div class="row fffff" v-for="propertyRow in currentVariation.properties">
                                                 <div class="col-xs-6 col-md-5" v-if="propertyRow.texts.value !== '' || propertyRow.selection.name !== '' || propertyRow.selection.description !== '' || propertyRow.valueFloat !== '' || propertyRow.valueInt !== ''">
                                                     <b>${ propertyRow.property.names.name }:</b>
                                                 </div>
