@@ -214,8 +214,8 @@
                                     <div class="my-4" v-if="currentVariation.properties">
                                         <div slot="MyProperty" class="my-property">
                                             <div class="row " v-for="propertyRow in currentVariation.properties">
-                                                <span v-for="n in 300">
-                                                    <div v-if="n ==  propertyRow.property.position">
+                                                <span v-for="n in 300" v-if="n ==  propertyRow.property.position">
+
                                                         <div class="col-xs-6 col-md-5 ${ propertyRow.property.position }" v-if="propertyRow.texts.value !== '' || propertyRow.selection.name !== '' || propertyRow.selection.description !== '' || propertyRow.valueFloat !== '' || propertyRow.valueInt !== ''">
                                                             <b>${ propertyRow.property.names.name }: </b>
                                                         </div>
@@ -227,7 +227,7 @@
                                                             <span v-if="propertyRow.valueInt">${ propertyRow.valueInt }Millimeter</span>
                                                         </div>
                                                     </div>
-                                                </span>
+
                                             </div>
                                         </div>
                                     </div>
