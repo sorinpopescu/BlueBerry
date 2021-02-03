@@ -190,7 +190,7 @@
                     </div>
 
                     <div class="col-12 col-md-7">
-                        {$ currentVariation.properties }
+
                         <!-- ITEM DESCRIPTION -->
                         <div class="my-5">
                             <ul class="nav nav-tabs" role="tablist">
@@ -214,7 +214,7 @@
                                     <div class="my-4" v-if="currentVariation.properties">
                                         <div slot="MyProperty" class="my-property">
                                             <div class="row " v-for="propertyRow in currentVariation.properties">
-                                                <div class="col-xs-6 col-md-5" v-if="propertyRow.texts.value !== '' || propertyRow.selection.name !== '' || propertyRow.selection.description !== '' || propertyRow.valueFloat !== '' || propertyRow.valueInt !== ''">
+                                                <div class="col-xs-6 col-md-5 ${ propertyRow.property.position }" v-if="propertyRow.texts.value !== '' || propertyRow.selection.name !== '' || propertyRow.selection.description !== '' || propertyRow.valueFloat !== '' || propertyRow.valueInt !== ''">
                                                     <b>${ propertyRow.property.names.name }: </b>
                                                 </div>
                                                 <div class="col-xs-6 col-md-7" v-if="propertyRow.texts.value !== '' || propertyRow.selection.name !== '' || propertyRow.selection.description !== '' || propertyRow.valueFloat !== '' || propertyRow.valueInt !== ''">
