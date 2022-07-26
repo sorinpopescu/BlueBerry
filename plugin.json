@@ -8,7 +8,10 @@
         "template"
     ],
     "require": [],
-    "version"           : "2.7.0",
+    "version"           : "2.7.1",
+    "platform": {
+        "php": ">=7.3 <8.1"
+    },
     "description"       : "BlueBerry B2B",
     "author"            : "BlueBerry",
     "serviceProvider"   : "BlueBerry\\Providers\\BlueBerryServiceProvider",

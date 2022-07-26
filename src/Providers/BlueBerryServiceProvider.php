@@ -31,24 +31,11 @@ class BlueBerryServiceProvider extends ServiceProvider {
      */
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
 
-        //$guard = pluginApp(AuthGuard::class);
-        //$guard->assertOrRedirect( true, '/login');
-
         $eventDispatcher->listen("IO.Resources.Import", function(ResourceContainer $container) {
             $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
             $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
             //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
-        },self::EVENT_LISTENER_PRIORITY);
-
-        /*$eventDispatcher->listen('IO.Component.Import', function (ComponentContainer $container) {
-            if ($container->getOriginComponentTemplate()=='Ceres::Item.Components.SingleItem') {
-                $container->setNewComponentTemplate('BlueBerry::Item.Components.SingleItem');
-            };
-
-            if ($container->getOriginComponentTemplate()=='Ceres::ItemList.Components.CategoryItem') {
-                $container->setNewComponentTemplate('BlueBerry::ItemList.Components.CategoryItem');
-            };
-        }, self::EVENT_LISTENER_PRIORITY);*/
+        }, self::EVENT_LISTENER_PRIORITY);
 
         $eventDispatcher->listen('IO.tpl.item', function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Item.SingleItemWrapper');
