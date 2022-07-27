@@ -37,10 +37,10 @@ class BlueBerryServiceProvider extends ServiceProvider {
             //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
         }, self::EVENT_LISTENER_PRIORITY);
 
-        // $eventDispatcher->listen('IO.tpl.item', function (TemplateContainer $container) {
-        //     $container->setTemplate('BlueBerry::Item.SingleItemWrapper');
-        //     return false;
-        // }, self::EVENT_LISTENER_PRIORITY);
+        $eventDispatcher->listen('IO.tpl.item', function (TemplateContainer $container) {
+            $container->setTemplate('BlueBerry::Item.SingleItemWrapper');
+            return false;
+        }, self::EVENT_LISTENER_PRIORITY);
 
         // $eventDispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container) {
         //     $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
