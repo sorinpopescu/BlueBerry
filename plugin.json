@@ -8,7 +8,7 @@
         "template"
     ],
     "require": [],
-    "version"           : "2.7.7",
+    "version"           : "2.7.8",
     "platform": {
         "php": ">=7.3 <8.1"
     },
