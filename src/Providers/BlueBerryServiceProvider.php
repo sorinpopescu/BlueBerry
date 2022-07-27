@@ -31,6 +31,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
      */
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
 
+        ini_set('display_errors', 1);
+
         $eventDispatcher->listen("IO.Resources.Import", function(ResourceContainer $container) {
             $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
             $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
