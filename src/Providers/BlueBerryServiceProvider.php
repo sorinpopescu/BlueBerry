@@ -31,38 +31,36 @@ class BlueBerryServiceProvider extends ServiceProvider {
      */
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
 
-        ini_set('display_errors', 1);
+        // $eventDispatcher->listen("IO.Resources.Import", function(ResourceContainer $container) {
+        //     $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
+        //     $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
+        //     //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
+        // }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen("IO.Resources.Import", function(ResourceContainer $container) {
-            $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
-            $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
-            //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
-        }, self::EVENT_LISTENER_PRIORITY);
+        // $eventDispatcher->listen('IO.tpl.item', function (TemplateContainer $container) {
+        //     $container->setTemplate('BlueBerry::Item.SingleItemWrapper');
+        //     return false;
+        // }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen('IO.tpl.item', function (TemplateContainer $container) {
-            $container->setTemplate('BlueBerry::Item.SingleItemWrapper');
-            return false;
-        }, self::EVENT_LISTENER_PRIORITY);
+        // $eventDispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container) {
+        //     $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
+        //     return false;
+        // }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container) {
-            $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
-            return false;
-        }, self::EVENT_LISTENER_PRIORITY);
+        // $eventDispatcher->listen('IO.tpl.search', function (TemplateContainer $container) {
+        //     $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
+        //     return false;
+        // }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen('IO.tpl.search', function (TemplateContainer $container) {
-            $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
-            return false;
-        }, self::EVENT_LISTENER_PRIORITY);
+        // $eventDispatcher->listen('IO.tpl.my-account', function (TemplateContainer $container) {
+        //     $container->setTemplate('BlueBerry::MyAccount.MyAccountView');
+        //     return false;
+        // }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen('IO.tpl.my-account', function (TemplateContainer $container) {
-            $container->setTemplate('BlueBerry::MyAccount.MyAccountView');
-            return false;
-        }, self::EVENT_LISTENER_PRIORITY);
-
-        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
-            $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
-            $partial->set('page-design', 'BlueBerry::PageDesign.PageDesign');
-        }, self::EVENT_LISTENER_PRIORITY);
+        // $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
+        //     $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
+        //     $partial->set('page-design', 'BlueBerry::PageDesign.PageDesign');
+        // }, self::EVENT_LISTENER_PRIORITY);
     }
 
     /**
