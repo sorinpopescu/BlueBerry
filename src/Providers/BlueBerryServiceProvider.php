@@ -32,8 +32,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
 
         $eventDispatcher->listen("IO.Resources.Import", function(ResourceContainer $container) {
-            // $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
-            // $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
+            $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
+            $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
             //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
         }, self::EVENT_LISTENER_PRIORITY);
 
