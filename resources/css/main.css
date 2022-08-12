@@ -222,7 +222,7 @@ nav.navbar:not(.megamenu) .nav-dropdown-inner li:hover {
 .discount-list {
     position: absolute;
     right: 27px;
-    bottom: 60px;
+    bottom: 75px;
     z-index: 99;
 }
 
