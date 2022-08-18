@@ -16,7 +16,7 @@ use Plenty\Plugin\Templates\Twig;
 
 class BlueBerryServiceProvider extends ServiceProvider {
 
-    private const EVENT_LISTENER_PRIORITY = 0;
+    public const EVENT_LISTENER_PRIORITY = 0;
 
     /**
      * Register the service provider.
