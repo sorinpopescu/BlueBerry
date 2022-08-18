@@ -14,10 +14,10 @@ use Plenty\Modules\Webshop\Template\Providers\TemplateServiceProvider;
 use BlueBerry\Providers\BlueBerryRouteServiceProvider;
 use Plenty\Plugin\Templates\Twig;
 
-
 class BlueBerryServiceProvider extends ServiceProvider {
 
-    const EVENT_LISTENER_PRIORITY = 0;
+    private const EVENT_LISTENER_PRIORITY = 0;
+
     /**
      * Register the service provider.
      */
@@ -27,20 +27,31 @@ class BlueBerryServiceProvider extends ServiceProvider {
     }
 
     /**
+     * Register event listeners for IO events.
+     * @param $event
+     * @param $listener
+     */
+    private function listenToIO($event, $dispatcher, $listener)
+    {
+        $dispatcher->listen('IO.' . $event, $listener, self::EVENT_LISTENER_PRIORITY);
+        $dispatcher->listen('IO.intl.' . $event, $listener, self::EVENT_LISTENER_PRIORITY);
+    }
+
+    /**
      * Boot method check if user is logged in or not and redirect him
      */
     public function boot(Twig $twig, Dispatcher $eventDispatcher) {
 
-        $eventDispatcher->listen("IO.Resources.Import", function(ResourceContainer $container) {
-            // $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
-            // $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
-            //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
-        }, self::EVENT_LISTENER_PRIORITY);
+        // $this->listenToIO("Resources.Import", $eventDispatcher, function(ResourceContainer $container) {
+        //     //$container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
+        //     // $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
+        //     //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
+        // }, self::EVENT_LISTENER_PRIORITY);
 
-        $eventDispatcher->listen('IO.tpl.item', function (TemplateContainer $container) {
+        $this->listenToIO('tpl.item', $eventDispatcher, function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Item.SingleItemWrapper');
             return false;
-        }, self::EVENT_LISTENER_PRIORITY);
+        });
 
         $eventDispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
@@ -67,7 +78,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * redirect to destination
      */
     public function redirectTo($path) {
-        header("Location: ".$path);
+        header("Location: " . $path);
         die;
     }
 
