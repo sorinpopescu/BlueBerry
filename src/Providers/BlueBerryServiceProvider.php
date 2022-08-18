@@ -21,7 +21,8 @@ class BlueBerryServiceProvider extends ServiceProvider {
     /**
      * Register the service provider.
      */
-    public function register() {
+    public function register()
+    {
         // Register routes
         // $this->getApplication()->register( BlueBerryRouteServiceProvider::class );
     }
@@ -40,38 +41,39 @@ class BlueBerryServiceProvider extends ServiceProvider {
     /**
      * Boot method check if user is logged in or not and redirect him
      */
-    public function boot(Twig $twig, Dispatcher $eventDispatcher) {
+    public function boot(Twig $twig, Dispatcher $eventDispatcher)
+    {
 
-        // $this->listenToIO("Resources.Import", $eventDispatcher, function(ResourceContainer $container) {
-        //     //$container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
-        //     // $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
-        //     //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
-        // }, self::EVENT_LISTENER_PRIORITY);
+        $this->listenToIO("Resources.Import", $eventDispatcher, function(ResourceContainer $container) {
+            //$container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
+            // $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
+            //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
+        });
 
         $this->listenToIO('tpl.item', $eventDispatcher, function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Item.SingleItemWrapper');
             return false;
         });
 
-        $eventDispatcher->listen('IO.tpl.category.item', function (TemplateContainer $container) {
+        $this->listenToIO('tpl.category.item', $eventDispatcher, function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
             return false;
-        }, self::EVENT_LISTENER_PRIORITY);
+        });
 
-        $eventDispatcher->listen('IO.tpl.search', function (TemplateContainer $container) {
+        $this->listenToIO('tpl.search', $eventDispatcher, function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::Category.Item.CategoryItem');
             return false;
-        }, self::EVENT_LISTENER_PRIORITY);
+        });
 
-        $eventDispatcher->listen('IO.tpl.my-account', function (TemplateContainer $container) {
+        $this->listenToIO('tpl.my-account', $eventDispatcher, function (TemplateContainer $container) {
             $container->setTemplate('BlueBerry::MyAccount.MyAccountView');
             return false;
-        }, self::EVENT_LISTENER_PRIORITY);
+        });
 
-        $eventDispatcher->listen('IO.init.templates', function (Partial $partial) {
+        $this->listenToIO('init.templates', $eventDispatcher, function (Partial $partial) {
             $partial->set('header', 'BlueBerry::PageDesign.Partials.Header.Header');
             $partial->set('page-design', 'BlueBerry::PageDesign.PageDesign');
-        }, self::EVENT_LISTENER_PRIORITY);
+        });
     }
 
     /**
@@ -104,10 +106,10 @@ class BlueBerryServiceProvider extends ServiceProvider {
             // if there is no rest or
             if ($isRest === false && stripos($currentUri, 'customer-') === false) {
                 // Redirect to login
-                $this->redirectTo('/'.$sessionLanguage.'/customer-login');
-            } else if ($isRest === false && stripos($currentUri, 'customer-') !== false) {
+                $this->redirectTo('/' . $sessionLanguage.'/customer-login');
+            } elseif ($isRest === false && stripos($currentUri, 'customer-') !== false) {
                 // set my login design
-                $eventDispatcher->listen('IO.init.templates', function (Partial $partial) use ($currentUri) {
+                $this->listenToIO('init.templates', $eventDispatcher, function (Partial $partial) use ($currentUri) {
                     // the partial
                     $partial->set('page-design-login', 'BlueBerry::PageDesign.PageDesignLogin');
                     // The login
@@ -117,7 +119,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
                 }, 800);
             };
         // IF user is loggedin and still on this page - redirect him
-        } else if (stripos($currentUri, 'customer-') !== false) {
+        } elseif (stripos($currentUri, 'customer-') !== false) {
             $this->redirectTo('/'.$sessionLanguage.'/');
         };
     }
@@ -125,7 +127,5 @@ class BlueBerryServiceProvider extends ServiceProvider {
     /**
      * Set default design
      */
-    public function setDesign() {
-
-    }
+    public function wait_setDesign() {}
 }
