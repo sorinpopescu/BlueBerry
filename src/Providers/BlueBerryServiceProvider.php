@@ -47,7 +47,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
 
         $this->listenToIO("Resources.Import", $eventDispatcher, function(ResourceContainer $container) {
             $container->addScriptTemplate('BlueBerry::ItemList.Components.CategoryItem');
-            // $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
+            $container->addScriptTemplate('BlueBerry::Item.Components.SingleItem');
             //$container->addScriptTemplate('BlueBerry::Item.Components.ItemPrice');
         });
 
