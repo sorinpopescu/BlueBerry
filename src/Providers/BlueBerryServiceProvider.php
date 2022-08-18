@@ -32,10 +32,11 @@ class BlueBerryServiceProvider extends ServiceProvider {
      * @param $event
      * @param $listener
      */
-    private function listenToIO($event, $dispatcher, $listener)
+    private function listenToIO($event, $dispatcher, $listener, $priority = 0)
     {
-        $dispatcher->listen('IO.' . $event, $listener, self::EVENT_LISTENER_PRIORITY);
-        $dispatcher->listen('IO.intl.' . $event, $listener, self::EVENT_LISTENER_PRIORITY);
+        $priority = ($priority > 0 ? $priority : self::EVENT_LISTENER_PRIORITY);
+        $dispatcher->listen('IO.' . $event, $listener, $priority);
+        $dispatcher->listen('IO.intl.' . $event, $listener, $priority);
     }
 
     /**
@@ -120,7 +121,7 @@ class BlueBerryServiceProvider extends ServiceProvider {
             };
         // IF user is loggedin and still on this page - redirect him
         } elseif (stripos($currentUri, 'customer-') !== false) {
-            $this->redirectTo('/'.$sessionLanguage.'/');
+            $this->redirectTo('/' . $sessionLanguage . '/');
         };
     }
 
